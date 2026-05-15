@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Subnautica 2 Gameserver.vcxproj" Id="3ab863a1-b1ae-42d5-bc24-76451d804a41" />
+</Solution>
