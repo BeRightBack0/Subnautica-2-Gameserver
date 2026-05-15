@@ -34,4 +34,14 @@
 #include <set>
 #include <atomic>
 
+using namespace SDK;
+using namespace std;
+inline uint64_t ImageBase = *(uint64_t*)(__readgsqword(0x60) + 0x10);
+
+
+inline UWorld* GetWorld()
+{
+    return UWorld::GetWorld();
+}
+
 #endif //PCH_H
