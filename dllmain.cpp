@@ -91,15 +91,16 @@ void Main() {
 
    // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk we will use it here
     Hook(ImageBase + 0x47088C0, ReturnOne, nullptr); // GetNetMode is not inlined
+    Hook(ImageBase + 0x41F72F0, ReturnOne, nullptr); // some random another netmode shit
 
-  //  //auto Gamemode = (AUWELobbyGameMode*)UGameplayStatics::GetGameMode(GetWorld());
- //   Gamemode->StartNewServerGame(ASN2WorldGameMode::StaticClass());
-
+   // auto Gamemode = (AUWELobbyGameMode*)UGameplayStatics::GetGameMode(GetWorld());
+    //Gamemode->StartNewServerGame(ASN2WorldGameMode::StaticClass());
     NullHook(ImageBase + 0x149EDA0);
     NullHook(ImageBase + 0x148CFF0);
     NullHook(ImageBase + 0x1637F40); // random ass exit func that is called on a random crash
 
 
+    // CreateNamedNetDriver_Local so it will only create normal gamenetdriver
     Hook(ImageBase + 0x47A3E50, jewdriver, (void**)&jewdriverOG);
    // UUWEGameModeTypeStatics
 
@@ -112,12 +113,10 @@ void Main() {
 
 
     MH_EnableHook(MH_ALL_HOOKS);
-  //  UGameEngine::GetEngine()->GameInstance->LocalPlayers.Remove(0);
-   // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"open /Game/Maps/Main/L_Main", nullptr);
+    auto jew = UGameEngine::GetEngine()->GameInstance->LocalPlayers[0];
+  
+    UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"open /Game/Maps/Main/L_Main", nullptr);
     // switch or open level might be better ngl
-
-
-
 }
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
