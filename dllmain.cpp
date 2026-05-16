@@ -64,18 +64,15 @@ bool jew() {
     std::cout << "called yo" << std::endl;
     return false;
 }
-DefineOriginal(char, jews, UEngine* Engine, FWorldContext* WorldContext, FURL* URL, UPendingNetGame* Pending, FString* Error);
-char jews(UEngine* Engine, FWorldContext* WorldContext, FURL* URL, UPendingNetGame* Pending, FString* Error) {
-    std::cout << "hello" << std::endl;
 
-    URL->Map = FString(L"/Game/Maps/Main/L_Main");
-    //URL->Protocol = FString(L"unreal");
-   // URL->Host = FString(L"127.0.0.1");
-    //URL->Port = 7777;
+DefineOriginal(UNetDriver*,  jewdriver, UEngine* a1, FWorldContext* a2, FName a3, FName a4);
+UNetDriver* jewdriver(UEngine* a1 , FWorldContext* a2, FName a3, FName a4) {
 
-    return jewsOG(Engine, WorldContext, URL, Pending, Error);
+    FName GameNetDriver = SDK::UKismetStringLibrary::Conv_StringToName(L"GameNetDriver");
+
+
+    return jewdriverOG(a1, a2, GameNetDriver, GameNetDriver);
 }
-
 
 void Main() {
     AllocConsole();
@@ -83,6 +80,8 @@ void Main() {
     FILE* File = nullptr;
     freopen_s(&File, "CONOUT$", "w+", stdout);
     freopen_s(&File, "CONOUT$", "w+", stderr);
+    freopen_s(&File, "D:\\log.txt", "w", stdout);
+    freopen_s(&File, "D:\\log.txt", "w", stderr);
 
     *(bool*)(ImageBase + 0xCC24A42) = false; // gisclient
     *(bool*)(ImageBase + 0xCC24A43) = true; // gisserver
@@ -90,16 +89,17 @@ void Main() {
     *(int*)(ImageBase + 0xCE78798) = 7; // random ass log for listening
     *(int*)(ImageBase + 0xCF118F8) = 1; // ass log that is spammed when u inject late 
 
-
-    //UEngine* Engine = SDK::UEngine::GetEngine();
-    //UObject* NewObject = UGameplayStatics::SpawnObject(Engine->ConsoleClass, Engine->GameViewport);
-    //Engine->GameViewport->ViewportConsole = static_cast<UConsole*>(NewObject);
-    UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk we will use it here
+   // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk we will use it here
     Hook(ImageBase + 0x47088C0, ReturnOne, nullptr); // GetNetMode is not inlined
 
-  //  auto Gamemode = (AUWELobbyGameMode*)UGameplayStatics::GetGameMode(GetWorld());
-    //Gamemode->StartNewServerGame(ASN2WorldGameMode::StaticClass());
+  //  //auto Gamemode = (AUWELobbyGameMode*)UGameplayStatics::GetGameMode(GetWorld());
+ //   Gamemode->StartNewServerGame(ASN2WorldGameMode::StaticClass());
 
+    NullHook(ImageBase + 0x149EDA0);
+    NullHook(ImageBase + 0x148CFF0);
+
+
+    Hook(ImageBase + 0x47A3E50, jewdriver, (void**)&jewdriverOG);
    // UUWEGameModeTypeStatics
 
   //  Hook(ImageBase + 0x47AFEE0, jews, (void**)&jewsOG); // uengine::loadmap

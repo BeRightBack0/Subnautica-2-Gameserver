@@ -38,6 +38,10 @@ using namespace SDK;
 using namespace std;
 inline uint64_t ImageBase = *(uint64_t*)(__readgsqword(0x60) + 0x10);
 
+inline void nullfunc() {
+    return;
+}
+
 
 inline UWorld* GetWorld()
 {
@@ -49,6 +53,13 @@ inline MH_STATUS Hook(uintptr_t Address, PVOID Hook, void** Original) {
 
 	return MH_CreateHook((LPVOID)Address, Hook, Original);
 }
+
+inline MH_STATUS NullHook(uintptr_t Address) {
+    if (Address - ImageBase == 0x0) return MH_ERROR_MEMORY_ALLOC;
+
+    return MH_CreateHook((LPVOID)Address, nullfunc, nullptr);
+}
+
 
 #define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
 
@@ -75,25 +86,28 @@ inline void VFTHook(int index, void* detour, void** original = nullptr)
 }
 
 template<typename T>
-inline void VFTHookEvery(int index, void* detour)
+inline void VFTHookEvery(int index, void* detour, void** original = nullptr)
 {
-	for (int i = 0; i < UObject::GObjects->Num(); i++) {
-		UObject* Object = UObject::GObjects->GetByIndex(i);
+    for (int i = 0; i < UObject::GObjects->Num(); i++) {
+        UObject* Object = UObject::GObjects->GetByIndex(i);
 
-		if (!Object) continue;
+        if (!Object) continue;
 
-		if (Object->IsA(T::StaticClass())) {
-			void** vtable = *(void***)Object;
-			if (!vtable || !vtable[index])
-				continue;
+        if (Object->IsA(T::StaticClass())) {
+            void** vtable = *(void***)Object;
+            if (!vtable || !vtable[index])
+                continue;
 
-			DWORD oldProtect;
-			if (VirtualProtect(&vtable[index], sizeof(void*), PAGE_EXECUTE_READWRITE, &oldProtect))
-			{
-				vtable[index] = detour;
-				VirtualProtect(&vtable[index], sizeof(void*), oldProtect, &oldProtect);
-			}
-		}
-	}
+            DWORD oldProtect;
+            if (VirtualProtect(&vtable[index], sizeof(void*), PAGE_EXECUTE_READWRITE, &oldProtect))
+            {
+                if (original && !*original)
+                    *original = vtable[index];
+
+                vtable[index] = detour;
+                VirtualProtect(&vtable[index], sizeof(void*), oldProtect, &oldProtect);
+            }
+        }
+    }
 }
 #endif //PCH_H
