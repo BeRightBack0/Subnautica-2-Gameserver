@@ -97,6 +97,7 @@ void Main() {
 
     NullHook(ImageBase + 0x149EDA0);
     NullHook(ImageBase + 0x148CFF0);
+    NullHook(ImageBase + 0x1637F40); // random ass exit func that is called on a random crash
 
 
     Hook(ImageBase + 0x47A3E50, jewdriver, (void**)&jewdriverOG);
