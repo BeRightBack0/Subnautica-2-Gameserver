@@ -68,10 +68,45 @@ bool jew() {
 DefineOriginal(UNetDriver*,  jewdriver, UEngine* a1, FWorldContext* a2, FName a3, FName a4);
 UNetDriver* jewdriver(UEngine* a1 , FWorldContext* a2, FName a3, FName a4) {
 
-    FName GameNetDriver = SDK::UKismetStringLibrary::Conv_StringToName(L"GameNetDriver");
+    // we actually dont want to do any logic when theres no context or engine
+    if (!a2 || !a1) return jewdriverOG(a1, a2, a3, a4);
+
+    FName GameNetDriver = UKismetStringLibrary::Conv_StringToName(L"GameNetDriver");
+    if (GameNetDriver == NAME_None) {
+        return jewdriverOG(a1, a2, a3, a4);
+    }
+    else {
+        return jewdriverOG(a1, a2, GameNetDriver, GameNetDriver);
+    }
+
+}
 
 
-    return jewdriverOG(a1, a2, GameNetDriver, GameNetDriver);
+DefineOriginal(__int64, CreateGameModeForURL, UGameInstance* a1, const FURL& a2, UWorld* a3);
+__int64 CreateGameModeForURL(UGameInstance* a1, const FURL& a2, UWorld* a3) {
+    // we will just edit the furl bc i dont feel like creating one  its just gonna be ahh
+
+    auto prot = a2.Protocol;
+    auto host = a2.Host;
+    auto port = a2.Port;
+    auto valid = a2.Valid;
+    auto map = a2.Map;
+    auto redirecturl = a2.RedirectURL;
+    auto options = a2.Op;
+    // properiumunreal  7777 1 /Game/Maps/L_ClientLobby
+    FURL url{};
+    url.Protocol = a2.Protocol;
+    url.Host = FString(L"127.0.0.1");
+    url.Port = a2.Port;
+    url.Valid = a2.Valid;
+    url.Map = FString(L"/Game/Maps/Main/L_Main");
+    url.RedirectURL = a2.RedirectURL;
+    url.Op = a2.Op;
+
+    std::cout << "[modified] host: " << url.Host.ToString().c_str() << std::endl;
+    std::cout << "[modified] map:  " << url.Map.ToString().c_str() << std::endl;
+
+   return CreateGameModeForURLOG(a1, url, a3);
 }
 
 void Main() {
@@ -80,24 +115,29 @@ void Main() {
     FILE* File = nullptr;
     freopen_s(&File, "CONOUT$", "w+", stdout);
     freopen_s(&File, "CONOUT$", "w+", stderr);
-    freopen_s(&File, "D:\\log.txt", "w", stdout);
-    freopen_s(&File, "D:\\log.txt", "w", stderr);
+    Sleep(3000);
 
     *(bool*)(ImageBase + 0xCC24A42) = false; // gisclient
     *(bool*)(ImageBase + 0xCC24A43) = true; // gisserver
 
     *(int*)(ImageBase + 0xCE78798) = 7; // random ass log for listening
     *(int*)(ImageBase + 0xCF118F8) = 1; // ass log that is spammed when u inject late 
+    *(int*)(ImageBase + 0xD0E5C18) = 1; // gay loading screen spam bc im unproper for the loading screen handling
+
 
    // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk we will use it here
     Hook(ImageBase + 0x47088C0, ReturnOne, nullptr); // GetNetMode is not inlined
     Hook(ImageBase + 0x41F72F0, ReturnOne, nullptr); // some random another netmode shit
+    Hook(ImageBase + 0x3F84900, CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
 
    // auto Gamemode = (AUWELobbyGameMode*)UGameplayStatics::GetGameMode(GetWorld());
     //Gamemode->StartNewServerGame(ASN2WorldGameMode::StaticClass());
     NullHook(ImageBase + 0x149EDA0);
     NullHook(ImageBase + 0x148CFF0);
     NullHook(ImageBase + 0x1637F40); // random ass exit func that is called on a random crash
+    NullHook(ImageBase + 0x5AEB3E0); // first loading screen crash
+    NullHook(ImageBase + 0x5AEA630); // another loading screen logic null yo
+
 
 
     // CreateNamedNetDriver_Local so it will only create normal gamenetdriver
@@ -115,7 +155,7 @@ void Main() {
     MH_EnableHook(MH_ALL_HOOKS);
     auto jew = UGameEngine::GetEngine()->GameInstance->LocalPlayers[0];
   
-    UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"open /Game/Maps/Main/L_Main", nullptr);
+   // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"open /Game/Maps/Main/L_Main", nullptr);
     // switch or open level might be better ngl
 }
 BOOL APIENTRY DllMain(HMODULE hModule,

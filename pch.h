@@ -33,10 +33,11 @@
 #include "MinHook.h"
 #include <set>
 #include <atomic>
+#define NAME_None FName(0)
 
 using namespace SDK;
 using namespace std;
-inline uint64_t ImageBase = *(uint64_t*)(__readgsqword(0x60) + 0x10);
+inline uint64_t ImageBase = (uint64_t)GetModuleHandle(nullptr);
 
 inline void nullfunc() {
     return;
@@ -47,22 +48,30 @@ inline UWorld* GetWorld()
 {
     return UWorld::GetWorld();
 }
-
-inline MH_STATUS Hook(uintptr_t Address, PVOID Hook, void** Original) {
-	if (Address - ImageBase == 0x0) return MH_ERROR_MEMORY_ALLOC;
-
-	return MH_CreateHook((LPVOID)Address, Hook, Original);
+inline void Hook(uintptr_t Address, void* Detour, void** Original) {
+   auto idk =  MH_CreateHook((LPVOID)Address, Detour, Original);
+   std::cout << idk << std::endl;
+    MH_EnableHook((LPVOID)Address);
 }
 
-inline MH_STATUS NullHook(uintptr_t Address) {
-    if (Address - ImageBase == 0x0) return MH_ERROR_MEMORY_ALLOC;
+inline void NullHook(uintptr_t Address) {
 
-    return MH_CreateHook((LPVOID)Address, nullfunc, nullptr);
+     MH_CreateHook((LPVOID)Address, nullfunc, nullptr);
+     MH_EnableHook((LPVOID)Address);
 }
 
 
 #define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
 
+
+template <typename _Is>
+__forceinline void Patch(uintptr_t ptr, _Is byte)
+{
+    DWORD og;
+    VirtualProtect(LPVOID(ptr), sizeof(_Is), PAGE_EXECUTE_READWRITE, &og);
+    *(_Is*)ptr = byte;
+    VirtualProtect(LPVOID(ptr), sizeof(_Is), og, &og);
+}
 
 template<typename T>
 inline void VFTHook(int index, void* detour, void** original = nullptr)

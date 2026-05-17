@@ -401,9 +401,12 @@ namespace UC
 
 		FString(const wchar_t* Str)
 		{
-			const uint32 NullTerminatedLength = static_cast<uint32>(wcslen(Str) + 0x1);
+			const uint32 NullTerminatedLength = static_cast<uint32>(wcslen(Str) + 1);
+			const uint64 ByteSize = NullTerminatedLength * sizeof(wchar_t);
 
-			Data = const_cast<wchar_t*>(Str);
+			Data = static_cast<wchar_t*>(FMemory::Realloc(nullptr, ByteSize, alignof(wchar_t)));
+			memcpy(Data, Str, ByteSize);
+
 			NumElements = NullTerminatedLength;
 			MaxElements = NullTerminatedLength;
 		}
