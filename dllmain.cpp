@@ -65,35 +65,36 @@ bool jew() {
     return false;
 }
 
-DefineOriginal(UNetDriver*,  jewdriver, UEngine* a1, FWorldContext* a2, FName a3, FName a4);
-UNetDriver* jewdriver(UEngine* a1 , FWorldContext* a2, FName a3, FName a4) {
+static bool (*IpNetDriverInitBase)(__int64, bool, __int64, const FURL&, bool, FString&) = decltype(IpNetDriverInitBase)(uintptr_t(GetModuleHandle(0)) + 0x52C1340);
 
-    // we actually dont want to do any logic when theres no context or engine
-    if (!a2 || !a1) return jewdriverOG(a1, a2, a3, a4);
-
-    FName GameNetDriver = UKismetStringLibrary::Conv_StringToName(L"GameNetDriver");
-    if (GameNetDriver == NAME_None) {
-        return jewdriverOG(a1, a2, a3, a4);
-    }
-    else {
-        return jewdriverOG(a1, a2, GameNetDriver, GameNetDriver);
-    }
-
+// that  eos net driver initbase
+DefineOriginal(bool, gayness, __int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error);
+bool gayness(__int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error) {
+    *reinterpret_cast<int*>(a1 + 0x9A8) = 1;
+    return IpNetDriverInitBase(a1, false, InNotify, URL, bReuseAddressAndPort, Error);
 }
+
+static bool (*IpNetDriverInitListen)(__int64, __int64, FURL&, bool, FString&) = decltype(IpNetDriverInitListen)(uintptr_t(GetModuleHandle(0)) + 0x52C2B30);
+
+DefineOriginal(bool, scuffness, __int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error);
+
+bool scuffness(__int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error) {
+
+    return IpNetDriverInitListen(self, InNotify, LocalURL, bReuseAddressAndPort, Error);
+}
+
+
+
+
+
+
+
 
 
 DefineOriginal(__int64, CreateGameModeForURL, UGameInstance* a1, const FURL& a2, UWorld* a3);
 __int64 CreateGameModeForURL(UGameInstance* a1, const FURL& a2, UWorld* a3) {
     // we will just edit the furl bc i dont feel like creating one  its just gonna be ahh
 
-    auto prot = a2.Protocol;
-    auto host = a2.Host;
-    auto port = a2.Port;
-    auto valid = a2.Valid;
-    auto map = a2.Map;
-    auto redirecturl = a2.RedirectURL;
-    auto options = a2.Op;
-    // properiumunreal  7777 1 /Game/Maps/L_ClientLobby
     FURL url{};
     url.Protocol = a2.Protocol;
     url.Host = FString(L"127.0.0.1");
@@ -101,7 +102,8 @@ __int64 CreateGameModeForURL(UGameInstance* a1, const FURL& a2, UWorld* a3) {
     url.Valid = a2.Valid;
     url.Map = FString(L"/Game/Maps/Main/L_Main");
     url.RedirectURL = a2.RedirectURL;
-    url.Op = a2.Op;
+    FString ipOption = FString(L"bUseIPSockets");
+    url.Op.Add(ipOption);
 
     std::cout << "[modified] host: " << url.Host.ToString().c_str() << std::endl;
     std::cout << "[modified] map:  " << url.Map.ToString().c_str() << std::endl;
@@ -138,10 +140,12 @@ void Main() {
     NullHook(ImageBase + 0x5AEB3E0); // first loading screen crash
     NullHook(ImageBase + 0x5AEA630); // another loading screen logic null yo
 
+    // eosnetdriver::initbase
+    Hook(ImageBase + 0x5323FB0, gayness, nullptr);
 
+    //eosnetdriver::initlisten
+    Hook(ImageBase + 0x53246A0, scuffness, nullptr);
 
-    // CreateNamedNetDriver_Local so it will only create normal gamenetdriver
-    Hook(ImageBase + 0x47A3E50, jewdriver, (void**)&jewdriverOG);
    // UUWEGameModeTypeStatics
 
   //  Hook(ImageBase + 0x47AFEE0, jews, (void**)&jewsOG); // uengine::loadmap
