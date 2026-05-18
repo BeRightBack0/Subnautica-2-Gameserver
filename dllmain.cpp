@@ -67,6 +67,12 @@ bool LoadMap(UEngine* Engine, FWorldContext& WorldContext, FURL URL, UPendingNet
 
 void ToggleCheatMenu()
 {
+
+   auto jew =  GetFirstObjectOfClass<UInputSettings>();
+   auto settings = jew->GetInputSettings();
+    auto name = UKismetStringLibrary::Conv_StringToName(FString(L"F8"));
+    settings->ConsoleKeys.Add({name}); // rat
+    
     auto* WM = USN2Statics::GetWindowManager(GetWorld());
     if (!WM) return;
 
