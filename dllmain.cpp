@@ -64,20 +64,20 @@ bool jew() {
     std::cout << "called yo" << std::endl;
     return false;
 }
-
+// "Unable to find socket subsystem"
 static bool (*IpNetDriverInitBase)(__int64, bool, __int64, const FURL&, bool, FString&) = decltype(IpNetDriverInitBase)(uintptr_t(GetModuleHandle(0)) + 0x52C1340);
 
-// that  eos net driver initbase
+// that eos net driver initbase
 DefineOriginal(bool, gayness, __int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error);
 bool gayness(__int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error) {
+    // NetDriverEOS->bIsPassthrough
     *reinterpret_cast<int*>(a1 + 0x9A8) = 1;
     return IpNetDriverInitBase(a1, false, InNotify, URL, bReuseAddressAndPort, Error);
 }
-
+// "%s IpNetDriver listening on port %i"
 static bool (*IpNetDriverInitListen)(__int64, __int64, FURL&, bool, FString&) = decltype(IpNetDriverInitListen)(uintptr_t(GetModuleHandle(0)) + 0x52C2B30);
 
 DefineOriginal(bool, scuffness, __int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error);
-
 bool scuffness(__int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error) {
 
     return IpNetDriverInitListen(self, InNotify, LocalURL, bReuseAddressAndPort, Error);
@@ -119,12 +119,22 @@ void Main() {
     freopen_s(&File, "CONOUT$", "w+", stderr);
     Sleep(3000);
 
+
+    // "AllowCommandletRendering" at the top of the func there will be 2 bytes set to 1
     *(bool*)(ImageBase + 0xCC24A42) = false; // gisclient
     *(bool*)(ImageBase + 0xCC24A43) = true; // gisserver
 
     *(int*)(ImageBase + 0xCE78798) = 7; // random ass log for listening
     *(int*)(ImageBase + 0xCF118F8) = 1; // ass log that is spammed when u inject late 
     *(int*)(ImageBase + 0xD0E5C18) = 1; // gay loading screen spam bc im unproper for the loading screen handling
+    *(int*)(ImageBase + 0xCF12378) = 1; // LogUWEAssetRegistrySubsystem
+    *(int*)(ImageBase + 0xCD1CA90) = 1; // LogSlate
+    *(int*)(ImageBase + 0xD0F4A20) = 0; // LogFMOD
+
+
+
+
+
 
 
    // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk we will use it here

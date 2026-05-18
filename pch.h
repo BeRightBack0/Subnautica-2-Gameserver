@@ -49,8 +49,7 @@ inline UWorld* GetWorld()
     return UWorld::GetWorld();
 }
 inline void Hook(uintptr_t Address, void* Detour, void** Original) {
-   auto idk =  MH_CreateHook((LPVOID)Address, Detour, Original);
-   std::cout << idk << std::endl;
+    MH_CreateHook((LPVOID)Address, Detour, Original);
     MH_EnableHook((LPVOID)Address);
 }
 
