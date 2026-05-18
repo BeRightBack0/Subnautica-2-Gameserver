@@ -38,11 +38,11 @@
 using namespace SDK;
 using namespace std;
 inline uint64_t ImageBase = (uint64_t)GetModuleHandle(nullptr);
+#define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
 
 inline void nullfunc() {
     return;
 }
-
 
 inline UWorld* GetWorld()
 {
@@ -57,19 +57,6 @@ inline void NullHook(uintptr_t Address) {
 
      MH_CreateHook((LPVOID)Address, nullfunc, nullptr);
      MH_EnableHook((LPVOID)Address);
-}
-
-
-#define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
-
-
-template <typename _Is>
-__forceinline void Patch(uintptr_t ptr, _Is byte)
-{
-    DWORD og;
-    VirtualProtect(LPVOID(ptr), sizeof(_Is), PAGE_EXECUTE_READWRITE, &og);
-    *(_Is*)ptr = byte;
-    VirtualProtect(LPVOID(ptr), sizeof(_Is), og, &og);
 }
 
 template<typename T>
