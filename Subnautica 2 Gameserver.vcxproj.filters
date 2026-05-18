@@ -62,5 +62,8 @@
     <ClCompile Include="SDK\SDK\UWEUtilities_functions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDK\SDK\UWECommonUI_functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

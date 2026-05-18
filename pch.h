@@ -105,4 +105,14 @@ inline void VFTHookEvery(int index, void* detour, void** original = nullptr)
         }
     }
 }
+
+inline UObject* (*StaticLoadObject_)(UClass* Class, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, uint32_t LoadFlags, UObject* Sandbox, bool bAllowObjectReconciliation, void* InstancingContext) = decltype(StaticLoadObject_)(ImageBase + 0x16EB880);
+template <typename T>
+inline T* StaticLoadObject(std::string Path, UClass* InClass = T::StaticClass(), UObject* Outer = nullptr)
+{
+    return (T*)StaticLoadObject_(InClass, Outer, std::wstring(Path.begin(), Path.end()).c_str(), nullptr, 0, nullptr, false, nullptr);
+}
+
+
+
 #endif //PCH_H

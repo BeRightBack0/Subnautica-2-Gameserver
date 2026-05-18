@@ -63,6 +63,22 @@ bool LoadMap(UEngine* Engine, FWorldContext& WorldContext, FURL URL, UPendingNet
     URL.Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
    return LoadMapOG(Engine, WorldContext, URL, Pending, Error);
 }
+
+
+void ToggleCheatMenu()
+{
+    auto* WM = USN2Statics::GetWindowManager(GetWorld());
+    if (!WM) return;
+
+    auto* Active = WM->GetActiveWidget(EUWEWindowManagerLayer::Modal);
+    if (Active) {
+        WM->Pop(Active);
+        return;
+    }
+
+    auto Class = StaticLoadObject<UClass>("/Game/Blueprints/UI/Cheat/WBP_CheatInput.WBP_CheatInput_C");
+    if (Class) WM->PushToLayer(EUWEWindowManagerLayer::Modal, TSubclassOf<UCommonActivatableWidget>(Class));
+}
 void Main() {
     AllocConsole();
     MH_Initialize();
@@ -81,7 +97,9 @@ void Main() {
     *(int*)(ImageBase + 0xD0E5C18) = 1; // gay loading screen spam bc im unproper for the loading screen handling
     *(int*)(ImageBase + 0xCF12378) = 1; // LogUWEAssetRegistrySubsystem
     *(int*)(ImageBase + 0xCD1CA90) = 1; // LogSlate
-    *(int*)(ImageBase + 0xD0F4A20) = 0; // LogFMOD
+    *(int*)(ImageBase + 0xD0F4A20) = -1; // LogFMOD
+    *(int*)(ImageBase + 0xCF0E290) = -1; // LogEOSSDK
+
 
    // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk i will need to check if i can join without 
     Hook(ImageBase + 0x47088C0, ReturnOne, nullptr); // GetNetMode is not inlined "listen"
