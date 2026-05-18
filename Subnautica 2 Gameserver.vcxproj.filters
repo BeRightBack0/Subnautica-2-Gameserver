@@ -21,7 +21,7 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Net.h">
+    <ClInclude Include="NetDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SDK\SDK.hpp">
@@ -38,7 +38,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Net.cpp">
+    <ClCompile Include="NetDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SDK\SDK\Basic.cpp">

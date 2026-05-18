@@ -39,6 +39,7 @@ using namespace SDK;
 using namespace std;
 inline uint64_t ImageBase = (uint64_t)GetModuleHandle(nullptr);
 #define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
+#define DefineCall(_Rt, _Name, _Offset, ...) static _Rt (*_Name)(##__VA_ARGS__) = reinterpret_cast<_Rt(*)(__VA_ARGS__)>(ImageBase + _Offset)
 
 inline void nullfunc() {
     return;

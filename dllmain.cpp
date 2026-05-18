@@ -16,7 +16,6 @@ enum ENetMode
 
 // "Unable to find socket subsystem"
 static bool (*IpNetDriverInitBase)(__int64, bool, __int64, const FURL&, bool, FString&) = decltype(IpNetDriverInitBase)(ImageBase + 0x52C1340);
-
 DefineOriginal(bool, NetDriverEOSInitBase, __int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error);
 bool NetDriverEOSInitBase(__int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error) {
     // NetDriverEOS->bIsPassthrough
