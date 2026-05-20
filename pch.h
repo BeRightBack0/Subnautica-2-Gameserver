@@ -39,17 +39,25 @@ using namespace SDK;
 using namespace std;
 inline uint64_t ImageBase = (uint64_t)GetModuleHandle(nullptr);
 #define DefineOriginal(_Rt, _Name, ...) static inline _Rt (*_Name##OG)(##__VA_ARGS__); static _Rt _Name(##__VA_ARGS__);
-#define DefineCall(_Rt, _Name, _Offset, ...) static _Rt (*_Name)(##__VA_ARGS__) = reinterpret_cast<_Rt(*)(__VA_ARGS__)>(ImageBase + _Offset)
+#define DefineCall(_Rt, _Name, _Offset, ...) static _Rt (*_Name)(##__VA_ARGS__) = reinterpret_cast<_Rt(*)(__VA_ARGS__)>(_Offset)
 
 inline void nullfunc() {
     return;
 }
 
+enum ENetMode
+{
+    NM_Standalone,
+    NM_DedicatedServer,
+    NM_ListenServer,
+    NM_Client,
+    NM_MAX,
+};
 inline UWorld* GetWorld()
 {
     return UWorld::GetWorld();
 }
-inline void Hook(uintptr_t Address, void* Detour, void** Original) {
+inline void DetourHook(uintptr_t Address, void* Detour, void** Original) {
     MH_CreateHook((LPVOID)Address, Detour, Original);
     MH_EnableHook((LPVOID)Address);
 }

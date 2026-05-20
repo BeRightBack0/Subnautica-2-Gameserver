@@ -1,45 +1,13 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
+#include "NetDriverEOS.h"
 
-int ReturnOne() {
-    return 1;
+ENetMode GetNetMode() {
+    return ENetMode::NM_DedicatedServer;
 }
 
-enum ENetMode  
-{
-    NM_Standalone,  
-    NM_DedicatedServer,  
-    NM_ListenServer,
-    NM_Client,  
-    NM_MAX,  
-};
-
-// "Unable to find socket subsystem"
-static bool (*IpNetDriverInitBase)(__int64, bool, __int64, const FURL&, bool, FString&) = decltype(IpNetDriverInitBase)(ImageBase + 0x52C1340);
-DefineOriginal(bool, NetDriverEOSInitBase, __int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error);
-bool NetDriverEOSInitBase(__int64 a1, bool bInitAsClient, __int64 InNotify, const FURL& URL, bool bReuseAddressAndPort, FString& Error) {
-    // NetDriverEOS->bIsPassthrough
-    *reinterpret_cast<int*>(a1 + 0x9A8) = 1;
-
-    FURL url{};
-    url.Protocol = URL.Protocol;
-    url.Host = FString(L"127.0.0.1");
-    url.Port = URL.Port;
-    url.Valid = URL.Valid;
-    url.Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
-    url.RedirectURL = URL.RedirectURL;
-    url.Op = URL.Op;
 
 
-    return IpNetDriverInitBase(a1, false, InNotify, url, bReuseAddressAndPort, Error);
-}
-// "%s IpNetDriver listening on port %i"
-static bool (*IpNetDriverInitListen)(__int64, __int64, FURL&, bool, FString&) = decltype(IpNetDriverInitListen)(ImageBase + 0x52C2B30);
-DefineOriginal(bool, NetDriverEOSInitListen, __int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error);
-bool NetDriverEOSInitListen(__int64 self, __int64 InNotify, FURL& LocalURL, bool bReuseAddressAndPort, FString& Error) {
-    SetConsoleTitleA("Listening on port 7777"); // Game Instance has been notified that Game Mode hooking that might be better 
-    return IpNetDriverInitListen(self, InNotify, LocalURL, bReuseAddressAndPort, Error);
-}
 // it actually might be useless but whatever
 DefineOriginal(__int64, CreateGameModeForURL, UGameInstance* a1, const FURL& a2, UWorld* a3);
 __int64 CreateGameModeForURL(UGameInstance* a1, const FURL& a2, UWorld* a3) {
@@ -62,28 +30,6 @@ bool LoadMap(UEngine* Engine, FWorldContext& WorldContext, FURL URL, UPendingNet
     URL.Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
    return LoadMapOG(Engine, WorldContext, URL, Pending, Error);
 }
-
-
-void ToggleCheatMenu()
-{
-
-   auto jew =  GetFirstObjectOfClass<UInputSettings>();
-   auto settings = jew->GetInputSettings();
-    auto name = UKismetStringLibrary::Conv_StringToName(FString(L"F8"));
-    settings->ConsoleKeys.Add({name}); // rat
-    
-    auto* WM = USN2Statics::GetWindowManager(GetWorld());
-    if (!WM) return;
-
-    auto* Active = WM->GetActiveWidget(EUWEWindowManagerLayer::Modal);
-    if (Active) {
-        WM->Pop(Active);
-        return;
-    }
-
-    auto Class = StaticLoadObject<UClass>("/Game/Blueprints/UI/Cheat/WBP_CheatInput.WBP_CheatInput_C");
-    if (Class) WM->PushToLayer(EUWEWindowManagerLayer::Modal, TSubclassOf<UCommonActivatableWidget>(Class));
-}
 void Main() {
     AllocConsole();
     MH_Initialize();
@@ -105,13 +51,14 @@ void Main() {
     *(int*)(ImageBase + 0xD0F4A20) = -1; // LogFMOD
     *(int*)(ImageBase + 0xCF0E290) = -1; // LogEOSSDK
 
+    NetDriverEOS::Hook();
 
    // UKismetSystemLibrary::ExecuteConsoleCommand(GetWorld(), L"net.AllowEncryption 0", nullptr); // we use it on fortnite so idk i will need to check if i can join without 
-    Hook(ImageBase + 0x47088C0, ReturnOne, nullptr); // GetNetMode is not inlined "listen"
-    Hook(ImageBase + 0x41F72F0, ReturnOne, nullptr); // actually no idea but related to netmode // 48 83 EC ? 48 8B 01 FF 90 ? ? ? ? 84 C0 74 ? 33 C0 // its in the main netmode func its called like atleast 2 times
+    DetourHook(ImageBase + 0x47088C0, GetNetMode, nullptr); // GetNetMode is not inlined "listen"
+    DetourHook(ImageBase + 0x41F72F0, GetNetMode, nullptr); // actually no idea but related to netmode // 48 83 EC ? 48 8B 01 FF 90 ? ? ? ? 84 C0 74 ? 33 C0 // its in the main netmode func its called like atleast 2 times
 
     // idk if its actually needed but whatever
-    Hook(ImageBase + 0x3F84900, CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
+    DetourHook(ImageBase + 0x3F84900, CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
 
     NullHook(ImageBase + 0x149EDA0); // RequestExit
     NullHook(ImageBase + 0x148CFF0); // second RequestExit
@@ -119,9 +66,7 @@ void Main() {
     NullHook(ImageBase + 0x5AEB3E0); // first loading screen crash  "Showing loading screen when 'IsShowingInitialLoadingScreen()' is true."
     NullHook(ImageBase + 0x5AEA630); // second loading screen crash "Reason for Showing/Hiding LoadingScreen is unknown!"
 
-    Hook(ImageBase + 0x5323FB0, NetDriverEOSInitBase, nullptr);
-    Hook(ImageBase + 0x53246A0, NetDriverEOSInitListen, nullptr);
-    Hook(ImageBase + 0x47AFEE0, LoadMap, (void**)&LoadMapOG);
+    DetourHook(ImageBase + 0x47AFEE0, LoadMap, (void**)&LoadMapOG);
 }
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,
