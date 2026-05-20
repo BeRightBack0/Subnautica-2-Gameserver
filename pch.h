@@ -31,6 +31,7 @@
 #include "SDK/SDK/GameplayAbilities_structs.hpp"
 #include "SDK/SDK/GameplayAbilities_classes.hpp"
 #include "MinHook.h"
+#include "memcury.h"
 #include <set>
 #include <atomic>
 #define NAME_None FName(0)
@@ -114,29 +115,5 @@ inline void VFTHookEvery(int index, void* detour, void** original = nullptr)
         }
     }
 }
-
-
-template<typename T>
-__forceinline T* GetFirstObjectOfClass()
-{
-    for (int i = 0; i < UObject::GObjects->Num(); i++)
-    {
-        T* Object = reinterpret_cast<T*>(UObject::GObjects->GetByIndex(i));
-        if (!Object) continue;
-        if (Object->IsA(T::StaticClass()))
-        {
-            return Object;
-        }
-    }
-    return nullptr;
-}
-inline UObject* (*StaticLoadObject_)(UClass* Class, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, uint32_t LoadFlags, UObject* Sandbox, bool bAllowObjectReconciliation, void* InstancingContext) = decltype(StaticLoadObject_)(ImageBase + 0x16EB880);
-template <typename T>
-inline T* StaticLoadObject(std::string Path, UClass* InClass = T::StaticClass(), UObject* Outer = nullptr)
-{
-    return (T*)StaticLoadObject_(InClass, Outer, std::wstring(Path.begin(), Path.end()).c_str(), nullptr, 0, nullptr, false, nullptr);
-}
-
-
 
 #endif //PCH_H
