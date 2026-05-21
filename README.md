@@ -7,3 +7,9 @@
 # Todo
 
 * [ ] Game Save Loading
+
+
+
+
+
+## Place engine.ini %LOCALAPPDATA%\Subnautica2\Saved\Config\Windows\ here and make it readonly
