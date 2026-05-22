@@ -926,19 +926,19 @@ namespace Memcury
         }
         auto GetFunctionStart() -> uintptr_t
         {
-            uintptr_t Base = (uintptr_t)GetModuleHandle(nullptr);
+            uintptr_t ImageBase = (uintptr_t)GetModuleHandle(nullptr);
 
-            RUNTIME_FUNCTION* RFE = RtlLookupFunctionEntry(_address.Get(), &Base, nullptr);
+            RUNTIME_FUNCTION* RFE = RtlLookupFunctionEntry(_address.Get(), &ImageBase, nullptr);
             if (!RFE)
                 return 0;
 
             while (true)
             {
-                auto* Scuffness = reinterpret_cast<UNWIND_INFO_HDR*>(Base + RFE->UnwindData);
+                auto* Scuffness = reinterpret_cast<UNWIND_INFO_HDR*>(ImageBase + RFE->UnwindData);
                 BYTE Flags = Scuffness->VersionFlags >> 3;
 
                 if (!(Flags & UNW_FLAG_CHAININFO))
-                    return Base + RFE->BeginAddress;
+                    return ImageBase + RFE->BeginAddress;
 
                 DWORD CodesSize = ((Scuffness->CountOfCodes + 1) & ~1) * sizeof(WORD);
                 RFE = reinterpret_cast<RUNTIME_FUNCTION*>(reinterpret_cast<BYTE*>(Scuffness) + sizeof(UNWIND_INFO_HDR) + CodesSize);

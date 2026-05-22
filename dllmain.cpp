@@ -24,21 +24,27 @@ __int64 CreateGameModeForURL(__int64* GameInstance, const FURL& URL, __int64* In
 
    return CreateGameModeForURLOG(GameInstance, url, InWorld);
 }
-
 DefineOriginal(bool, LoadMap, __int64* Engine, __int64& WorldContext, FURL URL, __int64* Pending, FString& Error);
 bool LoadMap(__int64* Engine, __int64& WorldContext, FURL URL, __int64* Pending, FString& Error) {
 
     URL.Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
    return LoadMapOG(Engine, WorldContext, URL, Pending, Error);
 }
-
+using namespace Memcury::ASM;
 void Main() {
     AllocConsole();
     MH_Initialize();
     FILE* File = nullptr;
     freopen_s(&File, "CONOUT$", "w+", stdout);
     freopen_s(&File, "CONOUT$", "w+", stderr);
-    Sleep(3000);
+
+    BYTE nop5[] = { NOP, NOP, NOP, NOP, NOP };
+
+    PatchByte(ImageBase + 0x6A92E4F, nop5, sizeof(nop5));
+    PatchByte(ImageBase + 0x6A92E77, nop5, sizeof(nop5));
+
+   // Sleep(3000);
+    Sleep(2000);
     Memcury::Scanner::SetTargetModule("Subnautica2-Win64-Shipping.exe");
 
     // we patch them first bc it loves to crash at the start
@@ -46,11 +52,14 @@ void Main() {
         NullHook(nullfunc);
     }
 
+
     // making finder for these bytes are gonna be so ahhh
     // "AllowCommandletRendering" at the top of the func there will be 2 bytes set to 1
     *(bool*)(ImageBase + 0xCC28A42) = false; // gisclient
     *(bool*)(ImageBase + 0xCC28A43) = true; // gisserver
-
+    for (auto addr : Finders::FindNetModes()) {
+        DetourHook(addr, GetNetMode, nullptr);
+    }
 
     /*
     *(int*)(ImageBase + 0xCE78798) = 7; // random ass log for listening
@@ -62,9 +71,6 @@ void Main() {
     *(int*)(ImageBase + 0xCF0E290) = -1; // LogEOSSDK */
 
     NetDriverEOS::Hook();
-    for (auto addr : Finders::FindNetModes()) {
-        DetourHook(addr, GetNetMode, nullptr);
-    }
 
     DetourHook(Finders::FindCreateGameModeForURL(), CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
     DetourHook(Finders::FindLoadMap(), LoadMap, (void**)&LoadMapOG);
