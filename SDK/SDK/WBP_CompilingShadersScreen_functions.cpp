@@ -16,51 +16,17 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.UpdateCompiling
+// (BlueprintCallable, BlueprintEvent)
 
-void UWBP_CompilingShadersScreen_C::Construct()
+void UWBP_CompilingShadersScreen_C::UpdateCompiling()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Construct");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "UpdateCompiling");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_CompilingShadersScreen_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Destruct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.ExecuteUbergraph_WBP_CompilingShadersScreen
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_CompilingShadersScreen_C::ExecuteUbergraph_WBP_CompilingShadersScreen(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "ExecuteUbergraph_WBP_CompilingShadersScreen");
-
-	Params::WBP_CompilingShadersScreen_C_ExecuteUbergraph_WBP_CompilingShadersScreen Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -84,15 +50,49 @@ void UWBP_CompilingShadersScreen_C::PreConstruct(bool IsDesignTime)
 }
 
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.UpdateCompiling
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.ExecuteUbergraph_WBP_CompilingShadersScreen
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CompilingShadersScreen_C::UpdateCompiling()
+void UWBP_CompilingShadersScreen_C::ExecuteUbergraph_WBP_CompilingShadersScreen(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "UpdateCompiling");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "ExecuteUbergraph_WBP_CompilingShadersScreen");
+
+	Params::WBP_CompilingShadersScreen_C_ExecuteUbergraph_WBP_CompilingShadersScreen Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_CompilingShadersScreen_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Destruct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_CompilingShadersScreen_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

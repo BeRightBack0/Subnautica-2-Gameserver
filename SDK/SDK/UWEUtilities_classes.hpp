@@ -186,7 +186,7 @@ DUMPER7_ASSERTS_UUWEInterfaceHelper;
 
 // Class UWEUtilities.UWEScalabilityLinker
 // 0x0008 (0x02B8 - 0x02B0)
-class AUWEScalabilityLinker final : public AActor
+class AUWEScalabilityLinker : public AActor
 {
 public:
 	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])

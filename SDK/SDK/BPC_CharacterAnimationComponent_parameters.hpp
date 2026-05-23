@@ -12,12 +12,12 @@
 
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "F_AnimSyncSettings_structs.hpp"
+#include "E_PlayerCharacter_Parts_structs.hpp"
 #include "UWEInventory_structs.hpp"
 #include "Engine_structs.hpp"
-#include "F_AnimSyncSettings_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "UWEVolumeTracker_structs.hpp"
-#include "E_PlayerCharacter_Parts_structs.hpp"
 
 
 SDK_NAMESPACE_START

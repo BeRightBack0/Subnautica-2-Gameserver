@@ -378,7 +378,7 @@ DUMPER7_ASSERTS_UUWEDialogueViewModel;
 
 // Class UWEDialogue.UWEPDASubtitleDisplay
 // 0x0000 (0x04B8 - 0x04B8)
-class UUWEPDASubtitleDisplay final : public UFocusActivatableWidget
+class UUWEPDASubtitleDisplay : public UFocusActivatableWidget
 {
 public:
 	void FadeOut();

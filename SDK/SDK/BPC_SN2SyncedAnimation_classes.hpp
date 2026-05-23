@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "F_AnimSyncSettings_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UWEPawnAttachment_structs.hpp"
 #include "E_AnimSyncMethodOptions_structs.hpp"
-#include "F_AnimSyncSettings_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
 
@@ -71,31 +71,31 @@ public:
 
 public:
 	void DevInterruptAnims();
-	void EndAbility();
-	void EndAnimation(class UAnimSequenceBase* Animation);
-	void ExecuteUbergraph_BPC_SN2SyncedAnimation(int32 EntryPoint);
-	void OnAnimStateReturn();
-	void OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer);
+	void SetupCharacterAnimationSync(bool NewParam1, bool* NewParam);
+	void OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
+	void OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
+	void OnInterrupted_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
 	void OnBlendOut_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
 	void OnCompleted_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
-	void OnDestroyed_Event(class AActor* DestroyedActor);
-	void OnInterrupted_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
-	void OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
-	void OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName);
-	void OnSyncedAnimationBegin(bool bUseAITarget, bool bDrivePlayer, const struct FAnimNotifyEventReference& EventReference, const struct FF_AnimSyncSettings& AnimSyncSettings_0);
-	void OnSyncedAnimationEnd();
-	void OnToolIsUnequipped();
+	void SetSyncBlendOut(class FName SyncEndPoseSnapshot, double PoseBlendOutTime);
+	void OnAnimStateReturn();
+	void StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime);
+	void EndAbility();
+	void EndAnimation(class UAnimSequenceBase* Animation);
 	void PlayMontageOnEquipped(class UAnimMontage* Montage, double PlayRate, bool StopAllMontages);
-	void ReceiveBeginPlay();
+	void UpdateAnimationEventTags(const struct FGameplayTag& Gameplay_Tag);
+	void OnToolIsUnequipped();
+	void OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer);
+	void SetupAndBeginSyncedAnimation(class AActor* DrivenActor_0, bool AttachDriven);
 	void SendPoseSnapshot(const struct FPoseSnapshot& PoseSnapshot);
 	void SetCurrentToolEnergy(double Energy);
-	void SetSyncBlendOut(class FName SyncEndPoseSnapshot, double PoseBlendOutTime);
-	void SetSyncDriver(class USkeletalMeshComponent* MeshComponentDriver, bool bIsMeshPoseDriven, double BlendInTime, double BlendOutTime);
-	void SetupAndBeginSyncedAnimation(class AActor* DrivenActor_0, bool AttachDriven);
-	void SetupCharacterAnimationSync(bool NewParam1, bool* NewParam);
-	void StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime);
+	void ReceiveBeginPlay();
 	void SyncedAnimationEvent(const struct FF_AnimSyncSettings& SyncSettings);
-	void UpdateAnimationEventTags(const struct FGameplayTag& Gameplay_Tag);
+	void OnSyncedAnimationBegin(bool bUseAITarget, bool bDrivePlayer, const struct FAnimNotifyEventReference& EventReference, const struct FF_AnimSyncSettings& AnimSyncSettings_0);
+	void OnSyncedAnimationEnd();
+	void SetSyncDriver(class USkeletalMeshComponent* MeshComponentDriver, bool bIsMeshPoseDriven, double BlendInTime, double BlendOutTime);
+	void OnDestroyed_Event(class AActor* DestroyedActor);
+	void ExecuteUbergraph_BPC_SN2SyncedAnimation(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

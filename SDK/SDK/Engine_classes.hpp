@@ -38116,7 +38116,7 @@ DUMPER7_ASSERTS_UOnlineSession;
 
 // Class Engine.PackedLevelActor
 // 0x0000 (0x0350 - 0x0350)
-class APackedLevelActor final : public ALevelInstance
+class APackedLevelActor : public ALevelInstance
 {
 public:
 	static class UClass* StaticClass()

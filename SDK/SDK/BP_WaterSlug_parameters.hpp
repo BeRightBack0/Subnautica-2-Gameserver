@@ -16,24 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_WaterSlug.BP_WaterSlug_C.BPOnEquipped
-// 0x0001 (0x0001 - 0x0000)
-struct BP_WaterSlug_C_BPOnEquipped final
-{
-public:
-	bool                                          bFirstEquip;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_WaterSlug_C_BPOnEquipped;
-
-// Function BP_WaterSlug.BP_WaterSlug_C.BPOnUnequipped
-// 0x0008 (0x0008 - 0x0000)
-struct BP_WaterSlug_C_BPOnUnequipped final
-{
-public:
-	const class AActor*                           OldEquippedByActor;                                // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_WaterSlug_C_BPOnUnequipped;
-
 // Function BP_WaterSlug.BP_WaterSlug_C.ExecuteUbergraph_BP_WaterSlug
 // 0x00A8 (0x00A8 - 0x0000)
 struct BP_WaterSlug_C_ExecuteUbergraph_BP_WaterSlug final
@@ -58,6 +40,24 @@ public:
 	int32                                         CallFunc_Max_ReturnValue;                          // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_WaterSlug_C_ExecuteUbergraph_BP_WaterSlug;
+
+// Function BP_WaterSlug.BP_WaterSlug_C.BPOnUnequipped
+// 0x0008 (0x0008 - 0x0000)
+struct BP_WaterSlug_C_BPOnUnequipped final
+{
+public:
+	const class AActor*                           OldEquippedByActor;                                // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_WaterSlug_C_BPOnUnequipped;
+
+// Function BP_WaterSlug.BP_WaterSlug_C.BPOnEquipped
+// 0x0001 (0x0001 - 0x0000)
+struct BP_WaterSlug_C_BPOnEquipped final
+{
+public:
+	bool                                          bFirstEquip;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_WaterSlug_C_BPOnEquipped;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

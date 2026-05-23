@@ -144,7 +144,7 @@ DUMPER7_ASSERTS_UUWEBioAbilityViewModel;
 
 // Class UWEBiomods.UWEBioLab
 // 0x00C0 (0x0388 - 0x02C8)
-class AUWEBioLab final : public AUWEGameplayActor
+class AUWEBioLab : public AUWEGameplayActor
 {
 public:
 	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])

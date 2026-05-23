@@ -12,9 +12,9 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Subnautica2_classes.hpp"
 #include "ABP_ElectricGeordie_01_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Subnautica2_classes.hpp"
 
 
 SDK_NAMESPACE_START

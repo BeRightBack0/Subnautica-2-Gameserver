@@ -16,52 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.PlayersInRangeChanged
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// int32                                   PlayersInRange                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Waterslug_01_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UABP_Waterslug_01_C::PlayersInRangeChanged(int32 PlayersInRange)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Waterslug_01_C", "AnimGraph");
+		Func = Class->GetFunction("ABP_Waterslug_01_C", "PlayersInRangeChanged");
 
-	Params::ABP_Waterslug_01_C_AnimGraph Parms{};
+	Params::ABP_Waterslug_01_C_PlayersInRangeChanged Parms{};
+
+	Parms.PlayersInRange = PlayersInRange;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.BlueprintBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UABP_Waterslug_01_C::BlueprintBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Waterslug_01_C", "BlueprintBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.BlueprintInitializeAnimation
-// (Event, Public, BlueprintEvent)
-
-void UABP_Waterslug_01_C::BlueprintInitializeAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Waterslug_01_C", "BlueprintInitializeAnimation");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -85,23 +56,52 @@ void UABP_Waterslug_01_C::ExecuteUbergraph_ABP_Waterslug_01(int32 EntryPoint)
 }
 
 
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.PlayersInRangeChanged
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   PlayersInRange                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.BlueprintInitializeAnimation
+// (Event, Public, BlueprintEvent)
 
-void UABP_Waterslug_01_C::PlayersInRangeChanged(int32 PlayersInRange)
+void UABP_Waterslug_01_C::BlueprintInitializeAnimation()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Waterslug_01_C", "PlayersInRangeChanged");
+		Func = Class->GetFunction("ABP_Waterslug_01_C", "BlueprintInitializeAnimation");
 
-	Params::ABP_Waterslug_01_C_PlayersInRangeChanged Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.PlayersInRange = PlayersInRange;
+
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.BlueprintBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void UABP_Waterslug_01_C::BlueprintBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Waterslug_01_C", "BlueprintBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UABP_Waterslug_01_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Waterslug_01_C", "AnimGraph");
+
+	Params::ABP_Waterslug_01_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 

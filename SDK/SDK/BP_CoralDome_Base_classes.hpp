@@ -18,7 +18,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_CoralDome_Base.BP_CoralDome_Base_C
 // 0x0038 (0x0300 - 0x02C8)
-class ABP_CoralDome_Base_C final : public AUWEGameplayActor
+class ABP_CoralDome_Base_C : public AUWEGameplayActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

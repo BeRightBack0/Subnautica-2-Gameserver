@@ -16,21 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.ExecuteUbergraph_GA_Base_DamageTaken
-// (Final, UbergraphFunction, HasDefaults)
+// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.OnDamageTaken
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayEventData&        GameplayEventData                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UGA_Base_DamageTaken_C::ExecuteUbergraph_GA_Base_DamageTaken(int32 EntryPoint)
+void UGA_Base_DamageTaken_C::OnDamageTaken(const struct FGameplayEventData& GameplayEventData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_DamageTaken_C", "ExecuteUbergraph_GA_Base_DamageTaken");
+		Func = Class->GetFunction("GA_Base_DamageTaken_C", "OnDamageTaken");
 
-	Params::GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken Parms{};
+	Params::GA_Base_DamageTaken_C_OnDamageTaken Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.GameplayEventData = std::move(GameplayEventData);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,21 +56,21 @@ void UGA_Base_DamageTaken_C::K2_ActivateAbilityFromEvent(const struct FGameplayE
 }
 
 
-// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.OnDamageTaken
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.ExecuteUbergraph_GA_Base_DamageTaken
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const struct FGameplayEventData&        GameplayEventData                                      (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_DamageTaken_C::OnDamageTaken(const struct FGameplayEventData& GameplayEventData)
+void UGA_Base_DamageTaken_C::ExecuteUbergraph_GA_Base_DamageTaken(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_DamageTaken_C", "OnDamageTaken");
+		Func = Class->GetFunction("GA_Base_DamageTaken_C", "ExecuteUbergraph_GA_Base_DamageTaken");
 
-	Params::GA_Base_DamageTaken_C_OnDamageTaken Parms{};
+	Params::GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken Parms{};
 
-	Parms.GameplayEventData = std::move(GameplayEventData);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

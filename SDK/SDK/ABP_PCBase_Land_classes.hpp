@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "E_Gait_structs.hpp"
+#include "E_MovementState_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "E_MovementMode_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "AnimationWarpingRuntime_structs.hpp"
 #include "BlendStack_structs.hpp"
 #include "PoseSearch_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "E_MovementMode_structs.hpp"
-#include "E_MovementState_structs.hpp"
-#include "E_Gait_structs.hpp"
 
 
 SDK_NAMESPACE_START

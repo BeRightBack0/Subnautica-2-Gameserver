@@ -12,11 +12,11 @@
 
 #include "GameplayTags_structs.hpp"
 #include "UWECarryable_structs.hpp"
-#include "E_PC_AnimationLayerType_structs.hpp"
 #include "E_LocomotionStates_structs.hpp"
 #include "UWEInventory_structs.hpp"
-#include "Engine_structs.hpp"
 #include "F_PlayerAnimStateStruct_structs.hpp"
+#include "Engine_structs.hpp"
+#include "E_PC_AnimationLayerType_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Subnautica2_classes.hpp"
 #include "UWEVolumeTracker_structs.hpp"

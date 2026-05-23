@@ -17,6 +17,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_CompilingShadersScreen_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_CompilingShadersScreen_C_PreConstruct;
+
 // Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.ExecuteUbergraph_WBP_CompilingShadersScreen
 // 0x00D0 (0x00D0 - 0x0000)
 struct WBP_CompilingShadersScreen_C_ExecuteUbergraph_WBP_CompilingShadersScreen final
@@ -42,15 +51,6 @@ public:
 	struct FWidgetAnimationHandle                 CallFunc_PlayAnimation_ReturnValue_2;              // 0x00C0(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_CompilingShadersScreen_C_ExecuteUbergraph_WBP_CompilingShadersScreen;
-
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CompilingShadersScreen_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_CompilingShadersScreen_C_PreConstruct;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

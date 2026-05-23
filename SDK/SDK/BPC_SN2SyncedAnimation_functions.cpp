@@ -30,91 +30,85 @@ void UBPC_SN2SyncedAnimation_C::DevInterruptAnims()
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.EndAbility
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupCharacterAnimationSync
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewParam1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::EndAbility()
+void UBPC_SN2SyncedAnimation_C::SetupCharacterAnimationSync(bool NewParam1, bool* NewParam)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "EndAbility");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetupCharacterAnimationSync");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync Parms{};
+
+	Parms.NewParam1 = NewParam1;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.EndAnimation
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::EndAnimation(class UAnimSequenceBase* Animation)
+void UBPC_SN2SyncedAnimation_C::OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "EndAnimation");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291");
 
-	Params::BPC_SN2SyncedAnimation_C_EndAnimation Parms{};
+	Params::BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291 Parms{};
 
-	Parms.Animation = Animation;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.ExecuteUbergraph_BPC_SN2SyncedAnimation
-// (Final, UbergraphFunction, HasDefaults)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::ExecuteUbergraph_BPC_SN2SyncedAnimation(int32 EntryPoint)
+void UBPC_SN2SyncedAnimation_C::OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "ExecuteUbergraph_BPC_SN2SyncedAnimation");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291");
 
-	Params::BPC_SN2SyncedAnimation_C_ExecuteUbergraph_BPC_SN2SyncedAnimation Parms{};
+	Params::BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAnimStateReturn
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UBPC_SN2SyncedAnimation_C::OnAnimStateReturn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnAnimStateReturn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAttachPlayerDriver
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnInterrupted_6CE57B834482AC68669FA3BD7C032291
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           PlayerDriver                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    AttachPlayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer)
+void UBPC_SN2SyncedAnimation_C::OnInterrupted_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnAttachPlayerDriver");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnInterrupted_6CE57B834482AC68669FA3BD7C032291");
 
-	Params::BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver Parms{};
+	Params::BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291 Parms{};
 
-	Parms.PlayerDriver = PlayerDriver;
-	Parms.AttachPlayer = AttachPlayer;
+	Parms.NotifyName = NotifyName;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -160,81 +154,269 @@ void UBPC_SN2SyncedAnimation_C::OnCompleted_6CE57B834482AC68669FA3BD7C032291(cla
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnDestroyed_Event
-// (BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncBlendOut
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           DestroyedActor                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FName                             SyncEndPoseSnapshot                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// double                                  PoseBlendOutTime                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::OnDestroyed_Event(class AActor* DestroyedActor)
+void UBPC_SN2SyncedAnimation_C::SetSyncBlendOut(class FName SyncEndPoseSnapshot, double PoseBlendOutTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnDestroyed_Event");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetSyncBlendOut");
 
-	Params::BPC_SN2SyncedAnimation_C_OnDestroyed_Event Parms{};
+	Params::BPC_SN2SyncedAnimation_C_SetSyncBlendOut Parms{};
 
-	Parms.DestroyedActor = DestroyedActor;
+	Parms.SyncEndPoseSnapshot = SyncEndPoseSnapshot;
+	Parms.PoseBlendOutTime = PoseBlendOutTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnInterrupted_6CE57B834482AC68669FA3BD7C032291
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAnimStateReturn
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBPC_SN2SyncedAnimation_C::OnInterrupted_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
+void UBPC_SN2SyncedAnimation_C::OnAnimStateReturn()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnInterrupted_6CE57B834482AC68669FA3BD7C032291");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnAnimStateReturn");
 
-	Params::BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.NotifyName = NotifyName;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.StopMontageOnEquipped
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimMontage*                     Montage                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// double                                  BlendOutTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "StopMontageOnEquipped");
+
+	Params::BPC_SN2SyncedAnimation_C_StopMontageOnEquipped Parms{};
+
+	Parms.Montage = Montage;
+	Parms.BlendOutTime = BlendOutTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.EndAbility
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UBPC_SN2SyncedAnimation_C::OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
+void UBPC_SN2SyncedAnimation_C::EndAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "EndAbility");
 
-	Params::BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.NotifyName = NotifyName;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.EndAnimation
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::EndAnimation(class UAnimSequenceBase* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "EndAnimation");
+
+	Params::BPC_SN2SyncedAnimation_C_EndAnimation Parms{};
+
+	Parms.Animation = Animation;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291
-// (BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.PlayMontageOnEquipped
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class FName                             NotifyName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimMontage*                     Montage                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// double                                  PlayRate                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    StopAllMontages                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291(class FName NotifyName)
+void UBPC_SN2SyncedAnimation_C::PlayMontageOnEquipped(class UAnimMontage* Montage, double PlayRate, bool StopAllMontages)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "PlayMontageOnEquipped");
 
-	Params::BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291 Parms{};
+	Params::BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped Parms{};
 
-	Parms.NotifyName = NotifyName;
+	Parms.Montage = Montage;
+	Parms.PlayRate = PlayRate;
+	Parms.StopAllMontages = StopAllMontages;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.UpdateAnimationEventTags
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              Gameplay_Tag                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::UpdateAnimationEventTags(const struct FGameplayTag& Gameplay_Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "UpdateAnimationEventTags");
+
+	Params::BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags Parms{};
+
+	Parms.Gameplay_Tag = std::move(Gameplay_Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnToolIsUnequipped
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UBPC_SN2SyncedAnimation_C::OnToolIsUnequipped()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnToolIsUnequipped");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAttachPlayerDriver
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           PlayerDriver                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    AttachPlayer                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnAttachPlayerDriver");
+
+	Params::BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver Parms{};
+
+	Parms.PlayerDriver = PlayerDriver;
+	Parms.AttachPlayer = AttachPlayer;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupAndBeginSyncedAnimation
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           DrivenActor_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    AttachDriven                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::SetupAndBeginSyncedAnimation(class AActor* DrivenActor_0, bool AttachDriven)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetupAndBeginSyncedAnimation");
+
+	Params::BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation Parms{};
+
+	Parms.DrivenActor_0 = DrivenActor_0;
+	Parms.AttachDriven = AttachDriven;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SendPoseSnapshot
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FPoseSnapshot&             PoseSnapshot                                           (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UBPC_SN2SyncedAnimation_C::SendPoseSnapshot(const struct FPoseSnapshot& PoseSnapshot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SendPoseSnapshot");
+
+	Params::BPC_SN2SyncedAnimation_C_SendPoseSnapshot Parms{};
+
+	Parms.PoseSnapshot = std::move(PoseSnapshot);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetCurrentToolEnergy
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double                                  Energy                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::SetCurrentToolEnergy(double Energy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetCurrentToolEnergy");
+
+	Params::BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy Parms{};
+
+	Parms.Energy = Energy;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.ReceiveBeginPlay
+// (Event, Public, BlueprintEvent)
+
+void UBPC_SN2SyncedAnimation_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SyncedAnimationEvent
+// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FF_AnimSyncSettings&       SyncSettings                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void UBPC_SN2SyncedAnimation_C::SyncedAnimationEvent(const struct FF_AnimSyncSettings& SyncSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SyncedAnimationEvent");
+
+	Params::BPC_SN2SyncedAnimation_C_SyncedAnimationEvent Parms{};
+
+	Parms.SyncSettings = std::move(SyncSettings);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -280,120 +462,6 @@ void UBPC_SN2SyncedAnimation_C::OnSyncedAnimationEnd()
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnToolIsUnequipped
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UBPC_SN2SyncedAnimation_C::OnToolIsUnequipped()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnToolIsUnequipped");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.PlayMontageOnEquipped
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  PlayRate                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    StopAllMontages                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::PlayMontageOnEquipped(class UAnimMontage* Montage, double PlayRate, bool StopAllMontages)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "PlayMontageOnEquipped");
-
-	Params::BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped Parms{};
-
-	Parms.Montage = Montage;
-	Parms.PlayRate = PlayRate;
-	Parms.StopAllMontages = StopAllMontages;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.ReceiveBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UBPC_SN2SyncedAnimation_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SendPoseSnapshot
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FPoseSnapshot&             PoseSnapshot                                           (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UBPC_SN2SyncedAnimation_C::SendPoseSnapshot(const struct FPoseSnapshot& PoseSnapshot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SendPoseSnapshot");
-
-	Params::BPC_SN2SyncedAnimation_C_SendPoseSnapshot Parms{};
-
-	Parms.PoseSnapshot = std::move(PoseSnapshot);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetCurrentToolEnergy
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// double                                  Energy                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::SetCurrentToolEnergy(double Energy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetCurrentToolEnergy");
-
-	Params::BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy Parms{};
-
-	Parms.Energy = Energy;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncBlendOut
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             SyncEndPoseSnapshot                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// double                                  PoseBlendOutTime                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::SetSyncBlendOut(class FName SyncEndPoseSnapshot, double PoseBlendOutTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetSyncBlendOut");
-
-	Params::BPC_SN2SyncedAnimation_C_SetSyncBlendOut Parms{};
-
-	Parms.SyncEndPoseSnapshot = SyncEndPoseSnapshot;
-	Parms.PoseBlendOutTime = PoseBlendOutTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncDriver
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -420,109 +488,41 @@ void UBPC_SN2SyncedAnimation_C::SetSyncDriver(class USkeletalMeshComponent* Mesh
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupAndBeginSyncedAnimation
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnDestroyed_Event
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           DrivenActor_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool                                    AttachDriven                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           DestroyedActor                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::SetupAndBeginSyncedAnimation(class AActor* DrivenActor_0, bool AttachDriven)
+void UBPC_SN2SyncedAnimation_C::OnDestroyed_Event(class AActor* DestroyedActor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetupAndBeginSyncedAnimation");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "OnDestroyed_Event");
 
-	Params::BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation Parms{};
+	Params::BPC_SN2SyncedAnimation_C_OnDestroyed_Event Parms{};
 
-	Parms.DrivenActor_0 = DrivenActor_0;
-	Parms.AttachDriven = AttachDriven;
+	Parms.DestroyedActor = DestroyedActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupCharacterAnimationSync
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.ExecuteUbergraph_BPC_SN2SyncedAnimation
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    NewParam1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBPC_SN2SyncedAnimation_C::SetupCharacterAnimationSync(bool NewParam1, bool* NewParam)
+void UBPC_SN2SyncedAnimation_C::ExecuteUbergraph_BPC_SN2SyncedAnimation(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SetupCharacterAnimationSync");
+		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "ExecuteUbergraph_BPC_SN2SyncedAnimation");
 
-	Params::BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync Parms{};
+	Params::BPC_SN2SyncedAnimation_C_ExecuteUbergraph_BPC_SN2SyncedAnimation Parms{};
 
-	Parms.NewParam1 = NewParam1;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (NewParam != nullptr)
-		*NewParam = Parms.NewParam;
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.StopMontageOnEquipped
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UAnimMontage*                     Montage                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double                                  BlendOutTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "StopMontageOnEquipped");
-
-	Params::BPC_SN2SyncedAnimation_C_StopMontageOnEquipped Parms{};
-
-	Parms.Montage = Montage;
-	Parms.BlendOutTime = BlendOutTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SyncedAnimationEvent
-// (Net, NetReliable, NetMulticast, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FF_AnimSyncSettings&       SyncSettings                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::SyncedAnimationEvent(const struct FF_AnimSyncSettings& SyncSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "SyncedAnimationEvent");
-
-	Params::BPC_SN2SyncedAnimation_C_SyncedAnimationEvent Parms{};
-
-	Parms.SyncSettings = std::move(SyncSettings);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.UpdateAnimationEventTags
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGameplayTag&              Gameplay_Tag                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-
-void UBPC_SN2SyncedAnimation_C::UpdateAnimationEventTags(const struct FGameplayTag& Gameplay_Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BPC_SN2SyncedAnimation_C", "UpdateAnimationEventTags");
-
-	Params::BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags Parms{};
-
-	Parms.Gameplay_Tag = std::move(Gameplay_Tag);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

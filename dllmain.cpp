@@ -30,6 +30,8 @@ bool LoadMap(__int64* Engine, __int64& WorldContext, FURL URL, __int64* Pending,
     URL.Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
    return LoadMapOG(Engine, WorldContext, URL, Pending, Error);
 }
+
+
 using namespace Memcury::ASM;
 void Main() {
     AllocConsole();
@@ -40,13 +42,14 @@ void Main() {
 
     BYTE nop5[] = { NOP, NOP, NOP, NOP, NOP };
 
-    PatchByte(ImageBase + 0x6A92E4F, nop5, sizeof(nop5));
-    PatchByte(ImageBase + 0x6A92E77, nop5, sizeof(nop5));
-
+   //PatchByte(ImageBase + 0x6A92E4F, nop5, sizeof(nop5)); that patch is ahh
+   PatchByte(ImageBase + 0x6A92E77, nop5, sizeof(nop5));
    // Sleep(3000);
     Sleep(2000);
     Memcury::Scanner::SetTargetModule("Subnautica2-Win64-Shipping.exe");
 
+
+  //  Memcury::Util::CopyToClipboard(std::to_string(ImageBase));
     // we patch them first bc it loves to crash at the start
     for (auto nullfunc : Finders::FindNullFuncs()) {
         NullHook(nullfunc);
@@ -70,10 +73,10 @@ void Main() {
     *(int*)(ImageBase + 0xD0F4A20) = -1; // LogFMOD
     *(int*)(ImageBase + 0xCF0E290) = -1; // LogEOSSDK */
 
-    NetDriverEOS::Hook();
+ //   NetDriverEOS::Hook();
 
-    DetourHook(Finders::FindCreateGameModeForURL(), CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
-    DetourHook(Finders::FindLoadMap(), LoadMap, (void**)&LoadMapOG);
+  //  DetourHook(Finders::FindCreateGameModeForURL(), CreateGameModeForURL, (void**)&CreateGameModeForURLOG);
+  //  DetourHook(Finders::FindLoadMap(), LoadMap, (void**)&LoadMapOG);
 }
 BOOL APIENTRY DllMain(HMODULE hModule,
     DWORD  ul_reason_for_call,

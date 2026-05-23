@@ -11,13 +11,88 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
 #include "F_AnimSyncSettings_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupCharacterAnimationSync
+// 0x0002 (0x0002 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync final
+{
+public:
+	bool                                          NewParam1;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NewParam;                                          // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnInterrupted_6CE57B834482AC68669FA3BD7C032291
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnBlendOut_6CE57B834482AC68669FA3BD7C032291
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnBlendOut_6CE57B834482AC68669FA3BD7C032291 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnBlendOut_6CE57B834482AC68669FA3BD7C032291;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnCompleted_6CE57B834482AC68669FA3BD7C032291
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnCompleted_6CE57B834482AC68669FA3BD7C032291 final
+{
+public:
+	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnCompleted_6CE57B834482AC68669FA3BD7C032291;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncBlendOut
+// 0x0010 (0x0010 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SetSyncBlendOut final
+{
+public:
+	class FName                                   SyncEndPoseSnapshot;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PoseBlendOutTime;                                  // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetSyncBlendOut;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.StopMontageOnEquipped
+// 0x0010 (0x0010 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_StopMontageOnEquipped final
+{
+public:
+	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        BlendOutTime;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_StopMontageOnEquipped;
 
 // Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.EndAnimation
 // 0x0008 (0x0008 - 0x0000)
@@ -27,6 +102,108 @@ public:
 	class UAnimSequenceBase*                      Animation;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_EndAnimation;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.PlayMontageOnEquipped
+// 0x0018 (0x0018 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped final
+{
+public:
+	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        PlayRate;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          StopAllMontages;                                   // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.UpdateAnimationEventTags
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags final
+{
+public:
+	struct FGameplayTag                           Gameplay_Tag;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAttachPlayerDriver
+// 0x0010 (0x0010 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver final
+{
+public:
+	class AActor*                                 PlayerDriver;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          AttachPlayer;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupAndBeginSyncedAnimation
+// 0x0010 (0x0010 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation final
+{
+public:
+	class AActor*                                 DrivenActor_0;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          AttachDriven;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SendPoseSnapshot
+// 0x0038 (0x0038 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SendPoseSnapshot final
+{
+public:
+	struct FPoseSnapshot                          PoseSnapshot;                                      // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SendPoseSnapshot;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetCurrentToolEnergy
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy final
+{
+public:
+	double                                        Energy;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SyncedAnimationEvent
+// 0x0058 (0x0058 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SyncedAnimationEvent final
+{
+public:
+	struct FF_AnimSyncSettings                    SyncSettings;                                      // 0x0000(0x0058)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SyncedAnimationEvent;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnSyncedAnimationBegin
+// 0x0090 (0x0090 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnSyncedAnimationBegin final
+{
+public:
+	bool                                          bUseAITarget;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bDrivePlayer;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAnimNotifyEventReference              EventReference;                                    // 0x0008(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FF_AnimSyncSettings                    AnimSyncSettings_0;                                // 0x0038(0x0058)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnSyncedAnimationBegin;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncDriver
+// 0x0020 (0x0020 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_SetSyncDriver final
+{
+public:
+	class USkeletalMeshComponent*                 MeshComponentDriver;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsMeshPoseDriven;                                 // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        BlendInTime;                                       // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        BlendOutTime;                                      // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetSyncDriver;
+
+// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnDestroyed_Event
+// 0x0008 (0x0008 - 0x0000)
+struct BPC_SN2SyncedAnimation_C_OnDestroyed_Event final
+{
+public:
+	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnDestroyed_Event;
 
 // Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.ExecuteUbergraph_BPC_SN2SyncedAnimation
 // 0x0650 (0x0650 - 0x0000)
@@ -184,183 +361,6 @@ public:
 	float                                         K2Node_VariableSet_AnimSyncDrivenBlendOutTime_ImplicitCast_1; // 0x064C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_ExecuteUbergraph_BPC_SN2SyncedAnimation;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnAttachPlayerDriver
-// 0x0010 (0x0010 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver final
-{
-public:
-	class AActor*                                 PlayerDriver;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          AttachPlayer;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnAttachPlayerDriver;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnBlendOut_6CE57B834482AC68669FA3BD7C032291
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnBlendOut_6CE57B834482AC68669FA3BD7C032291 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnBlendOut_6CE57B834482AC68669FA3BD7C032291;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnCompleted_6CE57B834482AC68669FA3BD7C032291
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnCompleted_6CE57B834482AC68669FA3BD7C032291 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnCompleted_6CE57B834482AC68669FA3BD7C032291;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnDestroyed_Event
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnDestroyed_Event final
-{
-public:
-	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnDestroyed_Event;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnInterrupted_6CE57B834482AC68669FA3BD7C032291
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnInterrupted_6CE57B834482AC68669FA3BD7C032291;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnNotifyBegin_6CE57B834482AC68669FA3BD7C032291;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291 final
-{
-public:
-	class FName                                   NotifyName;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnNotifyEnd_6CE57B834482AC68669FA3BD7C032291;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.OnSyncedAnimationBegin
-// 0x0090 (0x0090 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_OnSyncedAnimationBegin final
-{
-public:
-	bool                                          bUseAITarget;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bDrivePlayer;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAnimNotifyEventReference              EventReference;                                    // 0x0008(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm)
-	struct FF_AnimSyncSettings                    AnimSyncSettings_0;                                // 0x0038(0x0058)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_OnSyncedAnimationBegin;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.PlayMontageOnEquipped
-// 0x0018 (0x0018 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped final
-{
-public:
-	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        PlayRate;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          StopAllMontages;                                   // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_PlayMontageOnEquipped;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SendPoseSnapshot
-// 0x0038 (0x0038 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SendPoseSnapshot final
-{
-public:
-	struct FPoseSnapshot                          PoseSnapshot;                                      // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SendPoseSnapshot;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetCurrentToolEnergy
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy final
-{
-public:
-	double                                        Energy;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetCurrentToolEnergy;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncBlendOut
-// 0x0010 (0x0010 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SetSyncBlendOut final
-{
-public:
-	class FName                                   SyncEndPoseSnapshot;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        PoseBlendOutTime;                                  // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetSyncBlendOut;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetSyncDriver
-// 0x0020 (0x0020 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SetSyncDriver final
-{
-public:
-	class USkeletalMeshComponent*                 MeshComponentDriver;                               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsMeshPoseDriven;                                 // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        BlendInTime;                                       // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        BlendOutTime;                                      // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetSyncDriver;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupAndBeginSyncedAnimation
-// 0x0010 (0x0010 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation final
-{
-public:
-	class AActor*                                 DrivenActor_0;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          AttachDriven;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetupAndBeginSyncedAnimation;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SetupCharacterAnimationSync
-// 0x0002 (0x0002 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync final
-{
-public:
-	bool                                          NewParam1;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          NewParam;                                          // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SetupCharacterAnimationSync;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.StopMontageOnEquipped
-// 0x0010 (0x0010 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_StopMontageOnEquipped final
-{
-public:
-	class UAnimMontage*                           Montage;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        BlendOutTime;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_StopMontageOnEquipped;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.SyncedAnimationEvent
-// 0x0058 (0x0058 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_SyncedAnimationEvent final
-{
-public:
-	struct FF_AnimSyncSettings                    SyncSettings;                                      // 0x0000(0x0058)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_SyncedAnimationEvent;
-
-// Function BPC_SN2SyncedAnimation.BPC_SN2SyncedAnimation_C.UpdateAnimationEventTags
-// 0x0008 (0x0008 - 0x0000)
-struct BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags final
-{
-public:
-	struct FGameplayTag                           Gameplay_Tag;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPC_SN2SyncedAnimation_C_UpdateAnimationEventTags;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

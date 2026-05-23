@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "WBP_SettingsWidgetBase_classes.hpp"
 #include "UMG_structs.hpp"
+#include "WBP_SettingsWidgetBase_classes.hpp"
 
 
 SDK_NAMESPACE_START

@@ -32,15 +32,15 @@ public:
 	TMulticastInlineDelegate<void(int32 PlayersInRange)> OnPlayersInRangeChanged;                    // 0x03F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void BPOnEquipped(bool bFirstEquip);
-	void BPOnUnequipped(const class AActor* OldEquippedByActor);
-	void ExecuteUbergraph_BP_WaterSlug(int32 EntryPoint);
-	void HideSkeletalMesh();
-	void InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6();
-	void OnRep_PlayersInRange();
-	void OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6();
-	void ReceiveBeginPlay();
 	void ShowSkeletalMesh();
+	void ReceiveBeginPlay();
+	void OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6();
+	void OnRep_PlayersInRange();
+	void InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6();
+	void HideSkeletalMesh();
+	void ExecuteUbergraph_BP_WaterSlug(int32 EntryPoint);
+	void BPOnUnequipped(const class AActor* OldEquippedByActor);
+	void BPOnEquipped(bool bFirstEquip);
 
 public:
 	static class UClass* StaticClass()

@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "F_CloudLayersSettings_structs.hpp"
-#include "UWEWeather_classes.hpp"
 #include "F_GlobalWeatherSettings_structs.hpp"
+#include "UWEWeather_classes.hpp"
 
 
 SDK_NAMESPACE_START

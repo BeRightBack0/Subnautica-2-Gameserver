@@ -47,7 +47,7 @@ DUMPER7_ASSERTS_UUWEEdgeOfWorldHUDViewModel;
 
 // Class UWEEdgeOfWorld.UWEEdgeOfWorldSpline
 // 0x0028 (0x02D8 - 0x02B0)
-class AUWEEdgeOfWorldSpline final : public AActor
+class AUWEEdgeOfWorldSpline : public AActor
 {
 public:
 	TMulticastInlineDelegate<void(class APawn* Player)> OnPlayerOverlapBegin;                        // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, BlueprintCallable, NativeAccessSpecifierPublic)

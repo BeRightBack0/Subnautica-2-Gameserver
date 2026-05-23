@@ -16,14 +16,14 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ABP_Waterslug_01_C_AnimGraph final
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.PlayersInRangeChanged
+// 0x0004 (0x0004 - 0x0000)
+struct ABP_Waterslug_01_C_PlayersInRangeChanged final
 {
 public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+	int32                                         PlayersInRange;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ABP_Waterslug_01_C_AnimGraph;
+DUMPER7_ASSERTS_ABP_Waterslug_01_C_PlayersInRangeChanged;
 
 // Function ABP_Waterslug_01.ABP_Waterslug_01_C.ExecuteUbergraph_ABP_Waterslug_01
 // 0x0038 (0x0038 - 0x0000)
@@ -41,14 +41,14 @@ public:
 };
 DUMPER7_ASSERTS_ABP_Waterslug_01_C_ExecuteUbergraph_ABP_Waterslug_01;
 
-// Function ABP_Waterslug_01.ABP_Waterslug_01_C.PlayersInRangeChanged
-// 0x0004 (0x0004 - 0x0000)
-struct ABP_Waterslug_01_C_PlayersInRangeChanged final
+// Function ABP_Waterslug_01.ABP_Waterslug_01_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ABP_Waterslug_01_C_AnimGraph final
 {
 public:
-	int32                                         PlayersInRange;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
 };
-DUMPER7_ASSERTS_ABP_Waterslug_01_C_PlayersInRangeChanged;
+DUMPER7_ASSERTS_ABP_Waterslug_01_C_AnimGraph;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

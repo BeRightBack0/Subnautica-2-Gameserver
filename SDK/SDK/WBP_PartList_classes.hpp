@@ -37,14 +37,14 @@ public:
 	class UWBP_CharacterCustomizationScreen_C*    ParentScreen;                                      // 0x0558(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ExecuteUbergraph_WBP_PartList(int32 EntryPoint);
+	void FocusFirstElement();
 	void ResetState();
+	void SelectFirstElement();
 	void SelectIndex(int32 Index_0);
 	void SelectItem(class UUWEPlayerCustomizationItemDA* Item);
-	void FocusFirstElement();
-	void SelectFirstElement();
 	void SetObjects(TArray<class USN2CustomizationItemViewModel*>& ViewModelsIn);
 	void Tick(const struct FGeometry& MyGeometry, float InDeltaTime);
-	void ExecuteUbergraph_WBP_PartList(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

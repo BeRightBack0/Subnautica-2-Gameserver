@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "E_VehiclePlayerAttachments_structs.hpp"
 #include "ControlRig_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "E_VehiclePlayerAttachments_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
 

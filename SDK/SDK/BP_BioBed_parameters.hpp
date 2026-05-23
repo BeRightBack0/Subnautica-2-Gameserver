@@ -15,8 +15,8 @@
 #include "UWESculpturalBase_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UWEInterfaces_structs.hpp"
-#include "Engine_structs.hpp"
 #include "F_AnimSyncSettings_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 
 

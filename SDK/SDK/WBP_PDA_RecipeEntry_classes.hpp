@@ -21,7 +21,8 @@ SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_PDA_RecipeEntry.WBP_PDA_RecipeEntry_C
 // 0x0230 (0x1760 - 0x1530)
-class UWBP_PDA_RecipeEntry_C : public UCommonButtonBase
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UWBP_PDA_RecipeEntry_C : public UCommonButtonBase
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1530(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -127,6 +128,7 @@ public:
 		return GetDefaultObjImpl<UWBP_PDA_RecipeEntry_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UWBP_PDA_RecipeEntry_C;
 
 SDK_NAMESPACE_END

@@ -48,13 +48,13 @@ public:
 	bool                                          FollowCamera;                                      // 0x0338(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CheckFishSchoolEnable();
-	void CustomAdd(double Input, double X, double* Result);
-	void EditorTick();
-	void ExecuteUbergraph_BP_BOID_FishSchool(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset);
 	void UserConstructionScript();
+	void ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset);
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_BOID_FishSchool(int32 EntryPoint);
+	void EditorTick();
+	void CustomAdd(double Input, double X, double* Result);
+	void CheckFishSchoolEnable();
 
 public:
 	static class UClass* StaticClass()

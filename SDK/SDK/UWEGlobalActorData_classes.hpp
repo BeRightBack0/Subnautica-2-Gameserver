@@ -112,7 +112,7 @@ DUMPER7_ASSERTS_UUWEADGBroadcastComponent_Bool;
 
 // Class UWEGlobalActorData.UWEActorDataGroup
 // 0x0068 (0x0318 - 0x02B0)
-class AUWEActorDataGroup final : public AActor
+class AUWEActorDataGroup : public AActor
 {
 public:
 	class UUWEADGBroadcastComponent_Bool*         EnabledBroadcastComponent;                         // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

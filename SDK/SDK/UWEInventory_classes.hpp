@@ -609,7 +609,7 @@ DUMPER7_ASSERTS_UUWEInventoryDiagnostic;
 
 // Class UWEInventory.UWEInventoryInteractionComponent
 // 0x0070 (0x05E0 - 0x0570)
-class UUWEInventoryInteractionComponent final : public UBoxComponent
+class UUWEInventoryInteractionComponent : public UBoxComponent
 {
 public:
 	uint8                                         Pad_568[0x10];                                     // 0x0568(0x0010)(Fixing Size After Last Property [ Dumper-7 ])

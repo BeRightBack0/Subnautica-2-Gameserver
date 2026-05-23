@@ -288,7 +288,7 @@ DUMPER7_ASSERTS_AUWETriggerBase;
 
 // Class UWETrigger.UWEGenericButton
 // 0x00A8 (0x0370 - 0x02C8)
-class AUWEGenericButton final : public AUWETriggerBase
+class AUWEGenericButton : public AUWETriggerBase
 {
 public:
 	uint8                                         Pad_2C8[0x10];                                     // 0x02C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])

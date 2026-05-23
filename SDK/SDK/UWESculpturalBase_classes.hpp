@@ -946,7 +946,7 @@ DUMPER7_ASSERTS_UUWESavedBaseData;
 
 // Class UWESculpturalBase.UWESculpturalBaseActor
 // 0x0788 (0x0A38 - 0x02B0)
-class AUWESculpturalBaseActor final : public AActor
+class AUWESculpturalBaseActor : public AActor
 {
 public:
 	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1190,7 +1190,7 @@ DUMPER7_ASSERTS_UUWESculpturalBaseModuleSettings;
 
 // Class UWESculpturalBase.UWESculpturalBaseProxy
 // 0x0318 (0x05C8 - 0x02B0)
-class AUWESculpturalBaseProxy final : public AActor
+class AUWESculpturalBaseProxy : public AActor
 {
 public:
 	TMap<struct FUWEMeshHandle, struct FUWEStableIndexISM> CollisionMeshes;                          // 0x02B0(0x0050)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)

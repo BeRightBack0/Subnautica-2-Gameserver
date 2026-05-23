@@ -274,29 +274,29 @@ public:
 DUMPER7_ASSERTS_AUWEPawnAttachmentOverlapTrigger;
 
 // Class UWEPawnAttachment.UWEPawnAttachmentOwner
-// 0x0258 (0x0318 - 0x00C0)
+// 0x0260 (0x0320 - 0x00C0)
 class UUWEPawnAttachmentOwner final : public UActorComponent
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FUWEENetworkedAttachmentConfig> Configs;                                // 0x00C8(0x0050)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FUWEAttachmentState>            States;                                            // 0x0118(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, Protected, NativeAccessSpecifierProtected)
-	struct FUWEAttachmentReplicationStateArray    ReplicationStates;                                 // 0x0128(0x0128)(Net, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_250[0x10];                                     // 0x0250(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FUWEAttachmentStateSaveData>    StateSaveData;                                     // 0x0260(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, SaveGame, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FUWEAttachmentState>            BackupStates;                                      // 0x0270(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, Protected, NativeAccessSpecifierProtected)
-	TArray<class USceneComponent*>                AttachmentComponentsCache;                         // 0x0280(0x0010)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	class UUWESaveHandle*                         SaveHandle;                                        // 0x0290(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	bool                                          DisableServerConfirmation;                         // 0x0298(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_299[0x7];                                      // 0x0299(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachStarted; // 0x02A0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachInterpolationToSocketIsDone; // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachAnimationIsDone; // 0x02C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachFinished; // 0x02D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachStarted; // 0x02E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachAnimationIsDone; // 0x02F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachFinished; // 0x0300(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_310[0x8];                                      // 0x0310(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FUWEENetworkedAttachmentConfig> Configs;                                // 0x00D0(0x0050)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FUWEAttachmentState>            States;                                            // 0x0120(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, Protected, NativeAccessSpecifierProtected)
+	struct FUWEAttachmentReplicationStateArray    ReplicationStates;                                 // 0x0130(0x0128)(Net, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_258[0x10];                                     // 0x0258(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FUWEAttachmentStateSaveData>    StateSaveData;                                     // 0x0268(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, SaveGame, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FUWEAttachmentState>            BackupStates;                                      // 0x0278(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, Protected, NativeAccessSpecifierProtected)
+	TArray<class USceneComponent*>                AttachmentComponentsCache;                         // 0x0288(0x0010)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	class UUWESaveHandle*                         SaveHandle;                                        // 0x0298(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	bool                                          DisableServerConfirmation;                         // 0x02A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2A1[0x7];                                      // 0x02A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachStarted; // 0x02A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachInterpolationToSocketIsDone; // 0x02B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachAnimationIsDone; // 0x02C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnAttachFinished; // 0x02D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachStarted; // 0x02E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachAnimationIsDone; // 0x02F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Actor, const class FName& SlotName)> OnDetachFinished; // 0x0308(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_318[0x8];                                      // 0x0318(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool CanAttach_BP(class AActor* Attachment, const class FName& SlotName);

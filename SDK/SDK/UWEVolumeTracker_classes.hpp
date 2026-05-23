@@ -53,7 +53,7 @@ DUMPER7_ASSERTS_UShapeVolumeComponent;
 
 // Class UWEVolumeTracker.BoxVolumeComponent
 // 0x0020 (0x0610 - 0x05F0)
-class UBoxVolumeComponent final : public UShapeVolumeComponent
+class UBoxVolumeComponent : public UShapeVolumeComponent
 {
 public:
 	struct FVector                                BoxExtent;                                         // 0x05E8(0x0018)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)

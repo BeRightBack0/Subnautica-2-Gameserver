@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Biobed_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ABP_Biobed_structs.hpp"
 
 
 SDK_NAMESPACE_START

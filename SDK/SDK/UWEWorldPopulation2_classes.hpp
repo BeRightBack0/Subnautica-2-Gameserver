@@ -818,7 +818,7 @@ DUMPER7_ASSERTS_UUWEWorldPopRegionConfigDA;
 
 // Class UWEWorldPopulation2.UWEWorldPopResourceBaseActor
 // 0x0098 (0x0348 - 0x02B0)
-class AUWEWorldPopResourceBaseActor final : public AActor
+class AUWEWorldPopResourceBaseActor : public AActor
 {
 public:
 	uint8                                         Pad_2B0[0x20];                                     // 0x02B0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])

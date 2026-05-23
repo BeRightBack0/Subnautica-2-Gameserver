@@ -2620,7 +2620,7 @@ DUMPER7_ASSERTS_UBTDecorator_Blackboard;
 
 // Class AIModule.BTDecorator_BlueprintBase
 // 0x0038 (0x00A0 - 0x0068)
-class UBTDecorator_BlueprintBase final : public UBTDecorator
+class UBTDecorator_BlueprintBase : public UBTDecorator
 {
 public:
 	class AAIController*                          AIOwner;                                           // 0x0068(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -3170,7 +3170,7 @@ DUMPER7_ASSERTS_UBTService_BlackboardBase;
 
 // Class AIModule.BTService_BlueprintBase
 // 0x0028 (0x0098 - 0x0070)
-class UBTService_BlueprintBase : public UBTService
+class UBTService_BlueprintBase final : public UBTService
 {
 public:
 	class AAIController*                          AIOwner;                                           // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

@@ -17,26 +17,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.ExecuteUbergraph_GA_Base_DamageTaken
-// 0x00B8 (0x00B8 - 0x0000)
-struct GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayEventData                     K2Node_Event_EventData;                            // 0x0008(0x00B0)(ConstParm)
-};
-DUMPER7_ASSERTS_GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken;
-
-// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.K2_ActivateAbilityFromEvent
-// 0x00B0 (0x00B0 - 0x0000)
-struct GA_Base_DamageTaken_C_K2_ActivateAbilityFromEvent final
-{
-public:
-	struct FGameplayEventData                     EventData;                                         // 0x0000(0x00B0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-DUMPER7_ASSERTS_GA_Base_DamageTaken_C_K2_ActivateAbilityFromEvent;
-
 // Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.OnDamageTaken
 // 0x0120 (0x0120 - 0x0000)
 struct GA_Base_DamageTaken_C_OnDamageTaken final
@@ -50,6 +30,26 @@ public:
 	struct FActiveGameplayEffectHandle            CallFunc_K2_ApplyGameplayEffectSpecToOwner_ReturnValue; // 0x0118(0x0008)(NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GA_Base_DamageTaken_C_OnDamageTaken;
+
+// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.K2_ActivateAbilityFromEvent
+// 0x00B0 (0x00B0 - 0x0000)
+struct GA_Base_DamageTaken_C_K2_ActivateAbilityFromEvent final
+{
+public:
+	struct FGameplayEventData                     EventData;                                         // 0x0000(0x00B0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_GA_Base_DamageTaken_C_K2_ActivateAbilityFromEvent;
+
+// Function GA_Base_DamageTaken.GA_Base_DamageTaken_C.ExecuteUbergraph_GA_Base_DamageTaken
+// 0x00B8 (0x00B8 - 0x0000)
+struct GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayEventData                     K2Node_Event_EventData;                            // 0x0008(0x00B0)(ConstParm)
+};
+DUMPER7_ASSERTS_GA_Base_DamageTaken_C_ExecuteUbergraph_GA_Base_DamageTaken;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

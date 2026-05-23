@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "F_AnimSyncSettings_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 

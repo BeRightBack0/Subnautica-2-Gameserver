@@ -16,15 +16,87 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.CheckFishSchoolEnable
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_BOID_FishSchool_C::CheckFishSchoolEnable()
+void ABP_BOID_FishSchool_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "CheckFishSchoolEnable");
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ReceiveParticleData
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TArray<struct FBasicParticleData>&Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UNiagaraSystem*                   NiagaraSystem                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   SimulationPositionOffset                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BOID_FishSchool_C::ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ReceiveParticleData");
+
+	Params::BP_BOID_FishSchool_C_ReceiveParticleData Parms{};
+
+	Parms.Data = std::move(Data);
+	Parms.NiagaraSystem = NiagaraSystem;
+	Parms.SimulationPositionOffset = std::move(SimulationPositionOffset);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_BOID_FishSchool_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ExecuteUbergraph_BP_BOID_FishSchool
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BOID_FishSchool_C::ExecuteUbergraph_BP_BOID_FishSchool(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ExecuteUbergraph_BP_BOID_FishSchool");
+
+	Params::BP_BOID_FishSchool_C_ExecuteUbergraph_BP_BOID_FishSchool Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.EditorTick
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BOID_FishSchool_C::EditorTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "EditorTick");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,87 +128,15 @@ void ABP_BOID_FishSchool_C::CustomAdd(double Input, double X, double* Result)
 }
 
 
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.EditorTick
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.CheckFishSchoolEnable
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_BOID_FishSchool_C::EditorTick()
+void ABP_BOID_FishSchool_C::CheckFishSchoolEnable()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "EditorTick");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ExecuteUbergraph_BP_BOID_FishSchool
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BOID_FishSchool_C::ExecuteUbergraph_BP_BOID_FishSchool(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ExecuteUbergraph_BP_BOID_FishSchool");
-
-	Params::BP_BOID_FishSchool_C_ExecuteUbergraph_BP_BOID_FishSchool Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_BOID_FishSchool_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.ReceiveParticleData
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TArray<struct FBasicParticleData>&Data                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class UNiagaraSystem*                   NiagaraSystem                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   SimulationPositionOffset                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BOID_FishSchool_C::ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "ReceiveParticleData");
-
-	Params::BP_BOID_FishSchool_C_ReceiveParticleData Parms{};
-
-	Parms.Data = std::move(Data);
-	Parms.NiagaraSystem = NiagaraSystem;
-	Parms.SimulationPositionOffset = std::move(SimulationPositionOffset);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BOID_FishSchool.BP_BOID_FishSchool_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_BOID_FishSchool_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BOID_FishSchool_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_BOID_FishSchool_C", "CheckFishSchoolEnable");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

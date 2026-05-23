@@ -108,7 +108,7 @@ DUMPER7_ASSERTS_USN2AnimatingActorsDebugger;
 
 // Class Subnautica2.SN2BuilderTool
 // 0x01E8 (0x06E0 - 0x04F8)
-class ASN2BuilderTool final : public AUWEEnergyTool
+class ASN2BuilderTool : public AUWEEnergyTool
 {
 public:
 	TMulticastInlineDelegate<void(class AActor* OldConstructTarget, class AActor* NewConstructTarget)> OnConstructTargetChanged; // 0x04F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -1016,22 +1016,21 @@ DUMPER7_ASSERTS_USN2AbilityTask_UpdateResonatingCues;
 class ASN2BaseCharacter : public ACharacter
 {
 public:
-	uint8                                         Pad_648[0x50];                                     // 0x0648(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWEPawnAttachmentOwner*                AttachedToOwner;                                   // 0x0698(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UUWECollisionImpactComponent*           CollisionImpactComponent;                          // 0x06A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSourceComponent;                // 0x06A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInputMappingContext*                   DefaultInputMappingContext;                        // 0x06B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInputMappingContext*                   ClassicInputMappingContext;                        // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UInputMappingContext*                   AlternateInputMappingContext;                      // 0x06C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	int32                                         InputMappingPriority;                              // 0x06C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6CC[0x4];                                      // 0x06CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWESaveComponent*                      SaveComponent;                                     // 0x06D0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class AUWEOverlapWaterCurrent*>        EnteredWaterCurrents;                              // 0x06D8(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_6E8[0x8];                                      // 0x06E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool bNewPossessed)> OnPossessedChanged;                           // 0x06F0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class UInputMappingContext*                   CurrentMappingContext;                             // 0x0700(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UInputMappingContext*>           AddedMappingContexts;                              // 0x0708(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_718[0x8];                                      // 0x0718(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_648[0x58];                                     // 0x0648(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWEPawnAttachmentOwner*                AttachedToOwner;                                   // 0x06A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UUWECollisionImpactComponent*           CollisionImpactComponent;                          // 0x06A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSourceComponent;                // 0x06B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInputMappingContext*                   DefaultInputMappingContext;                        // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInputMappingContext*                   ClassicInputMappingContext;                        // 0x06C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UInputMappingContext*                   AlternateInputMappingContext;                      // 0x06C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	int32                                         InputMappingPriority;                              // 0x06D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6D4[0x4];                                      // 0x06D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWESaveComponent*                      SaveComponent;                                     // 0x06D8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class AUWEOverlapWaterCurrent*>        EnteredWaterCurrents;                              // 0x06E0(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_6F0[0x8];                                      // 0x06F0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool bNewPossessed)> OnPossessedChanged;                           // 0x06F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UInputMappingContext*                   CurrentMappingContext;                             // 0x0708(0x0008)(ZeroConstructor, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UInputMappingContext*>           AddedMappingContexts;                              // 0x0710(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	struct FSN2BaseCharacterSaveData              SaveData;                                          // 0x0720(0x0080)(Net, SaveGame, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	class UUWEAbilitySystemComponent*             UWEAbilitySystemComponent;                         // 0x07A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	bool                                          bPossessed;                                        // 0x07A8(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -1470,7 +1469,7 @@ DUMPER7_ASSERTS_USN2AdaptationsPlayerStateComponent;
 
 // Class Subnautica2.SN2BuilderGridToggleAbility
 // 0x0000 (0x0538 - 0x0538)
-class USN2BuilderGridToggleAbility final : public UUWEGameplayAbility
+class USN2BuilderGridToggleAbility : public UUWEGameplayAbility
 {
 public:
 	EBuilderSnapping ToggleGridSnapping();
@@ -2566,7 +2565,7 @@ DUMPER7_ASSERTS_USN2BaseCheatManager;
 
 // Class Subnautica2.SN2BaseDeconstructAbility
 // 0x0000 (0x0538 - 0x0538)
-class USN2BaseDeconstructAbility final : public UUWEGameplayAbility
+class USN2BaseDeconstructAbility : public UUWEGameplayAbility
 {
 public:
 	void ApplyEditAction(TScriptInterface<class IUWEBaseEditAction> EditAction);
@@ -2590,7 +2589,7 @@ DUMPER7_ASSERTS_USN2BaseDeconstructAbility;
 
 // Class Subnautica2.SN2BaseEditAbility
 // 0x0010 (0x0550 - 0x0540)
-class USN2BaseEditAbility final : public USN2BuilderActionAbility
+class USN2BaseEditAbility : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x8];                                      // 0x0540(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -3012,7 +3011,7 @@ DUMPER7_ASSERTS_ASN2BioBed;
 
 // Class Subnautica2.SN2Bioreactor
 // 0x00B8 (0x0368 - 0x02B0)
-class ASN2Bioreactor final : public AActor
+class ASN2Bioreactor : public AActor
 {
 public:
 	TMulticastInlineDelegate<void()>              OnItemChanged;                                     // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -3269,7 +3268,7 @@ DUMPER7_ASSERTS_ASN2BlightNode;
 
 // Class Subnautica2.SN2BlightCore
 // 0x0010 (0x04D0 - 0x04C0)
-class ASN2BlightCore final : public ASN2BlightNode
+class ASN2BlightCore : public ASN2BlightNode
 {
 public:
 	TArray<class USN2BlightNodeDataAsset*>        AssociatedNodes;                                   // 0x04C0(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
@@ -3393,7 +3392,7 @@ DUMPER7_ASSERTS_USN2BlightNodesGameStateComponent;
 
 // Class Subnautica2.SN2BlightVisualsManager
 // 0x0010 (0x02C0 - 0x02B0)
-class ASN2BlightVisualsManager final : public AActor
+class ASN2BlightVisualsManager : public AActor
 {
 public:
 	TMulticastInlineDelegate<void(class ULevel* InLevel, class UWorld* World)> OnLevelAddedBlueprint; // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -3488,7 +3487,7 @@ DUMPER7_ASSERTS_USN2ContinuousAbility;
 
 // Class Subnautica2.SN2BuilderAbility
 // 0x0008 (0x0540 - 0x0538)
-class USN2BuilderAbility final : public USN2ContinuousAbility
+class USN2BuilderAbility : public USN2ContinuousAbility
 {
 public:
 	bool                                          IsDeconstruct;                                     // 0x0538(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3842,7 +3841,7 @@ DUMPER7_ASSERTS_USN2BuilderMenuViewModel;
 
 // Class Subnautica2.SN2BuilderMoveAbility
 // 0x05F0 (0x0B30 - 0x0540)
-class USN2BuilderMoveAbility final : public USN2BuilderActionAbility
+class USN2BuilderMoveAbility : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -6016,7 +6015,7 @@ DUMPER7_ASSERTS_USN2GhostSubsystem;
 
 // Class Subnautica2.SN2GlintableScannable
 // 0x0000 (0x0120 - 0x0120)
-class USN2GlintableScannable final : public UUWEGlintableScannable
+class USN2GlintableScannable : public UUWEGlintableScannable
 {
 public:
 	static class UClass* StaticClass()
@@ -6857,7 +6856,7 @@ DUMPER7_ASSERTS_USN2SettingsViewModel;
 
 // Class Subnautica2.SN2InteractAbility
 // 0x0000 (0x0538 - 0x0538)
-class USN2InteractAbility final : public UUWEGameplayAbility
+class USN2InteractAbility : public UUWEGameplayAbility
 {
 public:
 	static class UClass* StaticClass()
@@ -7650,7 +7649,7 @@ DUMPER7_ASSERTS_USN2SSwimTiltCameraAnimation;
 
 // Class Subnautica2.SN2MoveModeAbility
 // 0x0008 (0x0540 - 0x0538)
-class USN2MoveModeAbility final : public UUWEGameplayAbility
+class USN2MoveModeAbility : public UUWEGameplayAbility
 {
 public:
 	uint8                                         Pad_538[0x8];                                      // 0x0538(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -7810,7 +7809,7 @@ DUMPER7_ASSERTS_USN2SubmarineFloodManager;
 
 // Class Subnautica2.SN2OxygenBubble
 // 0x00A0 (0x0350 - 0x02B0)
-class ASN2OxygenBubble final : public AActor
+class ASN2OxygenBubble : public AActor
 {
 public:
 	class USphereComponent*                       SphereComponent;                                   // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -7847,7 +7846,7 @@ DUMPER7_ASSERTS_ASN2OxygenBubble;
 
 // Class Subnautica2.SN2OxygenTank
 // 0x0038 (0x0448 - 0x0410)
-class ASN2OxygenTank final : public ASN2BaseEquippable
+class ASN2OxygenTank : public ASN2BaseEquippable
 {
 public:
 	float                                         OxygenLevel;                                       // 0x0410(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -8497,7 +8496,7 @@ DUMPER7_ASSERTS_USN2PinnedRecipesViewModel;
 
 // Class Subnautica2.SN2PlaceConstructionGhostAbility
 // 0x0028 (0x0568 - 0x0540)
-class USN2PlaceConstructionGhostAbility final : public USN2BuilderActionAbility
+class USN2PlaceConstructionGhostAbility : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -8906,7 +8905,7 @@ DUMPER7_ASSERTS_ASN2PlayerCharacter;
 
 // Class Subnautica2.SN2PlayerCinematicCharacter
 // 0x0008 (0x0338 - 0x0330)
-class ASN2PlayerCinematicCharacter final : public ASkeletalMeshActor
+class ASN2PlayerCinematicCharacter : public ASkeletalMeshActor
 {
 public:
 	uint8                                         Pad_330[0x8];                                      // 0x0330(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -9155,7 +9154,7 @@ DUMPER7_ASSERTS_USN2TargetBasedInputDecelerate;
 
 // Class Subnautica2.SN2PlayerDeathbox
 // 0x0008 (0x02B8 - 0x02B0)
-class ASN2PlayerDeathbox final : public AActor
+class ASN2PlayerDeathbox : public AActor
 {
 public:
 	class UUWEInventoryComponent*                 InventoryComponent;                                // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -10370,7 +10369,7 @@ DUMPER7_ASSERTS_USN2SustainedHoverComponent;
 
 // Class Subnautica2.SN2ProximityTextPopup
 // 0x0040 (0x02E0 - 0x02A0)
-class USN2ProximityTextPopup final : public USN2SustainedHoverComponent
+class USN2ProximityTextPopup : public USN2SustainedHoverComponent
 {
 public:
 	class FText                                   VisibleText;                                       // 0x02A0(0x0010)(Edit, NativeAccessSpecifierPrivate)
@@ -12409,40 +12408,40 @@ DUMPER7_ASSERTS_ISN2TabButtonInterface;
 class ASN2Tadpole : public ASN2Submersible
 {
 public:
-	uint8                                         Pad_960[0x10];                                     // 0x0960(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DefaultBankingModifier;                            // 0x0970(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DefaultStrafeSpeedModifier;                        // 0x0974(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DefaultSwimmingFriction;                           // 0x0978(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_97C[0x4];                                      // 0x097C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UUWEItemType>            PowerCellItemType;                                 // 0x0980(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UUWELocalVelocitySampler*               LeftExhaust;                                       // 0x09A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWELocalVelocitySampler*               RightExhaust;                                      // 0x09B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWELocalVelocitySampler*               BottomExhaust;                                     // 0x09B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWELocalVelocitySampler*               RearExhaust;                                       // 0x09C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class USN2CollisionDamageComponent*           CollisionDamageComponent;                          // 0x09C8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TSubclassOf<class AActor>                     SignalActorClass;                                  // 0x09D0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USN2TadpoleInventoryRouterComponent*    InventoryRouterComponent;                          // 0x09D8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWEInventoryComponent*                 PowerInventoryComponent;                           // 0x09E0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWEInventoryComponent*                 UpgradeInventoryComponent;                         // 0x09E8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWEInventoryInteractionComponent*      PowerInventoryInteraction;                         // 0x09F0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWEInventoryInteractionComponent*      UpgradeInventoryInteraction;                       // 0x09F8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisOverlapBegin;                     // 0x0A00(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisOverlapEnd;                       // 0x0A10(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisAttach;                           // 0x0A20(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisDetach;                           // 0x0A30(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisFullyAttached;                    // 0x0A40(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(EUWEVehicleMovementType NewMovementType)> OnMovementTypeChanged;   // 0x0A50(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class AActor*                                 CurrentChassis;                                    // 0x0A60(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TSoftClassPtr<class UClass>                   CurrentChassisClass;                               // 0x0A68(0x0028)(Edit, EditConst, SaveGame, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FGuid                                  ChassisSaveGuid;                                   // 0x0A90(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         ChassisDepenetrationAcceleration;                  // 0x0AA0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EUWEVehicleMovementType                       MovementType;                                      // 0x0AA4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, EditConst, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_AA5[0xB];                                      // 0x0AA5(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 SignalActor;                                       // 0x0AB0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_AB8[0x30];                                     // 0x0AB8(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 OverlappingChassis;                                // 0x0AE8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-	struct FTimerHandle                           DetachTimerHandle;                                 // 0x0AF0(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_AF8[0xB8];                                     // 0x0AF8(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_960[0x8];                                      // 0x0960(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DefaultBankingModifier;                            // 0x0968(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DefaultStrafeSpeedModifier;                        // 0x096C(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DefaultSwimmingFriction;                           // 0x0970(0x0004)(Edit, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_974[0x4];                                      // 0x0974(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UUWEItemType>            PowerCellItemType;                                 // 0x0978(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UUWELocalVelocitySampler*               LeftExhaust;                                       // 0x09A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWELocalVelocitySampler*               RightExhaust;                                      // 0x09A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWELocalVelocitySampler*               BottomExhaust;                                     // 0x09B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWELocalVelocitySampler*               RearExhaust;                                       // 0x09B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class USN2CollisionDamageComponent*           CollisionDamageComponent;                          // 0x09C0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TSubclassOf<class AActor>                     SignalActorClass;                                  // 0x09C8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USN2TadpoleInventoryRouterComponent*    InventoryRouterComponent;                          // 0x09D0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWEInventoryComponent*                 PowerInventoryComponent;                           // 0x09D8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWEInventoryComponent*                 UpgradeInventoryComponent;                         // 0x09E0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWEInventoryInteractionComponent*      PowerInventoryInteraction;                         // 0x09E8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWEInventoryInteractionComponent*      UpgradeInventoryInteraction;                       // 0x09F0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisOverlapBegin;                     // 0x09F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisOverlapEnd;                       // 0x0A08(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisAttach;                           // 0x0A18(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisDetach;                           // 0x0A28(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class AActor* Chassis)> OnChassisFullyAttached;                    // 0x0A38(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(EUWEVehicleMovementType NewMovementType)> OnMovementTypeChanged;   // 0x0A48(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class AActor*                                 CurrentChassis;                                    // 0x0A58(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, Transient, RepNotify, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TSoftClassPtr<class UClass>                   CurrentChassisClass;                               // 0x0A60(0x0028)(Edit, EditConst, SaveGame, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FGuid                                  ChassisSaveGuid;                                   // 0x0A88(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         ChassisDepenetrationAcceleration;                  // 0x0A98(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EUWEVehicleMovementType                       MovementType;                                      // 0x0A9C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, EditConst, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_A9D[0xB];                                      // 0x0A9D(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SignalActor;                                       // 0x0AA8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_AB0[0x30];                                     // 0x0AB0(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 OverlappingChassis;                                // 0x0AE0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	struct FTimerHandle                           DetachTimerHandle;                                 // 0x0AE8(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AF0[0xC0];                                     // 0x0AF0(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 AttachChassisAtBeginPlay;                          // 0x0BB0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         Pad_BB8[0x8];                                      // 0x0BB8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 

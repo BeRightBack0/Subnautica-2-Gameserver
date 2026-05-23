@@ -58,28 +58,28 @@ public:
 	class UObject*                                Cached_Next_Weather;                               // 0x06C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	double Blend_Rain_Amount(class UObject* Object, class UObject* Object2, double alpha);
-	void BlendGlobalWeatherVariables(class UUWEWeatherTypeBase* CurrentWeather, class UUWEWeatherTypeBase* NextWeather, double BlendAlpha, struct FF_GlobalWeatherSettings* BlendedSettings);
-	void EditorTick(float InDeltaTime);
-	void ExecuteUbergraph_BP_UWESky(int32 EntryPoint);
-	void ExtractWeatherVariables(class UUWEWeatherTypeBase* WeatherType, struct FParsedVariables* CloudSettings);
-	void GetDepth(double* Depth);
-	void HandleOnWeatherManagerEnabledChanged();
-	void InitGPUCoverageReadback();
-	double Night_Filter();
-	void ReceiveBeginPlay();
-	void ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset);
-	void ReceiveTick(float DeltaSeconds);
-	void ResetWeather();
-	void SetupWeatherManager();
-	void UpdateGPUCoverageReadback();
-	void UpdateHighCloudsValues(const struct FF_HighCloudsSettings& F_HighCloudsSettings);
-	void UpdateMPC();
-	void UpdateRingShadow();
-	void UpdateScalabilitySettings();
-	void UpdateVolumetricClouds();
-	void UpdateWeather();
 	void UserConstructionScript();
+	void UpdateWeather();
+	void UpdateVolumetricClouds();
+	void UpdateScalabilitySettings();
+	void UpdateRingShadow();
+	void UpdateMPC();
+	void UpdateHighCloudsValues(const struct FF_HighCloudsSettings& F_HighCloudsSettings);
+	void UpdateGPUCoverageReadback();
+	void SetupWeatherManager();
+	void ResetWeather();
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveParticleData(const TArray<struct FBasicParticleData>& Data, class UNiagaraSystem* NiagaraSystem, const struct FVector& SimulationPositionOffset);
+	void ReceiveBeginPlay();
+	double Night_Filter();
+	void InitGPUCoverageReadback();
+	void HandleOnWeatherManagerEnabledChanged();
+	void GetDepth(double* Depth);
+	void ExtractWeatherVariables(class UUWEWeatherTypeBase* WeatherType, struct FParsedVariables* CloudSettings);
+	void ExecuteUbergraph_BP_UWESky(int32 EntryPoint);
+	void EditorTick(float InDeltaTime);
+	void BlendGlobalWeatherVariables(class UUWEWeatherTypeBase* CurrentWeather, class UUWEWeatherTypeBase* NextWeather, double BlendAlpha, struct FF_GlobalWeatherSettings* BlendedSettings);
+	double Blend_Rain_Amount(class UObject* Object, class UObject* Object2, double alpha);
 
 public:
 	static class UClass* StaticClass()

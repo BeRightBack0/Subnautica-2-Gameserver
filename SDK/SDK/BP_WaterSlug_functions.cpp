@@ -16,21 +16,105 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_WaterSlug.BP_WaterSlug_C.BPOnEquipped
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bFirstEquip                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_WaterSlug.BP_WaterSlug_C.ShowSkeletalMesh
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_WaterSlug_C::BPOnEquipped(bool bFirstEquip)
+void ABP_WaterSlug_C::ShowSkeletalMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "BPOnEquipped");
+		Func = Class->GetFunction("BP_WaterSlug_C", "ShowSkeletalMesh");
 
-	Params::BP_WaterSlug_C_BPOnEquipped Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.bFirstEquip = bFirstEquip;
+
+// Function BP_WaterSlug.BP_WaterSlug_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_WaterSlug_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WaterSlug.BP_WaterSlug_C.OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_WaterSlug_C::OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WaterSlug.BP_WaterSlug_C.OnRep_PlayersInRange
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_WaterSlug_C::OnRep_PlayersInRange()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "OnRep_PlayersInRange");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WaterSlug.BP_WaterSlug_C.InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_WaterSlug_C::InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WaterSlug.BP_WaterSlug_C.HideSkeletalMesh
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WaterSlug_C::HideSkeletalMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "HideSkeletalMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WaterSlug.BP_WaterSlug_C.ExecuteUbergraph_BP_WaterSlug
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_WaterSlug_C::ExecuteUbergraph_BP_WaterSlug(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WaterSlug_C", "ExecuteUbergraph_BP_WaterSlug");
+
+	Params::BP_WaterSlug_C_ExecuteUbergraph_BP_WaterSlug Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -56,107 +140,23 @@ void ABP_WaterSlug_C::BPOnUnequipped(const class AActor* OldEquippedByActor)
 }
 
 
-// Function BP_WaterSlug.BP_WaterSlug_C.ExecuteUbergraph_BP_WaterSlug
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_WaterSlug.BP_WaterSlug_C.BPOnEquipped
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bFirstEquip                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WaterSlug_C::ExecuteUbergraph_BP_WaterSlug(int32 EntryPoint)
+void ABP_WaterSlug_C::BPOnEquipped(bool bFirstEquip)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "ExecuteUbergraph_BP_WaterSlug");
+		Func = Class->GetFunction("BP_WaterSlug_C", "BPOnEquipped");
 
-	Params::BP_WaterSlug_C_ExecuteUbergraph_BP_WaterSlug Parms{};
+	Params::BP_WaterSlug_C_BPOnEquipped Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bFirstEquip = bFirstEquip;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.HideSkeletalMesh
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WaterSlug_C::HideSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "HideSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_WaterSlug_C::InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "InRangeCallback_954953694E3292BEC9F12C9B9C0C64D6");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.OnRep_PlayersInRange
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_WaterSlug_C::OnRep_PlayersInRange()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "OnRep_PlayersInRange");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_WaterSlug_C::OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "OutOfRangeCallback_954953694E3292BEC9F12C9B9C0C64D6");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_WaterSlug_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WaterSlug.BP_WaterSlug_C.ShowSkeletalMesh
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WaterSlug_C::ShowSkeletalMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WaterSlug_C", "ShowSkeletalMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

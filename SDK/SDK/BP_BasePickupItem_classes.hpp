@@ -24,20 +24,20 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void EndAbility();
-	void EndAnimation(class UAnimSequenceBase* Animation);
-	void ExecuteUbergraph_BP_BasePickupItem(int32 EntryPoint);
-	void OnAnimStateReturn();
-	void OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer);
-	void OnSyncedAnimationBegin(bool bUseAITarget, bool bDrivePlayer, const struct FAnimNotifyEventReference& EventReference, const struct FF_AnimSyncSettings& AnimSyncSettings);
-	void OnSyncedAnimationEnd();
-	void OnToolIsUnequipped();
-	void PlayMontageOnEquipped(class UAnimMontage* Montage, double PlayRate, bool StopAllMontages);
-	void SendPoseSnapshot(const struct FPoseSnapshot& PoseSnapshot);
-	void SetCurrentToolEnergy(double Energy);
-	void SetupAndBeginSyncedAnimation(class AActor* DrivenActor, bool AttachDriven);
-	void StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime);
 	void UpdateAnimationEventTags(const struct FGameplayTag& Gameplay_Tag);
+	void StopMontageOnEquipped(class UAnimMontage* Montage, double BlendOutTime);
+	void SetupAndBeginSyncedAnimation(class AActor* DrivenActor, bool AttachDriven);
+	void SetCurrentToolEnergy(double Energy);
+	void SendPoseSnapshot(const struct FPoseSnapshot& PoseSnapshot);
+	void PlayMontageOnEquipped(class UAnimMontage* Montage, double PlayRate, bool StopAllMontages);
+	void OnToolIsUnequipped();
+	void OnSyncedAnimationEnd();
+	void OnSyncedAnimationBegin(bool bUseAITarget, bool bDrivePlayer, const struct FAnimNotifyEventReference& EventReference, const struct FF_AnimSyncSettings& AnimSyncSettings);
+	void OnAttachPlayerDriver(class AActor* PlayerDriver, bool AttachPlayer);
+	void OnAnimStateReturn();
+	void ExecuteUbergraph_BP_BasePickupItem(int32 EntryPoint);
+	void EndAnimation(class UAnimSequenceBase* Animation);
+	void EndAbility();
 
 public:
 	static class UClass* StaticClass()

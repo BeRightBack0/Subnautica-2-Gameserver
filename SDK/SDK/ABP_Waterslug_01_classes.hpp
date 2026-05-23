@@ -35,11 +35,11 @@ public:
 	bool                                          IsPlayerClose;                                     // 0x0550(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void BlueprintBeginPlay();
-	void BlueprintInitializeAnimation();
-	void ExecuteUbergraph_ABP_Waterslug_01(int32 EntryPoint);
 	void PlayersInRangeChanged(int32 PlayersInRange);
+	void ExecuteUbergraph_ABP_Waterslug_01(int32 EntryPoint);
+	void BlueprintInitializeAnimation();
+	void BlueprintBeginPlay();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

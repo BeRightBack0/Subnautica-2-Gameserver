@@ -24,9 +24,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0538(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_GA_Base_DamageTaken(int32 EntryPoint);
-	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
 	void OnDamageTaken(const struct FGameplayEventData& GameplayEventData);
+	void K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData);
+	void ExecuteUbergraph_GA_Base_DamageTaken(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

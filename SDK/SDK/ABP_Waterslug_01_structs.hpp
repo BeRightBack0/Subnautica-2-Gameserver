@@ -16,6 +16,15 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct ABP_Waterslug_01.ABP_Waterslug_01_C.AnimBlueprintGeneratedMutableData
+// 0x0001 (0x0002 - 0x0001)
+struct ABP_Waterslug_01::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ABP_Waterslug_01__FAnimBlueprintGeneratedMutableData;
+
 // ScriptStruct ABP_Waterslug_01.ABP_Waterslug_01_C.AnimBlueprintGeneratedConstantData
 // 0x021F (0x0220 - 0x0001)
 struct ABP_Waterslug_01::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -51,14 +60,5 @@ public:
 	struct FAnimNodeExposedValueHandler_PropertyAccess AnimGraphNode_SequencePlayer;                 // 0x01F0(0x0030)()
 };
 DUMPER7_ASSERTS_ABP_Waterslug_01__FAnimBlueprintGeneratedConstantData;
-
-// ScriptStruct ABP_Waterslug_01.ABP_Waterslug_01_C.AnimBlueprintGeneratedMutableData
-// 0x0001 (0x0002 - 0x0001)
-struct ABP_Waterslug_01::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ABP_Waterslug_01__FAnimBlueprintGeneratedMutableData;
 
 SDK_NAMESPACE_END
