@@ -7,7 +7,8 @@
 # Todo
 
 * [ ] Game Save Loading
-
+* [ ] Finders for gIsClient, gIsServer and notify gameinstance...
+* [ ] Turn off Spamming logging
 
 
 
