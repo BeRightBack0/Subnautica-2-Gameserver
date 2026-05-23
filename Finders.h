@@ -9,4 +9,6 @@ namespace Finders {
 	std::vector<uintptr_t> FindNullFuncs();
 	uintptr_t FindLoadMap();
 	std::vector<uintptr_t> FindNetModes();
+	uintptr_t FindScuffness();
+	uintptr_t FindProperium();
 };

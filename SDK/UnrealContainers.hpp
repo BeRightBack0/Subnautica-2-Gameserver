@@ -13,6 +13,7 @@
 #include <iostream>
 #include <optional>
 #include "UtfN.hpp"
+#include "../memcury.h"
 
 namespace UC
 {	
@@ -32,7 +33,10 @@ namespace UC
 		static void* Realloc(void* Ptr, uint64 Size, uint32 Alignment)
 		{
 
-			static void* (*FMemoryRealloc)(void* Ptr, uint64 Size, uint32 Alignment) = decltype(FMemoryRealloc)(uintptr_t(GetModuleHandle(0)) + 0x01334790);
+			uintptr_t addr = Memcury::Scanner::FindPattern("48 89 5C 24 08 48 89 74 24 10 57 48 83 EC ? 48 8B F1 41 8B D8 48 8B 0D ? ? ? ?").GetFunctionStart();
+
+			//static void* (*FMemoryRealloc)(void* Ptr, uint64 Size, uint32 Alignment) = decltype(FMemoryRealloc)(uintptr_t(GetModuleHandle(0)) + 0x1334790);
+			static void* (*FMemoryRealloc)(void* Ptr, uint64 Size, uint32 Alignment) = decltype(FMemoryRealloc)(addr);
 			return FMemoryRealloc(Ptr, Size, Alignment);
 		}
 
@@ -300,6 +304,19 @@ namespace UC
 			Data[NumElements] = Element;
 			NumElements++;
 
+			return true;
+		}
+		/* Adds to the array and resizes it if theres no space */
+		inline bool AddGrow(const ArrayElementType& Element)
+		{
+			if (GetSlack() <= 0)
+			{
+				int32 newMax = MaxElements == 0 ? 4 : MaxElements * 2;
+				Data = static_cast<ArrayElementType*>(FMemory::Realloc(Data, newMax * ElementSize, ElementAlign));
+				MaxElements = newMax;
+			}
+			Data[NumElements] = Element;
+			NumElements++;
 			return true;
 		}
 
