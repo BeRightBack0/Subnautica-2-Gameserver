@@ -11,4 +11,5 @@ namespace Finders {
 	std::vector<uintptr_t> FindNetModes();
 	uintptr_t FindScuffness();
 	uintptr_t FindProperium();
+	uintptr_t FindGIsClient();
 };

@@ -63,3 +63,16 @@ uintptr_t Finders::FindScuffness() {
 uintptr_t Finders::FindProperium() {
     return Memcury::Scanner::FindPattern("40 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 ? 48 81 EC ? ? ? ? 48 8D 99 ? ? ? ? 4C 8B F9 48 8B CB").GetFunctionStart();
 }
+// scuffness but works for that ue version
+uintptr_t Finders::FindGIsClient() {
+    auto ResolveByteAddr = [](uintptr_t instrAddr) -> uintptr_t {
+        int32_t disp = *(int32_t*)(instrAddr + 2);
+        return instrAddr + 6 + disp;
+    };
+
+    auto funcStart = Memcury::Scanner::FindStringRef(L"AllowCommandletRendering").GetFunctionStart();
+
+    auto scuffness = Memcury::Scanner(funcStart).ScanFor({ 0xC6, 0x05 }).Get();
+
+    return ResolveByteAddr(scuffness);
+}

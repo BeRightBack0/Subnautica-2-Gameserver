@@ -57,9 +57,14 @@ void Main() {
 
     // making finder for these bytes are gonna be so ahhh
     // "AllowCommandletRendering" at the top of the func there will be 2 bytes set to 1
-    *(bool*)(ImageBase + 0xCC25A42) = false; // gisclient
-    *(bool*)(ImageBase + 0xCC25A43) = true; // gisserver
-    *(int*)(ImageBase + 0xD0E6C18) = 0; // that was meant to be some ahh log but it doesnt care i guess
+    
+    
+    *(bool*)(Finders::FindGIsClient()) = false; // gisclient
+    *(bool*)(Finders::FindGIsClient() + 1) = true; // gIsServer
+
+    //*(bool*)(ImageBase + 0xCC25A42) = false; // gisclient
+  //  *(bool*)(ImageBase + 0xCC25A43) = true; // gisserver
+    //*(int*)(ImageBase + 0xD0E6C18) = 0; // that was meant to be some ahh log but it doesnt care i guess
     for (auto addr : Finders::FindNetModes()) {
         DetourHook(addr, GetNetMode, nullptr);
     }
