@@ -3,7 +3,6 @@
 #include "NetDriverEOS.h"
 #include "Finders.h"
 // TODO
-// gIsServer and gIsClient finder
 // all the spam log finders to disable log from them
 ENetMode GetNetMode() {
     return ENetMode::NM_DedicatedServer;
@@ -28,7 +27,18 @@ DefineOriginal(bool, LoadMap, __int64* Engine, __int64& WorldContext, FURL* URL,
 bool LoadMap(__int64* Engine, __int64& WorldContext, FURL* URL, __int64* Pending, FString& Error) {
     if (URL) {
         URL->Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
+        URL->Op.Clear();
+
+        // actually make it change the savegame slot to a diff one in the args of the subnautica 2 start
+        // that might be actually the proper way too 
         URL->Op.AddGrow(FString(L"listen"));
+        URL->Op.AddGrow(FString(L"LaunchType=LoadGame"));
+        URL->Op.AddGrow(FString(L"SaveSlotName=savegame_2"));
+        URL->Op.AddGrow(FString(L"slotname=savegame_2"));
+        URL->Op.AddGrow(FString(L"SlotName=savegame_2"));
+        URL->Op.AddGrow(FString(L"SaveSlot=savegame_2"));
+        URL->Op.AddGrow(FString(L"LoadGame=savegame_2"));
+        URL->Op.AddGrow(FString(L"SaveGame=savegame_2"));
     }
     return LoadMapOG(Engine, WorldContext, URL, Pending, Error);
 }

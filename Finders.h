@@ -12,4 +12,5 @@ namespace Finders {
 	uintptr_t FindScuffness();
 	uintptr_t FindProperium();
 	uintptr_t FindGIsClient();
+	uintptr_t FindPasting();
 };

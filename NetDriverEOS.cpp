@@ -34,5 +34,5 @@ void NetDriverEOS::Hook() {
 
     DetourHook(Finders::FindEOSInitBase(), InitBase, nullptr);
     DetourHook(Finders::FindEOSInitListen(), InitListen, nullptr);
-    DetourHook(ImageBase + 0x61CCA70, bruh, (void**)&bruhOG); // make a finder for that later
+    DetourHook(Finders::FindPasting(), bruh, (void**)&bruhOG);
 }

@@ -76,3 +76,7 @@ uintptr_t Finders::FindGIsClient() {
 
     return ResolveByteAddr(scuffness);
 }
+
+uintptr_t Finders::FindPasting() {
+    return Memcury::Scanner::FindPattern("40 53 48 83 EC ? 48 8B D9 E8 ? ? ? ? 48 8B CB E8 ? ? ? ? 48 85 C0 74 ? E8").GetFunctionStart();
+}
