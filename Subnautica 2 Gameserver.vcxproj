@@ -170,6 +170,7 @@
     <ClCompile Include="SDK\SDK\Subnautica2_functions.cpp" />
     <ClCompile Include="SDK\SDK\UWECommonUI_functions.cpp" />
     <ClCompile Include="SDK\SDK\UWELobby_functions.cpp" />
+    <ClCompile Include="SDK\SDK\UWEPawnAttachment_functions.cpp" />
     <ClCompile Include="SDK\SDK\UWEUtilities_functions.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

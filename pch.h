@@ -30,6 +30,8 @@
 #include "SDK/SDK/Engine_classes.hpp"
 #include "SDK/SDK/GameplayAbilities_structs.hpp"
 #include "SDK/SDK/GameplayAbilities_classes.hpp"
+#include "SDK/SDK/AssetRegistry_classes.hpp"
+#include "SDK/SDK/BPC_BlightCoreRewardButton_classes.hpp"
 #include "MinHook.h"
 #include "memcury.h"
 #include <set>
@@ -115,14 +117,4 @@ inline void VFTHookEvery(int index, void* detour, void** original = nullptr)
         }
     }
 }
-
-inline bool PatchByte(uintptr_t address, BYTE* bytes, size_t size) {
-    DWORD old;
-    if (!VirtualProtect((void*)address, size, PAGE_EXECUTE_READWRITE, &old))
-        return false;
-    memcpy((void*)address, bytes, size);
-    VirtualProtect((void*)address, size, old, &old);
-    return true;
-}
-
 #endif //PCH_H

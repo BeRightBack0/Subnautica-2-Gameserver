@@ -27,6 +27,7 @@ DefineOriginal(bool, LoadMap, __int64* Engine, __int64& WorldContext, FURL* URL,
 bool LoadMap(__int64* Engine, __int64& WorldContext, FURL* URL, __int64* Pending, FString& Error) {
     if (URL) {
         URL->Map = FString(L"/Game/Maps/Main/L_Main.L_Main");
+       // URL->Map = FString(L"/Game/Maps/L_Default_DevMap.L_Default_DevMap");
         URL->Op.Clear();
 
         // actually make it change the savegame slot to a diff one in the args of the subnautica 2 start
@@ -44,8 +45,6 @@ bool LoadMap(__int64* Engine, __int64& WorldContext, FURL* URL, __int64* Pending
 }
 inline char returna1() { return 1; }
 inline __int64 returna2(__int64 a1, __int64 a2) { return a2; }
-
-
 using namespace Memcury::ASM;
 void Main() {
     AllocConsole();
@@ -74,7 +73,9 @@ void Main() {
 
     //*(bool*)(ImageBase + 0xCC25A42) = false; // gisclient
   //  *(bool*)(ImageBase + 0xCC25A43) = true; // gisserver
-    //*(int*)(ImageBase + 0xD0E6C18) = 0; // that was meant to be some ahh log but it doesnt care i guess
+    *(int*)(ImageBase + 0xD0E6C18) = 0; // that was meant to be some ahh log but it doesnt care i guess
+    *(int*)(ImageBase + 0xD0FB188) = 7;
+    *(int*)(ImageBase + 0xD0FF0E8) = 7;
     for (auto addr : Finders::FindNetModes()) {
         DetourHook(addr, GetNetMode, nullptr);
     }

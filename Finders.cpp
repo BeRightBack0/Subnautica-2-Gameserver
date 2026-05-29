@@ -32,12 +32,12 @@ std::vector<uintptr_t> Finders::FindNullFuncs()
 
   // results.push_back(Memcury::Scanner::FindStringRef(L"Reason for Showing/Hiding LoadingScreen is unknown!").GetFunctionStart());
    // results.push_back(Memcury::Scanner::FindPattern("40 55 56 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 80 B9 ? ? ? ? ? 48 8B F1 0F 85").GetFunctionStart());
-    results.push_back(Memcury::Scanner::FindPattern("40 55 56 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 80 B9 ? ? ? ? ? 48 8B F1 0F 85").GetFunctionStart());
-    results.push_back(Memcury::Scanner::FindPattern("48 89 5C 24 ? 57 48 83 EC ? 48 8B DA 48 8B F9 E8 ? ? ? ? 48 8B 8B ? ? ? ? 48 85 C9").GetFunctionStart());
-    results.push_back(Memcury::Scanner::FindPattern("40 53 48 83 EC ? 80 3D ? ? ? ? ? 0F B6 D9 72 ? 48 85 D2").GetFunctionStart());
-    results.push_back(Memcury::Scanner::FindPattern("40 55 53 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 80 3D").GetFunctionStart());
+    results.push_back(Memcury::Scanner::FindPattern("40 55 56 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 80 B9 ? ? ? ? ? 48 8B F1 0F 85").GetFunctionStart()); // loading screen crashes not proper very scuffed
+    results.push_back(Memcury::Scanner::FindPattern("48 89 5C 24 ? 57 48 83 EC ? 48 8B DA 48 8B F9 E8 ? ? ? ? 48 8B 8B ? ? ? ? 48 85 C9").GetFunctionStart()); // i have no fucking idea what it is
+    results.push_back(Memcury::Scanner::FindPattern("40 53 48 83 EC ? 80 3D ? ? ? ? ? 0F B6 D9 72 ? 48 85 D2").GetFunctionStart()); // requestexit we love steam (string ref should work too)
+    results.push_back(Memcury::Scanner::FindPattern("40 55 53 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 80 3D").GetFunctionStart()); // gameserver tries to render something with -nullrhi nice
     results.push_back(Memcury::Scanner::FindPattern("48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC ? 49 8B D8 48 8B F2 8B E9").GetFunctionStart()); // thats the message box when u run with nosteam
-    results.push_back(Memcury::Scanner::FindPattern("40 55 53 56 57 41 56 41 57 48 8D 6C 24 ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 45 ? 48 8B D9 4D 8B F1").GetFunctionStart()); // completly forgot what this was for 
+    results.push_back(Memcury::Scanner::FindPattern("40 55 53 56 57 41 56 41 57 48 8D 6C 24 ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 45 ? 48 8B D9 4D 8B F1").GetFunctionStart()); // i actually forgot what it is its localplayer vft index
 
     return results;
 }

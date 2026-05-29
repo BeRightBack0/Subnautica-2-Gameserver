@@ -5,12 +5,10 @@
 * Inject when the shipping process start
 * Dont use it for your main saves its a proof of concept
 * If the finders dont work later pls create a issue 
+* Run the shipping with these args -log -nosound -nullrhi -nosteam -nosplash
+
 ## TODO
-- [ ] Fix softlock on the start
+- [ ] Fix softlock on adaptations 
 - [ ] Add a way to choose a save slot to load
-
-
-
-
-## Prob not needed
-### Place engine.ini %LOCALAPPDATA%\Subnautica2\Saved\Config\Windows\ here and make it readonly
+- [ ] Make Finders for logs + pe etc
+- [ ] Fix crashes when player rejoins
