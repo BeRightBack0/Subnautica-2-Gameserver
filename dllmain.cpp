@@ -61,19 +61,13 @@ void Main() {
     for (auto nullfunc : Finders::FindNullFuncs()) {
         NullHook(nullfunc);
     }
-
-    //Memcury::Util::CopyToClipboard(std::to_string(ImageBase));
-
-    // making finder for these bytes are gonna be so ahhh
-    // "AllowCommandletRendering" at the top of the func there will be 2 bytes set to 1
-    
     
     *(bool*)(Finders::FindGIsClient()) = false; // gisclient
     *(bool*)(Finders::FindGIsClient() + 1) = true; // gIsServer
 
-    //*(bool*)(ImageBase + 0xCC25A42) = false; // gisclient
-  //  *(bool*)(ImageBase + 0xCC25A43) = true; // gisserver
-    *(int*)(ImageBase + 0xD0E6C18) = 0; // that was meant to be some ahh log but it doesnt care i guess
+    // finder for that soon
+    *(int*)(ImageBase + 0xD0E6C18) = 0; // loadingscreen log 
+
     *(int*)(ImageBase + 0xD0FB188) = 7;
     *(int*)(ImageBase + 0xD0FF0E8) = 7;
     for (auto addr : Finders::FindNetModes()) {
