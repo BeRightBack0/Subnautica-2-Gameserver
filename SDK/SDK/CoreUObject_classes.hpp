@@ -66,7 +66,10 @@ public:
 
 	void ProcessEvent(class UFunction* Function, void* Parms) const
 	{
-		InSDKUtils::CallGameFunction(InSDKUtils::GetVirtualFunction<void(*)(const UObject*, class UFunction*, void*)>(this, Offsets::ProcessEventIdx), this, Function, Parms);
+		if (!Offsets::ProcessEvent)
+			return;
+
+		reinterpret_cast<void(__fastcall*)(const UObject*, class UFunction*, void*)>(Offsets::ProcessEvent)(this, Function, Parms);
 	}
 };
 DUMPER7_ASSERTS_UObject;
