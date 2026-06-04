@@ -55,7 +55,7 @@ char dontcrash2(__int64 a1, __int64 a2) {
     
     if (UObject::GObjects->GetByIndex(Obj->Index) != Obj) return 0;
 
-    constexpr EObjectFlags flags = EObjectFlags::BeginDestroyed  | EObjectFlags::FinishDestroyed | EObjectFlags::MirroredGarbage;
+    auto flags = EObjectFlags::BeginDestroyed  | EObjectFlags::FinishDestroyed | EObjectFlags::MirroredGarbage;
 
     if (Obj->Flags & flags) return 0;
 
@@ -69,7 +69,7 @@ __int64 dontcrash(__int64 a1) {
     if (Obj->Index < 0 || Obj->Index >= UObject::GObjects->Num()) return 0;
     if (UObject::GObjects->GetByIndex(Obj->Index) != Obj) return 0;
 
-    constexpr EObjectFlags flags = EObjectFlags::BeginDestroyed | EObjectFlags::FinishDestroyed | EObjectFlags::MirroredGarbage;
+    auto flags = EObjectFlags::BeginDestroyed | EObjectFlags::FinishDestroyed | EObjectFlags::MirroredGarbage;
 
     if (Obj->Flags & flags) return 0;
 
