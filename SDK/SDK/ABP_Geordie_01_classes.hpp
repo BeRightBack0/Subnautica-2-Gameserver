@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
-#include "ABP_Geordie_01_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ABP_Geordie_01_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
@@ -81,7 +81,7 @@ public:
 	bool                                          Attached;                                          // 0x1049(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_104A[0x6];                                     // 0x104A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBPC_CreatureAnimationComponent_C*      CreatureAnimationComponent;                        // 0x1050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsCreatureAnimationComponentValid;                 // 0x1058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isCreatureAnimationComponentValid;                 // 0x1058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsStunned;                                         // 0x1059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Use_Preview_Editor;                                // 0x105A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_105B[0x5];                                     // 0x105B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])

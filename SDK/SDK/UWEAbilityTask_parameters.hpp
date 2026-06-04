@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "UWEAbilityTask_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "UWEAbilityTask_structs.hpp"
 
 
 SDK_NAMESPACE_START

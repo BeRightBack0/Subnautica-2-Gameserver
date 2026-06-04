@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "UWEGameplayCues_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -46,7 +46,7 @@ public:
 	struct FLinearColor GetStateColor();
 	void HoverTargetChanged(const struct FUWETargetActor& OldHoverTarget, const struct FUWETargetActor& NewHoverTarget);
 	void InitFrontLight(class USceneComponent* AttachTarget);
-	void initHologramLight(class USceneComponent* AttachTarget);
+	void InitHologramLight(class USceneComponent* AttachTarget);
 	bool IsHoverTargetAlreadyScanned();
 	void OnActorInstanceScannedByPlayer_Event(class AActor* Actor);
 	void OnAmmoLoaded();

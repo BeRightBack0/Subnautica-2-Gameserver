@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "E_GAAnimEndOptions_structs.hpp"
 #include "E_GAAnimEndConditions_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "E_GAAnimEndOptions_structs.hpp"
 #include "UWEEquipment_structs.hpp"
 
 

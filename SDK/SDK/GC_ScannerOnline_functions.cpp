@@ -147,19 +147,19 @@ void AGC_ScannerOnline_C::InitFrontLight(class USceneComponent* AttachTarget)
 }
 
 
-// Function GC_ScannerOnline.GC_ScannerOnline_C.initHologramLight
+// Function GC_ScannerOnline.GC_ScannerOnline_C.InitHologramLight
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USceneComponent*                  AttachTarget                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void AGC_ScannerOnline_C::initHologramLight(class USceneComponent* AttachTarget)
+void AGC_ScannerOnline_C::InitHologramLight(class USceneComponent* AttachTarget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GC_ScannerOnline_C", "initHologramLight");
+		Func = Class->GetFunction("GC_ScannerOnline_C", "InitHologramLight");
 
-	Params::GC_ScannerOnline_C_initHologramLight Parms{};
+	Params::GC_ScannerOnline_C_InitHologramLight Parms{};
 
 	Parms.AttachTarget = AttachTarget;
 

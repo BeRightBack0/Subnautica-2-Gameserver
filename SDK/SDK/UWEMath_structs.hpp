@@ -24,18 +24,6 @@ enum class EUWETransformedShapeType : uint8
 	EUWETransformedShapeType_MAX             = 2,
 };
 
-// ScriptStruct UWEMath.UWEDynamicRandomFloatRangeConfig
-// 0x0010 (0x0010 - 0x0000)
-struct FUWEDynamicRandomFloatRangeConfig final
-{
-public:
-	float                                         MinValue;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxValue;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RandomInterval;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TransitionTimeBetweenMinAndMax;                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEDynamicRandomFloatRangeConfig;
-
 // ScriptStruct UWEMath.UWERightAngleRotator
 // 0x0004 (0x0004 - 0x0000)
 struct FUWERightAngleRotator final
@@ -44,6 +32,17 @@ public:
 	int32                                         ID;                                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWERightAngleRotator;
+
+// ScriptStruct UWEMath.UWESphereTransformed
+// 0x0070 (0x0070 - 0x0000)
+struct FUWESphereTransformed final
+{
+public:
+	float                                         SphereRadius;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWESphereTransformed;
 
 // ScriptStruct UWEMath.UWEIntBounds
 // 0x0018 (0x0018 - 0x0000)
@@ -63,6 +62,29 @@ public:
 	TArray<struct FUWEIntBounds>                  Sections;                                          // 0x0000(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWECoordinateSet;
+
+// ScriptStruct UWEMath.UWEBoxTransformed
+// 0x0080 (0x0080 - 0x0000)
+struct FUWEBoxTransformed final
+{
+public:
+	struct FVector                                BoxExtent;                                         // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEBoxTransformed;
+
+// ScriptStruct UWEMath.UWEDynamicRandomFloatRangeConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FUWEDynamicRandomFloatRangeConfig final
+{
+public:
+	float                                         MinValue;                                          // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxValue;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RandomInterval;                                    // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TransitionTimeBetweenMinAndMax;                    // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEDynamicRandomFloatRangeConfig;
 
 // ScriptStruct UWEMath.UWEDynamicRandomFloatRange
 // 0x0018 (0x0018 - 0x0000)
@@ -84,28 +106,6 @@ public:
 	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWESimpleShape;
-
-// ScriptStruct UWEMath.UWESphereTransformed
-// 0x0070 (0x0070 - 0x0000)
-struct FUWESphereTransformed final
-{
-public:
-	float                                         SphereRadius;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWESphereTransformed;
-
-// ScriptStruct UWEMath.UWEBoxTransformed
-// 0x0080 (0x0080 - 0x0000)
-struct FUWEBoxTransformed final
-{
-public:
-	struct FVector                                BoxExtent;                                         // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0020(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEBoxTransformed;
 
 // ScriptStruct UWEMath.UWEShapeTransformed
 // 0x0100 (0x0100 - 0x0000)

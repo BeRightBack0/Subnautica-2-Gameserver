@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "UWEGameplayCues_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -51,7 +51,7 @@ public:
 	void EnergyRefilled();
 	void ExecuteUbergraph_GC_SonicResonator_Online(int32 EntryPoint);
 	void GetScannedActorsComponent(class UUWEScannedActorsComponent** Scanned_Actors_Component);
-	void initHologramLight(class USceneComponent* Tool);
+	void InitHologramLight(class USceneComponent* Tool);
 	void OnLoopingStart(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FUWEGameplayCueNotify_SpawnResult& SpawnResults);
 	void OnRemoval(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FUWEGameplayCueNotify_SpawnResult& SpawnResults);
 	void ReceiveTick(float DeltaSeconds);

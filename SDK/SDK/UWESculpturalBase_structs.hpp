@@ -230,138 +230,14 @@ enum class EUWECellRotationShowMode : uint8
 	EUWECellRotationShowMode_MAX             = 3,
 };
 
-// ScriptStruct UWESculpturalBase.UWESculpturalBaseCellCost
-// 0x0030 (0x0030 - 0x0000)
-struct FUWESculpturalBaseCellCost final
-{
-public:
-	TSoftObjectPtr<class UUWEItemType>            ItemType;                                          // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, SaveGame, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Cost;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWESculpturalBaseCellCost;
-
-// ScriptStruct UWESculpturalBase.BrushTypeCost
-// 0x0010 (0x0010 - 0x0000)
-struct FBrushTypeCost final
-{
-public:
-	TArray<struct FUWESculpturalBaseCellCost>     Costs;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FBrushTypeCost;
-
-// ScriptStruct UWESculpturalBase.UWEPlacementArrowOffsets
-// 0x0030 (0x0030 - 0x0000)
-struct FUWEPlacementArrowOffsets final
-{
-public:
-	struct FVector                                ExteriorOffset;                                    // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InteriorOffset;                                    // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEPlacementArrowOffsets;
-
-// ScriptStruct UWESculpturalBase.UWEBrushTypeSettings
-// 0x0070 (0x0070 - 0x0000)
-struct FUWEBrushTypeSettings final
-{
-public:
-	struct FBrushTypeCost                         BrushTypeCost;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	float                                         TimePerCell;                                       // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   NounText;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         SnappedPlacementFloorOffset;                       // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          FlexibleFloorHeight;                               // 0x002C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CeilingOffset;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IgnoreFloorBoundariesForSolve;                     // 0x0034(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FUWEPlacementArrowOffsets              PlacementArrowOffsets;                             // 0x0038(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ShowFeedbackWhenInvalid;                           // 0x0068(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShowAutomaticPreviewArrows;                        // 0x0069(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AlwaysUseFullCellForOverlap;                       // 0x006A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UsesFacingDirectionsForSolve;                      // 0x006B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DisableDefaultOverlap;                             // 0x006C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsAdditive;                                        // 0x006D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEBrushTypeSettings;
-
-// ScriptStruct UWESculpturalBase.UWERemovedProp
-// 0x0020 (0x0020 - 0x0000)
-struct FUWERemovedProp final
-{
-public:
-	class FString                                 LevelName;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ActorName;                                         // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWERemovedProp;
-
-// ScriptStruct UWESculpturalBase.UWENonGenerativeBaseModuleVariant
-// 0x0010 (0x0010 - 0x0000)
-struct FUWENonGenerativeBaseModuleVariant final
-{
-public:
-	TArray<class UStaticMesh*>                    Meshes;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWENonGenerativeBaseModuleVariant;
-
-// ScriptStruct UWESculpturalBase.UWEBaseModuleHeightVariant
-// 0x0018 (0x0018 - 0x0000)
-struct FUWEBaseModuleHeightVariant final
-{
-public:
-	int32                                         HeightWithinLevel;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          MainLevelRoom;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FUWENonGenerativeBaseModuleVariant> VariantMeshes;                                 // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEBaseModuleHeightVariant;
-
-// ScriptStruct UWESculpturalBase.UWEStructure
-// 0x0010 (0x0010 - 0x0000)
-struct FUWEStructure final
-{
-public:
-	uint32                                        StructureId;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint32                                        CellCount;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UUWEPowerSystemComponent*               PowerSystem;                                       // 0x0008(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FUWEStructure;
-
-// ScriptStruct UWESculpturalBase.UWEDecoratorMatch
-// 0x0040 (0x0040 - 0x0000)
-struct FUWEDecoratorMatch final
-{
-public:
-	uint32                                        ID;                                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWEBaseDecorator*                      DecoratorData;                                     // 0x0008(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FUWERightAngleRotator                  MatchRotation;                                     // 0x0010(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIntVector                             OriginCell;                                        // 0x0014(0x000C)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FIntVector>                     MatchCells;                                        // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	struct FUWEActorUID                           ActorID;                                           // 0x0030(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEDecoratorMatch;
-
-// ScriptStruct UWESculpturalBase.UWESupportOverride
+// ScriptStruct UWESculpturalBase.CachedLegalityInfo
 // 0x0060 (0x0060 - 0x0000)
-struct FUWESupportOverride final
+struct alignas(0x08) FCachedLegalityInfo final
 {
 public:
-	TSoftClassPtr<class UClass>                   SupportActor;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Offset;                                            // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  RelativeRotation;                                  // 0x0040(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FUWESupportOverride;
-
-// ScriptStruct UWESculpturalBase.UWESupportOverrides
-// 0x0010 (0x0010 - 0x0000)
-struct FUWESupportOverrides final
-{
-public:
-	TArray<struct FUWESupportOverride>            Overrides;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWESupportOverrides;
+DUMPER7_ASSERTS_FCachedLegalityInfo;
 
 // ScriptStruct UWESculpturalBase.UWEBaseMaterialOverride
 // 0x0068 (0x0068 - 0x0000)
@@ -386,19 +262,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWEBaseMaterialOverrideList;
 
-// ScriptStruct UWESculpturalBase.UWESculpturalEditGhostMaterialGroup
-// 0x0080 (0x0080 - 0x0000)
-struct FUWESculpturalEditGhostMaterialGroup final
-{
-public:
-	TSoftObjectPtr<class UMaterialInterface>      ExteriorMaterial;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMaterialInterface>      InteriorMaterial;                                  // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMaterialInterface>      OverlayMaterial;                                   // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShouldHighlightOnHover;                            // 0x0078(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWESculpturalEditGhostMaterialGroup;
-
 // ScriptStruct UWESculpturalBase.UWEGridPartitionHandle
 // 0x0080 (0x0080 - 0x0000)
 struct alignas(0x10) FUWEGridPartitionHandle final
@@ -407,6 +270,97 @@ public:
 	uint8                                         Pad_0[0x80];                                       // 0x0000(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWEGridPartitionHandle;
+
+// ScriptStruct UWESculpturalBase.UWESelectionSize
+// 0x000C (0x000C - 0x0000)
+struct FUWESelectionSize final
+{
+public:
+	int32                                         X;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EditDepth;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWESelectionSize;
+
+// ScriptStruct UWESculpturalBase.UWESelectionParams
+// 0x0048 (0x0048 - 0x0000)
+struct FUWESelectionParams final
+{
+public:
+	TArray<struct FUWESelectionSize>              SelectionSizes;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         DefaultSelectionSizeIndex;                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUWESelectionNormal                           UsedNormal;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUWESelectionYAxis                            UsedYAxis;                                         // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RequireFullSelection;                              // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LimitToFlatSurfaces;                               // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ExcludeInteriorCorners;                            // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ExcludeSpecifiedModules;                           // 0x001E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UUWEBaseModule*>                 ExcludedModules;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          LimitToOccupied;                                   // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LimitToSameBrushType;                              // 0x0031(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LimitToSameFloor;                                  // 0x0032(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LimitToSpecifiedHeightInFloor;                     // 0x0033(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 SpecifiedHeights;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWESelectionParams;
+
+// ScriptStruct UWESculpturalBase.UWERemovedProp
+// 0x0020 (0x0020 - 0x0000)
+struct FUWERemovedProp final
+{
+public:
+	class FString                                 LevelName;                                         // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ActorName;                                         // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWERemovedProp;
+
+// ScriptStruct UWESculpturalBase.UWEStreamingBaseProxyInfo
+// 0x00A0 (0x00A0 - 0x0000)
+struct FUWEStreamingBaseProxyInfo final
+{
+public:
+	struct FGuid                                  BaseNetworkGUID;                                   // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             Transform;                                         // 0x0010(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIntVector                             ChunkCoords;                                       // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                CellOriginOffset;                                  // 0x0080(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEStreamingBaseProxyInfo;
+
+// ScriptStruct UWESculpturalBase.UWEDecoratorMatch
+// 0x0040 (0x0040 - 0x0000)
+struct FUWEDecoratorMatch final
+{
+public:
+	uint32                                        ID;                                                // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWEBaseDecorator*                      DecoratorData;                                     // 0x0008(0x0008)(ZeroConstructor, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FUWERightAngleRotator                  MatchRotation;                                     // 0x0010(0x0004)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIntVector                             OriginCell;                                        // 0x0014(0x000C)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FIntVector>                     MatchCells;                                        // 0x0020(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	struct FUWEActorUID                           ActorID;                                           // 0x0030(0x0010)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEDecoratorMatch;
+
+// ScriptStruct UWESculpturalBase.UWEDecoratorMesh
+// 0x0060 (0x0060 - 0x0000)
+struct FUWEDecoratorMesh final
+{
+public:
+	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	bool                                          OverrideHoldingCell;                               // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIntVector                             HoldingCell;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Translation;                                       // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  Rotation;                                          // 0x0030(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowInGhost;                                       // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0xF];                                       // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEDecoratorMesh;
 
 // ScriptStruct UWESculpturalBase.UWEDeconstructGroupKey
 // 0x0014 (0x0014 - 0x0000)
@@ -421,15 +375,39 @@ public:
 };
 DUMPER7_ASSERTS_FUWEDeconstructGroupKey;
 
-// ScriptStruct UWESculpturalBase.UWEGreedyMeshPartition
-// 0x0020 (0x0020 - 0x0000)
-struct FUWEGreedyMeshPartition final
+// ScriptStruct UWESculpturalBase.UWEBaseModulePieceID
+// 0x0018 (0x0018 - 0x0000)
+struct FUWEBaseModulePieceID final
 {
 public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0018(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWEBaseModule*                         Module;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FIntVector                             Coords;                                            // 0x0008(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FUWEGreedyMeshPartition;
+DUMPER7_ASSERTS_FUWEBaseModulePieceID;
+
+// ScriptStruct UWESculpturalBase.UWEModuleMatch
+// 0x0030 (0x0030 - 0x0000)
+struct FUWEModuleMatch final
+{
+public:
+	struct FUWEBaseModulePieceID                  PieceId;                                           // 0x0000(0x0018)(Edit, DisableEditOnInstance, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FUWEModuleMatch;
+
+// ScriptStruct UWESculpturalBase.UWEModuleGhostMesh
+// 0x00A0 (0x00A0 - 0x0000)
+struct FUWEModuleGhostMesh final
+{
+public:
+	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ShowCondition;                                     // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEModuleGhostMesh;
 
 // ScriptStruct UWESculpturalBase.UWEDeconstructGroup
 // 0x0018 (0x0018 - 0x0000)
@@ -451,39 +429,43 @@ public:
 };
 DUMPER7_ASSERTS_FUWEDeconstructGroups;
 
-// ScriptStruct UWESculpturalBase.UWESelectionSize
-// 0x000C (0x000C - 0x0000)
-struct FUWESelectionSize final
+// ScriptStruct UWESculpturalBase.UWEBuildAheadMesh
+// 0x0090 (0x0090 - 0x0000)
+struct FUWEBuildAheadMesh final
 {
 public:
-	int32                                         X;                                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Y;                                                 // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EditDepth;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FUWESelectionSize;
+DUMPER7_ASSERTS_FUWEBuildAheadMesh;
 
-// ScriptStruct UWESculpturalBase.UWESelectionOverride
-// 0x0060 (0x0060 - 0x0000)
-struct FUWESelectionOverride final
+// ScriptStruct UWESculpturalBase.UWEAllowedPieces
+// 0x0028 (0x0028 - 0x0000)
+struct FUWEAllowedPieces final
 {
 public:
-	bool                                          OverrideHitCoords;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FIntVector                             HitCoords;                                         // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OverrideNormal;                                    // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FUWEModuleMatch>                ValidMatches;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          AllowEmpty;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FIntVector                             Normal;                                            // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OverrideSelectionSize;                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FUWESelectionSize                      SelectionSizeOverride;                             // 0x0024(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          OverridePieceRotation;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               PieceRotation;                                     // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          OverridePieceOrigin;                               // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FIntVector                             PieceOriginCoords;                                 // 0x0054(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           AllowAnyOfBrushType;                               // 0x0014(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DecoratorCell;                                     // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ModuleMeshesToHide;                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FUWESelectionOverride;
+DUMPER7_ASSERTS_FUWEAllowedPieces;
+
+// ScriptStruct UWESculpturalBase.UWEStructure
+// 0x0010 (0x0010 - 0x0000)
+struct FUWEStructure final
+{
+public:
+	uint32                                        StructureId;                                       // 0x0000(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        CellCount;                                         // 0x0004(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UUWEPowerSystemComponent*               PowerSystem;                                       // 0x0008(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FUWEStructure;
 
 // ScriptStruct UWESculpturalBase.LockedCellGroup
 // 0x0068 (0x0068 - 0x0000)
@@ -507,52 +489,6 @@ public:
 };
 DUMPER7_ASSERTS_FPropList;
 
-// ScriptStruct UWESculpturalBase.UWEModuleGhostMesh
-// 0x00A0 (0x00A0 - 0x0000)
-struct FUWEModuleGhostMesh final
-{
-public:
-	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         ShowCondition;                                     // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_91[0xF];                                       // 0x0091(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEModuleGhostMesh;
-
-// ScriptStruct UWESculpturalBase.UWEBaseModulePieceID
-// 0x0018 (0x0018 - 0x0000)
-struct FUWEBaseModulePieceID final
-{
-public:
-	class UUWEBaseModule*                         Module;                                            // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FIntVector                             Coords;                                            // 0x0008(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEBaseModulePieceID;
-
-// ScriptStruct UWESculpturalBase.UWEModuleMatch
-// 0x0030 (0x0030 - 0x0000)
-struct FUWEModuleMatch final
-{
-public:
-	struct FUWEBaseModulePieceID                  PieceId;                                           // 0x0000(0x0018)(Edit, DisableEditOnInstance, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0018(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FUWEModuleMatch;
-
-// ScriptStruct UWESculpturalBase.UWEAdjacentModuleRules
-// 0x0028 (0x0028 - 0x0000)
-struct FUWEAdjacentModuleRules final
-{
-public:
-	EUWECellOccupancyRequirements                 OccupancyRequirements;                             // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FUWEModuleMatch>                AllowedMatches;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<struct FUWEModuleMatch>                ProhibitedMatches;                                 // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEAdjacentModuleRules;
-
 // ScriptStruct UWESculpturalBase.UWECellSerializationContext
 // 0x00B8 (0x00B8 - 0x0000)
 struct FUWECellSerializationContext final
@@ -565,19 +501,6 @@ public:
 	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWECellSerializationContext;
-
-// ScriptStruct UWESculpturalBase.UWEBaseModulePiece
-// 0x0080 (0x0080 - 0x0000)
-struct FUWEBaseModulePiece final
-{
-public:
-	struct FUWEBaseModulePieceID                  ID;                                                // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           BrushType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         DeconstructID;                                     // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIntVector                             FacingDirection;                                   // 0x0024(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<struct FIntVector, struct FUWEAdjacentModuleRules> Rules;                                   // 0x0030(0x0050)(NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FUWEBaseModulePiece;
 
 // ScriptStruct UWESculpturalBase.UWERuntimeBaseModulePieceID
 // 0x0018 (0x0018 - 0x0000)
@@ -601,6 +524,21 @@ public:
 };
 DUMPER7_ASSERTS_FUWERuntimeModuleMatch;
 
+// ScriptStruct UWESculpturalBase.UWECellChange
+// 0x00B0 (0x00B0 - 0x0000)
+struct FUWECellChange final
+{
+public:
+	struct FIntVector                             Coords;                                            // 0x0000(0x000C)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             FinalPieceTransform;                               // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUWERuntimeModuleMatch                 ModuleMatch;                                       // 0x0070(0x0020)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FUWEDecoratorMatch>             DecoratorMatches;                                  // 0x0090(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	uint32                                        VariantIndex;                                      // 0x00A0(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A4[0xC];                                       // 0x00A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWECellChange;
+
 // ScriptStruct UWESculpturalBase.UWESculpturalBaseCell
 // 0x0060 (0x0060 - 0x0000)
 struct FUWESculpturalBaseCell final
@@ -622,28 +560,24 @@ public:
 };
 DUMPER7_ASSERTS_FUWESculpturalBaseCell;
 
-// ScriptStruct UWESculpturalBase.UWERuntimeAdjacentModuleRules
-// 0x0028 (0x0028 - 0x0000)
-struct FUWERuntimeAdjacentModuleRules final
+// ScriptStruct UWESculpturalBase.UWEDecoratorMeshList
+// 0x0010 (0x0010 - 0x0000)
+struct FUWEDecoratorMeshList final
 {
 public:
-	EUWECellOccupancyRequirements                 OccupancyRequirements;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FUWERuntimeModuleMatch>         AllowedMatches;                                    // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FUWERuntimeModuleMatch>         ProhibitedMatches;                                 // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FUWEDecoratorMesh>              Meshes;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FUWERuntimeAdjacentModuleRules;
+DUMPER7_ASSERTS_FUWEDecoratorMeshList;
 
-// ScriptStruct UWESculpturalBase.SerializedSlotRules
-// 0x0038 (0x0038 - 0x0000)
-struct FSerializedSlotRules final
+// ScriptStruct UWESculpturalBase.UWEGreedyMeshPartition
+// 0x0020 (0x0020 - 0x0000)
+struct FUWEGreedyMeshPartition final
 {
 public:
-	struct FIntVector                             Slot;                                              // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FUWERuntimeAdjacentModuleRules         Rules;                                             // 0x0010(0x0028)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0018(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FSerializedSlotRules;
+DUMPER7_ASSERTS_FUWEGreedyMeshPartition;
 
 // ScriptStruct UWESculpturalBase.SerializedEditAction
 // 0x0028 (0x0028 - 0x0000)
@@ -655,6 +589,64 @@ public:
 	TArray<uint8>                                 BinaryData;                                        // 0x0018(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSerializedEditAction;
+
+// ScriptStruct UWESculpturalBase.UWERenderMeshHandle
+// 0x0060 (0x0060 - 0x0000)
+struct alignas(0x10) FUWERenderMeshHandle final
+{
+public:
+	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWERenderMeshHandle;
+
+// ScriptStruct UWESculpturalBase.UWECellUpdateList
+// 0x0148 (0x0148 - 0x0000)
+struct FUWECellUpdateList final
+{
+public:
+	TSet<struct FIntVector>                       DirtyCells;                                        // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TSet<struct FIntVector>                       ModifiedCells;                                     // 0x0050(0x0050)(NativeAccessSpecifierPublic)
+	TSet<struct FIntVector>                       AddedCells;                                        // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
+	TSet<struct FIntVector>                       RemovedCells;                                      // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
+	bool                                          DisconnectedStructure;                             // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_141[0x7];                                      // 0x0141(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWECellUpdateList;
+
+// ScriptStruct UWESculpturalBase.UWEOverlapMesh
+// 0x0090 (0x0090 - 0x0000)
+struct FUWEOverlapMesh final
+{
+public:
+	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEOverlapMesh;
+
+// ScriptStruct UWESculpturalBase.UWESculpturalBaseCellCost
+// 0x0030 (0x0030 - 0x0000)
+struct FUWESculpturalBaseCellCost final
+{
+public:
+	TSoftObjectPtr<class UUWEItemType>            ItemType;                                          // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, SaveGame, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Cost;                                              // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWESculpturalBaseCellCost;
+
+// ScriptStruct UWESculpturalBase.UWESculpturalEditGhostMaterialGroup
+// 0x0080 (0x0080 - 0x0000)
+struct FUWESculpturalEditGhostMaterialGroup final
+{
+public:
+	TSoftObjectPtr<class UMaterialInterface>      ExteriorMaterial;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMaterialInterface>      InteriorMaterial;                                  // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMaterialInterface>      OverlayMaterial;                                   // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShouldHighlightOnHover;                            // 0x0078(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWESculpturalEditGhostMaterialGroup;
 
 // ScriptStruct UWESculpturalBase.UWESelectionBrush
 // 0x0078 (0x0078 - 0x0000)
@@ -704,131 +696,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWESelectionData;
 
-// ScriptStruct UWESculpturalBase.UWEStableIndexISM
-// 0x0020 (0x0020 - 0x0000)
-struct FUWEStableIndexISM final
-{
-public:
-	class UInstancedStaticMeshComponent*          ISM;                                               // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEStableIndexISM;
-
-// ScriptStruct UWESculpturalBase.UWECellUpdateList
-// 0x0148 (0x0148 - 0x0000)
-struct FUWECellUpdateList final
-{
-public:
-	TSet<struct FIntVector>                       DirtyCells;                                        // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-	TSet<struct FIntVector>                       ModifiedCells;                                     // 0x0050(0x0050)(NativeAccessSpecifierPublic)
-	TSet<struct FIntVector>                       AddedCells;                                        // 0x00A0(0x0050)(NativeAccessSpecifierPublic)
-	TSet<struct FIntVector>                       RemovedCells;                                      // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
-	bool                                          DisconnectedStructure;                             // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_141[0x7];                                      // 0x0141(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWECellUpdateList;
-
-// ScriptStruct UWESculpturalBase.UWESelectionParams
-// 0x0048 (0x0048 - 0x0000)
-struct FUWESelectionParams final
-{
-public:
-	TArray<struct FUWESelectionSize>              SelectionSizes;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         DefaultSelectionSizeIndex;                         // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUWESelectionNormal                           UsedNormal;                                        // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUWESelectionYAxis                            UsedYAxis;                                         // 0x0015(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         RequireFullSelection;                              // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LimitToFlatSurfaces;                               // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ExcludeInteriorCorners;                            // 0x001D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ExcludeSpecifiedModules;                           // 0x001E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UUWEBaseModule*>                 ExcludedModules;                                   // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          LimitToOccupied;                                   // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LimitToSameBrushType;                              // 0x0031(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LimitToSameFloor;                                  // 0x0032(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LimitToSpecifiedHeightInFloor;                     // 0x0033(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 SpecifiedHeights;                                  // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWESelectionParams;
-
-// ScriptStruct UWESculpturalBase.UWEUnsupportedIndicator
-// 0x0090 (0x0090 - 0x0000)
-struct FUWEUnsupportedIndicator final
-{
-public:
-	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEUnsupportedIndicator;
-
-// ScriptStruct UWESculpturalBase.UWEAllowedPieces
-// 0x0028 (0x0028 - 0x0000)
-struct FUWEAllowedPieces final
-{
-public:
-	TArray<struct FUWEModuleMatch>                ValidMatches;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          AllowEmpty;                                        // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           AllowAnyOfBrushType;                               // 0x0014(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DecoratorCell;                                     // 0x001C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ModuleMeshesToHide;                                // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEAllowedPieces;
-
-// ScriptStruct UWESculpturalBase.UWEDecoratorMesh
-// 0x0060 (0x0060 - 0x0000)
-struct FUWEDecoratorMesh final
-{
-public:
-	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	bool                                          OverrideHoldingCell;                               // 0x0008(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FIntVector                             HoldingCell;                                       // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Translation;                                       // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  Rotation;                                          // 0x0030(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShowInGhost;                                       // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0xF];                                       // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEDecoratorMesh;
-
-// ScriptStruct UWESculpturalBase.UWEDecoratorMeshList
-// 0x0010 (0x0010 - 0x0000)
-struct FUWEDecoratorMeshList final
-{
-public:
-	TArray<struct FUWEDecoratorMesh>              Meshes;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEDecoratorMeshList;
-
-// ScriptStruct UWESculpturalBase.UWECellChange
-// 0x00B0 (0x00B0 - 0x0000)
-struct FUWECellChange final
-{
-public:
-	struct FIntVector                             Coords;                                            // 0x0000(0x000C)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             FinalPieceTransform;                               // 0x0010(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUWERuntimeModuleMatch                 ModuleMatch;                                       // 0x0070(0x0020)(SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FUWEDecoratorMatch>             DecoratorMatches;                                  // 0x0090(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	uint32                                        VariantIndex;                                      // 0x00A0(0x0004)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0xC];                                       // 0x00A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWECellChange;
-
-// ScriptStruct UWESculpturalBase.CachedLegalityInfo
-// 0x0060 (0x0060 - 0x0000)
-struct alignas(0x08) FCachedLegalityInfo final
-{
-public:
-	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCachedLegalityInfo;
-
 // ScriptStruct UWESculpturalBase.UWEInitialPieceCellData
 // 0x001C (0x001C - 0x0000)
 struct FUWEInitialPieceCellData final
@@ -868,16 +735,28 @@ public:
 };
 DUMPER7_ASSERTS_FUWEBaseModuleMesh;
 
-// ScriptStruct UWESculpturalBase.UWEBuildAheadMesh
-// 0x0090 (0x0090 - 0x0000)
-struct FUWEBuildAheadMesh final
+// ScriptStruct UWESculpturalBase.UWESelectionOverride
+// 0x0060 (0x0060 - 0x0000)
+struct FUWESelectionOverride final
 {
 public:
-	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OverrideHitCoords;                                 // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIntVector                             HitCoords;                                         // 0x0004(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OverrideNormal;                                    // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIntVector                             Normal;                                            // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OverrideSelectionSize;                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUWESelectionSize                      SelectionSizeOverride;                             // 0x0024(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          OverridePieceRotation;                             // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               PieceRotation;                                     // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          OverridePieceOrigin;                               // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIntVector                             PieceOriginCoords;                                 // 0x0054(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FUWEBuildAheadMesh;
+DUMPER7_ASSERTS_FUWESelectionOverride;
 
 // ScriptStruct UWESculpturalBase.UWEBuildAheadCollisions
 // 0x00D8 (0x00D8 - 0x0000)
@@ -901,17 +780,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWEBuildAheadCollisions;
 
-// ScriptStruct UWESculpturalBase.UWEOverlapMesh
-// 0x0090 (0x0090 - 0x0000)
-struct FUWEOverlapMesh final
-{
-public:
-	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEOverlapMesh;
-
 // ScriptStruct UWESculpturalBase.UWEBaseModuleVariant
 // 0x0010 (0x0010 - 0x0000)
 struct FUWEBaseModuleVariant final
@@ -920,6 +788,83 @@ public:
 	TArray<struct FUWEBaseModuleMesh>             Meshes;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEBaseModuleVariant;
+
+// ScriptStruct UWESculpturalBase.UWENonGenerativeBaseModuleVariant
+// 0x0010 (0x0010 - 0x0000)
+struct FUWENonGenerativeBaseModuleVariant final
+{
+public:
+	TArray<class UStaticMesh*>                    Meshes;                                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWENonGenerativeBaseModuleVariant;
+
+// ScriptStruct UWESculpturalBase.UWEBaseModuleHeightVariant
+// 0x0018 (0x0018 - 0x0000)
+struct FUWEBaseModuleHeightVariant final
+{
+public:
+	int32                                         HeightWithinLevel;                                 // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          MainLevelRoom;                                     // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FUWENonGenerativeBaseModuleVariant> VariantMeshes;                                 // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEBaseModuleHeightVariant;
+
+// ScriptStruct UWESculpturalBase.UWESupportOverride
+// 0x0060 (0x0060 - 0x0000)
+struct FUWESupportOverride final
+{
+public:
+	TSoftClassPtr<class UClass>                   SupportActor;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Offset;                                            // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  RelativeRotation;                                  // 0x0040(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWESupportOverride;
+
+// ScriptStruct UWESculpturalBase.UWESupportOverrides
+// 0x0010 (0x0010 - 0x0000)
+struct FUWESupportOverrides final
+{
+public:
+	TArray<struct FUWESupportOverride>            Overrides;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWESupportOverrides;
+
+// ScriptStruct UWESculpturalBase.UWEUnsupportedIndicator
+// 0x0090 (0x0090 - 0x0000)
+struct FUWEUnsupportedIndicator final
+{
+public:
+	TSoftObjectPtr<class UStaticMesh>             Mesh;                                              // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x0030(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEUnsupportedIndicator;
+
+// ScriptStruct UWESculpturalBase.UWEAdjacentModuleRules
+// 0x0028 (0x0028 - 0x0000)
+struct FUWEAdjacentModuleRules final
+{
+public:
+	EUWECellOccupancyRequirements                 OccupancyRequirements;                             // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FUWEModuleMatch>                AllowedMatches;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<struct FUWEModuleMatch>                ProhibitedMatches;                                 // 0x0018(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEAdjacentModuleRules;
+
+// ScriptStruct UWESculpturalBase.UWEBaseModulePiece
+// 0x0080 (0x0080 - 0x0000)
+struct FUWEBaseModulePiece final
+{
+public:
+	struct FUWEBaseModulePieceID                  ID;                                                // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           BrushType;                                         // 0x0018(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DeconstructID;                                     // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FIntVector                             FacingDirection;                                   // 0x0024(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<struct FIntVector, struct FUWEAdjacentModuleRules> Rules;                                   // 0x0030(0x0050)(NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FUWEBaseModulePiece;
 
 // ScriptStruct UWESculpturalBase.UWEBrushTypeRequirements
 // 0x0040 (0x0040 - 0x0000)
@@ -930,6 +875,18 @@ public:
 	struct FGameplayTagContainer                  ProhibitedBrushTypes;                              // 0x0020(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEBrushTypeRequirements;
+
+// ScriptStruct UWESculpturalBase.UWERuntimeAdjacentModuleRules
+// 0x0028 (0x0028 - 0x0000)
+struct FUWERuntimeAdjacentModuleRules final
+{
+public:
+	EUWECellOccupancyRequirements                 OccupancyRequirements;                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FUWERuntimeModuleMatch>         AllowedMatches;                                    // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FUWERuntimeModuleMatch>         ProhibitedMatches;                                 // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWERuntimeAdjacentModuleRules;
 
 // ScriptStruct UWESculpturalBase.UWEBlockerState
 // 0x0010 (0x0010 - 0x0000)
@@ -979,6 +936,51 @@ public:
 };
 DUMPER7_ASSERTS_FUWECellHitResult;
 
+// ScriptStruct UWESculpturalBase.BrushTypeCost
+// 0x0010 (0x0010 - 0x0000)
+struct FBrushTypeCost final
+{
+public:
+	TArray<struct FUWESculpturalBaseCellCost>     Costs;                                             // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FBrushTypeCost;
+
+// ScriptStruct UWESculpturalBase.UWEPlacementArrowOffsets
+// 0x0030 (0x0030 - 0x0000)
+struct FUWEPlacementArrowOffsets final
+{
+public:
+	struct FVector                                ExteriorOffset;                                    // 0x0000(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InteriorOffset;                                    // 0x0018(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEPlacementArrowOffsets;
+
+// ScriptStruct UWESculpturalBase.UWEBrushTypeSettings
+// 0x0070 (0x0070 - 0x0000)
+struct FUWEBrushTypeSettings final
+{
+public:
+	struct FBrushTypeCost                         BrushTypeCost;                                     // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	float                                         TimePerCell;                                       // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   NounText;                                          // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         SnappedPlacementFloorOffset;                       // 0x0028(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          FlexibleFloorHeight;                               // 0x002C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CeilingOffset;                                     // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IgnoreFloorBoundariesForSolve;                     // 0x0034(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUWEPlacementArrowOffsets              PlacementArrowOffsets;                             // 0x0038(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ShowFeedbackWhenInvalid;                           // 0x0068(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShowAutomaticPreviewArrows;                        // 0x0069(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AlwaysUseFullCellForOverlap;                       // 0x006A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UsesFacingDirectionsForSolve;                      // 0x006B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DisableDefaultOverlap;                             // 0x006C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsAdditive;                                        // 0x006D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEBrushTypeSettings;
+
 // ScriptStruct UWESculpturalBase.UWESculpturalEditGhostMaterials
 // 0x0058 (0x0058 - 0x0000)
 struct FUWESculpturalEditGhostMaterials final
@@ -1011,15 +1013,6 @@ public:
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWEConstructionProgressMaterial;
-
-// ScriptStruct UWESculpturalBase.UWERenderMeshHandle
-// 0x0060 (0x0060 - 0x0000)
-struct alignas(0x10) FUWERenderMeshHandle final
-{
-public:
-	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWERenderMeshHandle;
 
 // ScriptStruct UWESculpturalBase.UWEMeshHandle
 // 0x0018 (0x0018 - 0x0000)
@@ -1059,20 +1052,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWEMaterialParameterKey;
 
-// ScriptStruct UWESculpturalBase.UWEStreamingBaseProxyInfo
-// 0x00A0 (0x00A0 - 0x0000)
-struct FUWEStreamingBaseProxyInfo final
-{
-public:
-	struct FGuid                                  BaseNetworkGUID;                                   // 0x0000(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             Transform;                                         // 0x0010(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIntVector                             ChunkCoords;                                       // 0x0070(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                CellOriginOffset;                                  // 0x0080(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEStreamingBaseProxyInfo;
-
 // ScriptStruct UWESculpturalBase.UWEModuleRuleset
 // 0x0050 (0x0050 - 0x0000)
 struct FUWEModuleRuleset final
@@ -1099,6 +1078,17 @@ public:
 	TMap<uint32, struct FUWEPiecelist>            PiecesByHash;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEPiecesByHash;
+
+// ScriptStruct UWESculpturalBase.SerializedSlotRules
+// 0x0038 (0x0038 - 0x0000)
+struct FSerializedSlotRules final
+{
+public:
+	struct FIntVector                             Slot;                                              // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUWERuntimeAdjacentModuleRules         Rules;                                             // 0x0010(0x0028)(Edit, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSerializedSlotRules;
 
 // ScriptStruct UWESculpturalBase.UWESerializedBasePieceRules
 // 0x0020 (0x0020 - 0x0000)
@@ -1182,6 +1172,16 @@ public:
 	struct FIntVector                             SupportCell;                                       // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSupportVisitedElement;
+
+// ScriptStruct UWESculpturalBase.UWEStableIndexISM
+// 0x0020 (0x0020 - 0x0000)
+struct FUWEStableIndexISM final
+{
+public:
+	class UInstancedStaticMeshComponent*          ISM;                                               // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_8[0x18];                                       // 0x0008(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEStableIndexISM;
 
 // ScriptStruct UWESculpturalBase.UWESolverInfoCache
 // 0x0088 (0x0088 - 0x0000)

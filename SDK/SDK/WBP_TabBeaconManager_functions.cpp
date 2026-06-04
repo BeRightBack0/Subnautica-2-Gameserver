@@ -30,55 +30,21 @@ void UWBP_TabBeaconManager_C::BP_OnActivated()
 }
 
 
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.BP_OnDeactivated
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_TabBeaconManager_C::BP_OnDeactivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabBeaconManager_C", "BP_OnDeactivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.ExecuteUbergraph_WBP_TabBeaconManager
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_TabBeaconManager_C::ExecuteUbergraph_WBP_TabBeaconManager(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabBeaconManager_C", "ExecuteUbergraph_WBP_TabBeaconManager");
-
-	Params::WBP_TabBeaconManager_C_ExecuteUbergraph_WBP_TabBeaconManager Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnLabelChangeConfirmed
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.RefreshMap
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class FString&                    Label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const TMap<struct FGuid, class USN2PingViewModel*>&PingsMap                                               (BlueprintVisible, BlueprintReadOnly, Parm)
 
-void UWBP_TabBeaconManager_C::OnLabelChangeConfirmed(const class FString& Label)
+void UWBP_TabBeaconManager_C::RefreshMap(const TMap<struct FGuid, class USN2PingViewModel*>& PingsMap)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabBeaconManager_C", "OnLabelChangeConfirmed");
+		Func = Class->GetFunction("WBP_TabBeaconManager_C", "RefreshMap");
 
-	Params::WBP_TabBeaconManager_C_OnLabelChangeConfirmed Parms{};
+	Params::WBP_TabBeaconManager_C_RefreshMap Parms{};
 
-	Parms.Label = std::move(Label);
+	Parms.PingsMap = std::move(PingsMap);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -106,21 +72,55 @@ void UWBP_TabBeaconManager_C::OnPingEntryIsActiveChanged(int32 PingEntryIndex, b
 }
 
 
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.RefreshMap
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TMap<struct FGuid, class USN2PingViewModel*>&PingsMap                                               (BlueprintVisible, BlueprintReadOnly, Parm)
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.BP_OnDeactivated
+// (Event, Protected, BlueprintEvent)
 
-void UWBP_TabBeaconManager_C::RefreshMap(const TMap<struct FGuid, class USN2PingViewModel*>& PingsMap)
+void UWBP_TabBeaconManager_C::BP_OnDeactivated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabBeaconManager_C", "RefreshMap");
+		Func = Class->GetFunction("WBP_TabBeaconManager_C", "BP_OnDeactivated");
 
-	Params::WBP_TabBeaconManager_C_RefreshMap Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.PingsMap = std::move(PingsMap);
+
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnLabelChangeConfirmed
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    Label                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UWBP_TabBeaconManager_C::OnLabelChangeConfirmed(const class FString& Label)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_TabBeaconManager_C", "OnLabelChangeConfirmed");
+
+	Params::WBP_TabBeaconManager_C_OnLabelChangeConfirmed Parms{};
+
+	Parms.Label = std::move(Label);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.ExecuteUbergraph_WBP_TabBeaconManager
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_TabBeaconManager_C::ExecuteUbergraph_WBP_TabBeaconManager(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_TabBeaconManager_C", "ExecuteUbergraph_WBP_TabBeaconManager");
+
+	Params::WBP_TabBeaconManager_C_ExecuteUbergraph_WBP_TabBeaconManager Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

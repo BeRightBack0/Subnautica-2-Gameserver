@@ -98,6 +98,20 @@ enum class EUWENetworkedAttachmentSocketRule : uint8
 	EUWENetworkedAttachmentSocketRule_MAX    = 3,
 };
 
+// ScriptStruct UWEPawnAttachment.UWENetworkedAttachmentSocketInterpolationConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FUWENetworkedAttachmentSocketInterpolationConfig final
+{
+public:
+	EUWENetworkedAttachmentSocketInterpolationType InterpolationType;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ExponentialSpeed;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TakeLinearSpeedFromActor;                          // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LinearSpeed;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWENetworkedAttachmentSocketInterpolationConfig;
+
 // ScriptStruct UWEPawnAttachment.UWENetworkedAttachmentAnimationMontageConfig
 // 0x0018 (0x0018 - 0x0000)
 struct FUWENetworkedAttachmentAnimationMontageConfig final
@@ -134,20 +148,6 @@ public:
 	struct FUWENetworkedAttachmentAnimationSequencerConfig AnimationSequencerConfig;                 // 0x0038(0x0038)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWENetworkedAttachmentAnimationConfig;
-
-// ScriptStruct UWEPawnAttachment.UWENetworkedAttachmentSocketInterpolationConfig
-// 0x0010 (0x0010 - 0x0000)
-struct FUWENetworkedAttachmentSocketInterpolationConfig final
-{
-public:
-	EUWENetworkedAttachmentSocketInterpolationType InterpolationType;                                // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ExponentialSpeed;                                  // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TakeLinearSpeedFromActor;                          // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LinearSpeed;                                       // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWENetworkedAttachmentSocketInterpolationConfig;
 
 // ScriptStruct UWEPawnAttachment.UWEENetworkedAttachmentConfig
 // 0x0230 (0x0230 - 0x0000)

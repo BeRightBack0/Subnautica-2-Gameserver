@@ -154,6 +154,27 @@ enum class EUWEUserPrivilegeOverrideMode : uint8
 	EUWEUserPrivilegeOverrideMode_MAX        = 3,
 };
 
+// ScriptStruct UWESonar.SonarEmpty
+// 0x0001 (0x0001 - 0x0000)
+struct FSonarEmpty final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSonarEmpty;
+
+// ScriptStruct UWESonar.UWERedeemEntitlementStatus
+// 0x0028 (0x0028 - 0x0000)
+struct FUWERedeemEntitlementStatus final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ErrorCode;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   ErrorMessage;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWERedeemEntitlementStatus;
+
 // ScriptStruct UWESonar.UWECrossPlatformFriend
 // 0x01E8 (0x01E8 - 0x0000)
 struct FUWECrossPlatformFriend final
@@ -176,18 +197,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWECrossPlatformFriend;
 
-// ScriptStruct UWESonar.UWERedeemEntitlementStatus
-// 0x0028 (0x0028 - 0x0000)
-struct FUWERedeemEntitlementStatus final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ErrorCode;                                         // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FText                                   ErrorMessage;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWERedeemEntitlementStatus;
-
 // ScriptStruct UWESonar.SonarPlayerState
 // 0x0030 (0x0030 - 0x0000)
 struct FSonarPlayerState final
@@ -198,15 +207,6 @@ public:
 	class FString                                 SonarProvider;                                     // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSonarPlayerState;
-
-// ScriptStruct UWESonar.SonarEmpty
-// 0x0001 (0x0001 - 0x0000)
-struct FSonarEmpty final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSonarEmpty;
 
 // ScriptStruct UWESonar.SonarLocation
 // 0x0018 (0x0018 - 0x0000)

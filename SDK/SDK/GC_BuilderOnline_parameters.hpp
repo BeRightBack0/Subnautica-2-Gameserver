@@ -70,9 +70,9 @@ public:
 };
 DUMPER7_ASSERTS_GC_BuilderOnline_C_GetStateColor;
 
-// Function GC_BuilderOnline.GC_BuilderOnline_C.initHologramLight
+// Function GC_BuilderOnline.GC_BuilderOnline_C.InitHologramLight
 // 0x0038 (0x0038 - 0x0000)
-struct GC_BuilderOnline_C_initHologramLight final
+struct GC_BuilderOnline_C_InitHologramLight final
 {
 public:
 	class USceneComponent*                        AttachTarget;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -85,7 +85,7 @@ public:
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GC_BuilderOnline_C_initHologramLight;
+DUMPER7_ASSERTS_GC_BuilderOnline_C_InitHologramLight;
 
 // Function GC_BuilderOnline.GC_BuilderOnline_C.OnLoopingStart
 // 0x01D0 (0x01D0 - 0x0000)

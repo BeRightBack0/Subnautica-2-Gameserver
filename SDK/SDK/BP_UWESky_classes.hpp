@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "UWESky_classes.hpp"
 #include "F_GlobalWeatherSettings_structs.hpp"
 #include "FMODStudio_structs.hpp"
-#include "UWESky_classes.hpp"
 
 
 SDK_NAMESPACE_START

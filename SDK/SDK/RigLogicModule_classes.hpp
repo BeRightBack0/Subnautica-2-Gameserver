@@ -10,12 +10,32 @@
 
 #include "Basic.hpp"
 
-#include "RigLogicModule_structs.hpp"
 #include "Engine_classes.hpp"
+#include "RigLogicModule_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START
+
+// Class RigLogicModule.DNAIndexMapping
+// 0x0000 (0x0028 - 0x0028)
+class UDNAIndexMapping final : public UAssetUserData
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DNAIndexMapping")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DNAIndexMapping")
+	}
+	static class UDNAIndexMapping* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDNAIndexMapping>();
+	}
+};
+DUMPER7_ASSERTS_UDNAIndexMapping;
 
 // Class RigLogicModule.DNAAsset
 // 0x0118 (0x0140 - 0x0028)
@@ -44,26 +64,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDNAAsset;
-
-// Class RigLogicModule.DNAIndexMapping
-// 0x0000 (0x0028 - 0x0028)
-class UDNAIndexMapping final : public UAssetUserData
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DNAIndexMapping")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DNAIndexMapping")
-	}
-	static class UDNAIndexMapping* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDNAIndexMapping>();
-	}
-};
-DUMPER7_ASSERTS_UDNAIndexMapping;
 
 // Class RigLogicModule.SkelMeshDNAUtils
 // 0x0000 (0x0028 - 0x0028)

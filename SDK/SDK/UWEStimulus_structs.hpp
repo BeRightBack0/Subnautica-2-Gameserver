@@ -41,6 +41,18 @@ enum class EFUWEStimulusType : uint8
 	FUWEStimulusType_MAX                     = 65,
 };
 
+// ScriptStruct UWEStimulus.UWEStimulusUpdatingData
+// 0x0008 (0x0008 - 0x0000)
+struct FUWEStimulusUpdatingData final
+{
+public:
+	float                                         TimeSinceLastUpdate;                               // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsInRangeOfPlayer;                                 // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsEnabled;                                         // 0x0005(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEStimulusUpdatingData;
+
 // ScriptStruct UWEStimulus.UWEStimulusSource
 // 0x0048 (0x0048 - 0x0000)
 struct FUWEStimulusSource final
@@ -108,17 +120,5 @@ public:
 	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FStimulusShape;
-
-// ScriptStruct UWEStimulus.UWEStimulusUpdatingData
-// 0x0008 (0x0008 - 0x0000)
-struct FUWEStimulusUpdatingData final
-{
-public:
-	float                                         TimeSinceLastUpdate;                               // 0x0000(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsInRangeOfPlayer;                                 // 0x0004(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsEnabled;                                         // 0x0005(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEStimulusUpdatingData;
 
 SDK_NAMESPACE_END

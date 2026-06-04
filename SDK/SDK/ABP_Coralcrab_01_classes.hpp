@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "ControlRig_structs.hpp"
 #include "ABP_Coralcrab_01_structs.hpp"
+#include "ControlRig_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Subnautica2_classes.hpp"
 

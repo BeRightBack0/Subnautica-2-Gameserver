@@ -16,18 +16,15 @@
 SDK_NAMESPACE_START
 
 // Class UWESonarAPI.UWESonarAPISubsystem
-// 0x0168 (0x0198 - 0x0030)
+// 0x0150 (0x0180 - 0x0030)
 class UUWESonarAPISubsystem final : public UGameInstanceSubsystem
 {
 public:
 	class FString                                 UWESonarAPIUrl;                                    // 0x0030(0x0010)(ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UWEAlternativeEventsUrl;                           // 0x0040(0x0010)(ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDisableGPP;                                       // 0x0050(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 UWESonarLoginXSTSEndpoint;                         // 0x0058(0x0010)(ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_68[0x100];                                     // 0x0068(0x0100)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 BearerToken;                                       // 0x0168(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_178[0x20];                                     // 0x0178(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 UWESonarLoginXSTSEndpoint;                         // 0x0040(0x0010)(ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x100];                                     // 0x0050(0x0100)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 BearerToken;                                       // 0x0150(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_160[0x20];                                     // 0x0160(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -12,8 +12,8 @@
 
 #include "Engine_classes.hpp"
 #include "UWEImGui_classes.hpp"
-#include "UWEInGameCurrency_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "UWEInGameCurrency_structs.hpp"
 
 
 SDK_NAMESPACE_START

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ABP_SonicResonator_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ABP_SonicResonator_structs.hpp"
 
 
 SDK_NAMESPACE_START

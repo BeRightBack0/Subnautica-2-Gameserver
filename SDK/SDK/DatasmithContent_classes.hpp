@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "DatasmithContent_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "DatasmithContent_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -297,6 +297,29 @@ public:
 };
 DUMPER7_ASSERTS_UDatasmithSceneImportData;
 
+// Class DatasmithContent.DatasmithCineCameraActorTemplate
+// 0x0030 (0x0060 - 0x0030)
+class UDatasmithCineCameraActorTemplate final : public UDatasmithObjectTemplate
+{
+public:
+	struct FDatasmithCameraLookatTrackingSettingsTemplate LookatTrackingSettings;                    // 0x0030(0x0030)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DatasmithCineCameraActorTemplate")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DatasmithCineCameraActorTemplate")
+	}
+	static class UDatasmithCineCameraActorTemplate* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDatasmithCineCameraActorTemplate>();
+	}
+};
+DUMPER7_ASSERTS_UDatasmithCineCameraActorTemplate;
+
 // Class DatasmithContent.DatasmithTranslatedSceneImportData
 // 0x0000 (0x0028 - 0x0028)
 class UDatasmithTranslatedSceneImportData final : public UDatasmithSceneImportData
@@ -428,32 +451,6 @@ public:
 };
 DUMPER7_ASSERTS_UDatasmithGLTFSceneImportData;
 
-// Class DatasmithContent.DatasmithDecalComponentTemplate
-// 0x0028 (0x0058 - 0x0030)
-class UDatasmithDecalComponentTemplate final : public UDatasmithObjectTemplate
-{
-public:
-	int32                                         SortOrder;                                         // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                DecalSize;                                         // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     Material;                                          // 0x0050(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DatasmithDecalComponentTemplate")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DatasmithDecalComponentTemplate")
-	}
-	static class UDatasmithDecalComponentTemplate* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDatasmithDecalComponentTemplate>();
-	}
-};
-DUMPER7_ASSERTS_UDatasmithDecalComponentTemplate;
-
 // Class DatasmithContent.DatasmithStaticMeshGLTFImportData
 // 0x0010 (0x0038 - 0x0028)
 class UDatasmithStaticMeshGLTFImportData final : public UDatasmithStaticMeshImportData
@@ -476,33 +473,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDatasmithStaticMeshGLTFImportData;
-
-// Class DatasmithContent.DatasmithMaterialInstanceTemplate
-// 0x0168 (0x0198 - 0x0030)
-class UDatasmithMaterialInstanceTemplate final : public UDatasmithObjectTemplate
-{
-public:
-	TSoftObjectPtr<class UMaterialInterface>      ParentMaterial;                                    // 0x0030(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, float>                      ScalarParameterValues;                             // 0x0058(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, struct FLinearColor>        VectorParameterValues;                             // 0x00A8(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class FName, TSoftObjectPtr<class UTexture>> TextureParameterValues;                        // 0x00F8(0x0050)(UObjectWrapper, NativeAccessSpecifierPublic)
-	struct FDatasmithStaticParameterSetTemplate   StaticParameters;                                  // 0x0148(0x0050)(NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DatasmithMaterialInstanceTemplate")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DatasmithMaterialInstanceTemplate")
-	}
-	static class UDatasmithMaterialInstanceTemplate* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDatasmithMaterialInstanceTemplate>();
-	}
-};
-DUMPER7_ASSERTS_UDatasmithMaterialInstanceTemplate;
 
 // Class DatasmithContent.DatasmithFBXSceneImportData
 // 0x0020 (0x0048 - 0x0028)
@@ -644,29 +614,6 @@ public:
 };
 DUMPER7_ASSERTS_UDatasmithVREDSceneImportData;
 
-// Class DatasmithContent.DatasmithCineCameraActorTemplate
-// 0x0030 (0x0060 - 0x0030)
-class UDatasmithCineCameraActorTemplate final : public UDatasmithObjectTemplate
-{
-public:
-	struct FDatasmithCameraLookatTrackingSettingsTemplate LookatTrackingSettings;                    // 0x0030(0x0030)(NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DatasmithCineCameraActorTemplate")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DatasmithCineCameraActorTemplate")
-	}
-	static class UDatasmithCineCameraActorTemplate* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UDatasmithCineCameraActorTemplate>();
-	}
-};
-DUMPER7_ASSERTS_UDatasmithCineCameraActorTemplate;
-
 // Class DatasmithContent.DatasmithCineCameraComponentTemplate
 // 0x0060 (0x0090 - 0x0030)
 class UDatasmithCineCameraComponentTemplate final : public UDatasmithObjectTemplate
@@ -721,6 +668,32 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDatasmithContentBlueprintLibrary;
+
+// Class DatasmithContent.DatasmithDecalComponentTemplate
+// 0x0028 (0x0058 - 0x0030)
+class UDatasmithDecalComponentTemplate final : public UDatasmithObjectTemplate
+{
+public:
+	int32                                         SortOrder;                                         // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                DecalSize;                                         // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     Material;                                          // 0x0050(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DatasmithDecalComponentTemplate")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DatasmithDecalComponentTemplate")
+	}
+	static class UDatasmithDecalComponentTemplate* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDatasmithDecalComponentTemplate>();
+	}
+};
+DUMPER7_ASSERTS_UDatasmithDecalComponentTemplate;
 
 // Class DatasmithContent.DatasmithImportedSequencesActor
 // 0x0010 (0x02C0 - 0x02B0)
@@ -845,6 +818,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDatasmithLightComponentTemplate;
+
+// Class DatasmithContent.DatasmithMaterialInstanceTemplate
+// 0x0168 (0x0198 - 0x0030)
+class UDatasmithMaterialInstanceTemplate final : public UDatasmithObjectTemplate
+{
+public:
+	TSoftObjectPtr<class UMaterialInterface>      ParentMaterial;                                    // 0x0030(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<class FName, float>                      ScalarParameterValues;                             // 0x0058(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, struct FLinearColor>        VectorParameterValues;                             // 0x00A8(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class FName, TSoftObjectPtr<class UTexture>> TextureParameterValues;                        // 0x00F8(0x0050)(UObjectWrapper, NativeAccessSpecifierPublic)
+	struct FDatasmithStaticParameterSetTemplate   StaticParameters;                                  // 0x0148(0x0050)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DatasmithMaterialInstanceTemplate")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DatasmithMaterialInstanceTemplate")
+	}
+	static class UDatasmithMaterialInstanceTemplate* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UDatasmithMaterialInstanceTemplate>();
+	}
+};
+DUMPER7_ASSERTS_UDatasmithMaterialInstanceTemplate;
 
 // Class DatasmithContent.DatasmithPointLightComponentTemplate
 // 0x0010 (0x0040 - 0x0030)

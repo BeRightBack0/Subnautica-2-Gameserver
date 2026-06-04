@@ -17,26 +17,6 @@
 
 SDK_NAMESPACE_START
 
-// ScriptStruct LevelSequence.LevelSequenceBindingReference
-// 0x0040 (0x0040 - 0x0000)
-struct FLevelSequenceBindingReference final
-{
-public:
-	class FString                                 PackageName;                                       // 0x0000(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ExternalObjectPath;                                // 0x0010(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ObjectPath;                                        // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLevelSequenceBindingReference;
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReferenceArray
-// 0x0010 (0x0010 - 0x0000)
-struct FLevelSequenceBindingReferenceArray final
-{
-public:
-	TArray<struct FLevelSequenceBindingReference> References;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLevelSequenceBindingReferenceArray;
-
 // ScriptStruct LevelSequence.LevelSequenceCameraSettings
 // 0x0002 (0x0002 - 0x0000)
 struct FLevelSequenceCameraSettings final
@@ -46,6 +26,15 @@ public:
 	EAspectRatioAxisConstraint                    AspectRatioAxisConstraint;                         // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLevelSequenceCameraSettings;
+
+// ScriptStruct LevelSequence.BoundActorProxy
+// 0x0001 (0x0001 - 0x0000)
+struct FBoundActorProxy final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBoundActorProxy;
 
 // ScriptStruct LevelSequence.LegacyLazyObjectPtrFragment
 // 0x0010 (0x0010 - 0x0000)
@@ -73,15 +62,6 @@ public:
 	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FLevelSequenceObjectReferenceMap;
-
-// ScriptStruct LevelSequence.BoundActorProxy
-// 0x0001 (0x0001 - 0x0000)
-struct FBoundActorProxy final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBoundActorProxy;
 
 // ScriptStruct LevelSequence.LevelSequenceAnimSequenceLinkItem
 // 0x0080 (0x0080 - 0x0000)
@@ -112,6 +92,26 @@ public:
 	struct FFrameRate                             CustomFrameRate;                                   // 0x0078(0x0008)(BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLevelSequenceAnimSequenceLinkItem;
+
+// ScriptStruct LevelSequence.LevelSequenceBindingReference
+// 0x0040 (0x0040 - 0x0000)
+struct FLevelSequenceBindingReference final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSoftObjectPath                        ExternalObjectPath;                                // 0x0010(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ObjectPath;                                        // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLevelSequenceBindingReference;
+
+// ScriptStruct LevelSequence.LevelSequenceBindingReferenceArray
+// 0x0010 (0x0010 - 0x0000)
+struct FLevelSequenceBindingReferenceArray final
+{
+public:
+	TArray<struct FLevelSequenceBindingReference> References;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLevelSequenceBindingReferenceArray;
 
 // ScriptStruct LevelSequence.UpgradedLevelSequenceBindingReferences
 // 0x0000 (0x0010 - 0x0010)

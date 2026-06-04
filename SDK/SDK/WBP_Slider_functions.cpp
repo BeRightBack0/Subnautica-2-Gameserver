@@ -233,10 +233,10 @@ void UWBP_Slider_C::SetValue(float InValue)
 // Function WBP_Slider.WBP_Slider_C.UpdateSliderParameters
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool&                                   Display_As_Percentage_0                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float&                                  Step_Size__Rounding__0                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   Display_as_percentage_0                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float&                                  Step_size__rounding__0                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_Slider_C::UpdateSliderParameters(bool& Display_As_Percentage_0, float& Step_Size__Rounding__0)
+void UWBP_Slider_C::UpdateSliderParameters(bool& Display_as_percentage_0, float& Step_size__rounding__0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -245,13 +245,13 @@ void UWBP_Slider_C::UpdateSliderParameters(bool& Display_As_Percentage_0, float&
 
 	Params::WBP_Slider_C_UpdateSliderParameters Parms{};
 
-	Parms.Display_As_Percentage_0 = Display_As_Percentage_0;
-	Parms.Step_Size__Rounding__0 = Step_Size__Rounding__0;
+	Parms.Display_as_percentage_0 = Display_as_percentage_0;
+	Parms.Step_size__rounding__0 = Step_size__rounding__0;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	Display_As_Percentage_0 = Parms.Display_As_Percentage_0;
-	Step_Size__Rounding__0 = Parms.Step_Size__Rounding__0;
+	Display_as_percentage_0 = Parms.Display_as_percentage_0;
+	Step_size__rounding__0 = Parms.Step_size__rounding__0;
 }
 
 

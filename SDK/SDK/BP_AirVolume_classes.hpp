@@ -17,7 +17,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AirVolume.BP_AirVolume_C
 // 0x0020 (0x0498 - 0x0478)
-class ABP_AirVolume_C : public ABP_UWEWaterBiomeRegionActor_C
+class ABP_AirVolume_C final : public ABP_UWEWaterBiomeRegionActor_C
 {
 public:
 	class UDecalComponent*                        Caustics_Decal;                                    // 0x0478(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)

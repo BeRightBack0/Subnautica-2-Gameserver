@@ -132,9 +132,9 @@ public:
 };
 DUMPER7_ASSERTS_GC_ScannerOnline_C_InitFrontLight;
 
-// Function GC_ScannerOnline.GC_ScannerOnline_C.initHologramLight
+// Function GC_ScannerOnline.GC_ScannerOnline_C.InitHologramLight
 // 0x0028 (0x0028 - 0x0000)
-struct GC_ScannerOnline_C_initHologramLight final
+struct GC_ScannerOnline_C_InitHologramLight final
 {
 public:
 	class USceneComponent*                        AttachTarget;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -145,7 +145,7 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPointLightComponent*                   CallFunc_AddComponentByClass_ReturnValue;          // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GC_ScannerOnline_C_initHologramLight;
+DUMPER7_ASSERTS_GC_ScannerOnline_C_InitHologramLight;
 
 // Function GC_ScannerOnline.GC_ScannerOnline_C.IsHoverTargetAlreadyScanned
 // 0x0180 (0x0180 - 0x0000)

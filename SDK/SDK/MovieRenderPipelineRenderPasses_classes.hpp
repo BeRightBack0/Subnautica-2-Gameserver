@@ -15,8 +15,8 @@
 #include "MovieRenderPipelineRenderPasses_structs.hpp"
 #include "Engine_structs.hpp"
 #include "OpenColorIO_structs.hpp"
-#include "ActorLayerUtilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ActorLayerUtilities_structs.hpp"
 
 
 SDK_NAMESPACE_START

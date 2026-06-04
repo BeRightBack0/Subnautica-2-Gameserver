@@ -79,20 +79,6 @@ enum class EUWEGameplayCueType : uint8
 	EUWEGameplayCueType_MAX                  = 2,
 };
 
-// ScriptStruct UWEAbilitySystem.UWEGameplayEventParams
-// 0x0050 (0x0050 - 0x0000)
-struct FUWEGameplayEventParams final
-{
-public:
-	struct FGameplayTag                           TagParam;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  TagContainerParam;                                 // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TSubclassOf<class UGameplayEffect>            GameplayEffectParam;                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IntParam;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FloatParam;                                        // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                VectorParam;                                       // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEGameplayEventParams;
-
 // ScriptStruct UWEAbilitySystem.UWEGameplayAttributeSaveData
 // 0x0018 (0x0018 - 0x0000)
 struct FUWEGameplayAttributeSaveData final
@@ -104,17 +90,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWEGameplayAttributeSaveData;
 
-// ScriptStruct UWEAbilitySystem.SpeedBuff
-// 0x0014 (0x0014 - 0x0000)
-struct FSpeedBuff final
-{
-public:
-	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           SpeedTag;                                          // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Speed;                                             // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSpeedBuff;
-
 // ScriptStruct UWEAbilitySystem.ActivePredictedEffect
 // 0x0018 (0x0018 - 0x0000)
 struct alignas(0x08) FActivePredictedEffect final
@@ -123,15 +98,6 @@ public:
 	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FActivePredictedEffect;
-
-// ScriptStruct UWEAbilitySystem.UWEGameplayTagResponseAppliedInfo
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FUWEGameplayTagResponseAppliedInfo final
-{
-public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEGameplayTagResponseAppliedInfo;
 
 // ScriptStruct UWEAbilitySystem.UWEActiveGameplayEffectSaveData
 // 0x0038 (0x0038 - 0x0000)
@@ -166,6 +132,20 @@ public:
 };
 DUMPER7_ASSERTS_FUWEAbilitySystemComponentSaveData;
 
+// ScriptStruct UWEAbilitySystem.UWEGameplayEventParams
+// 0x0050 (0x0050 - 0x0000)
+struct FUWEGameplayEventParams final
+{
+public:
+	struct FGameplayTag                           TagParam;                                          // 0x0000(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  TagContainerParam;                                 // 0x0008(0x0020)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TSubclassOf<class UGameplayEffect>            GameplayEffectParam;                               // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IntParam;                                          // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatParam;                                        // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VectorParam;                                       // 0x0038(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEGameplayEventParams;
+
 // ScriptStruct UWEAbilitySystem.UWETargetActor
 // 0x0138 (0x0138 - 0x0000)
 struct FUWETargetActor final
@@ -183,6 +163,15 @@ public:
 	struct FHitResult                             HitResult;                                         // 0x0038(0x0100)(Edit, BlueprintVisible, BlueprintReadOnly, EditConst, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWETargetActor;
+
+// ScriptStruct UWEAbilitySystem.AbilitySystemTagChangeAnalyticsOption
+// 0x0010 (0x0010 - 0x0000)
+struct FAbilitySystemTagChangeAnalyticsOption final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAbilitySystemTagChangeAnalyticsOption;
 
 // ScriptStruct UWEAbilitySystem.UWEAnimationEventParams
 // 0x0008 (0x0008 - 0x0000)
@@ -230,14 +219,14 @@ public:
 };
 DUMPER7_ASSERTS_FUWEInputBinding;
 
-// ScriptStruct UWEAbilitySystem.AbilitySystemTagChangeAnalyticsOption
-// 0x0010 (0x0010 - 0x0000)
-struct FAbilitySystemTagChangeAnalyticsOption final
+// ScriptStruct UWEAbilitySystem.UWEGameplayTagResponseAppliedInfo
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FUWEGameplayTagResponseAppliedInfo final
 {
 public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FAbilitySystemTagChangeAnalyticsOption;
+DUMPER7_ASSERTS_FUWEGameplayTagResponseAppliedInfo;
 
 // ScriptStruct UWEAbilitySystem.UWEGameplayAttributeData
 // 0x0000 (0x0010 - 0x0010)
@@ -290,5 +279,16 @@ public:
 	TArray<TSubclassOf<class UGameplayEffect>>    OnTagRemovedEffects;                               // 0x0038(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEGameplayTagResponseTableEntry;
+
+// ScriptStruct UWEAbilitySystem.SpeedBuff
+// 0x0014 (0x0014 - 0x0000)
+struct FSpeedBuff final
+{
+public:
+	struct FActiveGameplayEffectHandle            Handle;                                            // 0x0000(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           SpeedTag;                                          // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Speed;                                             // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSpeedBuff;
 
 SDK_NAMESPACE_END

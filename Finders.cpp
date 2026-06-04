@@ -53,7 +53,7 @@ std::vector<uintptr_t> Finders::FindNetModes()
 
     results.push_back(Memcury::Scanner::FindPattern("75 ? 48 8B 8B ? ? ? ? E8 ? ? ? ? 84 C0 74 ? 48 8B 83").GetFunctionStart()); // main/internal getnetmode 
     //results.push_back(Memcury::Scanner::FindStringRef(L"listen").GetFunctionStart()); i would need to figure out to get all xrefs of listen string or smth like that idk maybe zydis?
-    results.push_back(Memcury::Scanner::FindPattern("48 83 EC ? 48 8B 01 FF 90 ? ? ? ? 84 C0 74 ? 33 C0").GetFunctionStart()); // the second getnetmode 
+    //results.push_back(Memcury::Scanner::FindPattern("48 83 EC ? 48 8B 01 FF 90 ? ? ? ? 84 C0 74 ? 33 C0").GetFunctionStart()); // the second getnetmode 
 
     return results;
 }

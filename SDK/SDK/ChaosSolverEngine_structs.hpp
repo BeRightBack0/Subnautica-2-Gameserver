@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "ChaosVDRuntime_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
+#include "ChaosVDRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -50,15 +50,6 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_EClsuterCreationParameters_Max     = 6,
 	Chaos_MAX                                = 7,
 };
-
-// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
-// 0x0001 (0x0001 - 0x0000)
-struct FChaosVDStopRecordingCommandMessage final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
@@ -111,6 +102,15 @@ public:
 	class FString                                 Target;                                            // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChaosVDStartRecordingCommandMessage;
+
+// ScriptStruct ChaosSolverEngine.ChaosVDStopRecordingCommandMessage
+// 0x0001 (0x0001 - 0x0000)
+struct FChaosVDStopRecordingCommandMessage final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChaosVDStopRecordingCommandMessage;
 
 // ScriptStruct ChaosSolverEngine.ChaosVDRecordingStatusMessage
 // 0x0050 (0x0050 - 0x0000)

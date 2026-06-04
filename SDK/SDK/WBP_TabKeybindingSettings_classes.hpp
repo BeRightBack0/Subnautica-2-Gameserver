@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EnhancedInput_structs.hpp"
 #include "Engine_structs.hpp"
+#include "EnhancedInput_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "CommonUI_classes.hpp"
 #include "CommonInput_structs.hpp"
@@ -48,27 +48,27 @@ public:
 	class FText                                   ForbiddenKeyWarning;                               // 0x05A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void ApplyAndSaveNewPlayerKeyMapping(const struct FMapPlayerKeyArgs& NewPlayerKeyMapping_0);
-	void BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);
-	void Cancel();
+	void UnregisterLastFocussedInputKeySelector();
+	void RegisterLastFocussedInputKeySelector();
+	void ShowForbiddenKeyWarning();
 	void CheckForForbiddenKeys(const struct FMapPlayerKeyArgs& KeyToCheck, bool* NotForbidden);
-	void CheckIfKeyAlreadyBound(const struct FMapPlayerKeyArgs& KeyToCheck, bool* IsAlreadyBound, TArray<struct FPlayerKeyMapping>* ConflictingKeyMappings_0);
-	void Destruct();
-	void ExecuteUbergraph_WBP_TabKeybindingSettings(int32 EntryPoint);
-	void GetKeyMappings(TArray<struct FPlayerKeyMapping>* FoundKeyMappings);
 	void GetSortedKeyMappings(TArray<struct FPlayerKeyMapping>* Result);
+	void ShowResetAllWidget();
+	void ShowConflictWidget();
+	void RevertInputMappingChangeAttempt();
+	void ApplyAndSaveNewPlayerKeyMapping(const struct FMapPlayerKeyArgs& NewPlayerKeyMapping_0);
+	void GetKeyMappings(TArray<struct FPlayerKeyMapping>* FoundKeyMappings);
+	void CheckIfKeyAlreadyBound(const struct FMapPlayerKeyArgs& KeyToCheck, bool* IsAlreadyBound, TArray<struct FPlayerKeyMapping>* ConflictingKeyMappings_0);
+	void BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button);
+	void OnTryToChangeKeyMapping(const struct FMapPlayerKeyArgs& NewPlayerKeyMapping_0, class UWBP_SettingsKeybind_C* Widget);
 	void OnApply();
-	void OnClearKeyMapping(const struct FMapPlayerKeyArgs& KeyMappingArgs, class UWBP_SettingsKeybind_C* Widget);
+	void Cancel();
 	void OnResetAllApply();
 	void OnResetAllCancel();
-	void OnTryToChangeKeyMapping(const struct FMapPlayerKeyArgs& NewPlayerKeyMapping_0, class UWBP_SettingsKeybind_C* Widget);
-	void RegisterLastFocussedInputKeySelector();
-	void RevertInputMappingChangeAttempt();
+	void OnClearKeyMapping(const struct FMapPlayerKeyArgs& KeyMappingArgs, class UWBP_SettingsKeybind_C* Widget);
 	void SetupWidgets();
-	void ShowConflictWidget();
-	void ShowForbiddenKeyWarning();
-	void ShowResetAllWidget();
-	void UnregisterLastFocussedInputKeySelector();
+	void Destruct();
+	void ExecuteUbergraph_WBP_TabKeybindingSettings(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

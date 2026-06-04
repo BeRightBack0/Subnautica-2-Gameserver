@@ -12,9 +12,9 @@
 
 #include "CoreUObject_structs.hpp"
 #include "F_HighCloudsSettings_structs.hpp"
+#include "Niagara_structs.hpp"
 #include "F_GlobalWeatherSettings_structs.hpp"
 #include "UWEWeather_structs.hpp"
-#include "Niagara_structs.hpp"
 #include "FMODStudio_structs.hpp"
 
 

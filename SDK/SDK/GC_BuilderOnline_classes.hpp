@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "UWEGameplayCues_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -38,7 +38,7 @@ public:
 	void EnergyRefilled();
 	void ExecuteUbergraph_GC_BuilderOnline(int32 EntryPoint);
 	struct FLinearColor GetStateColor();
-	void initHologramLight(class USceneComponent* AttachTarget);
+	void InitHologramLight(class USceneComponent* AttachTarget);
 	void OnAmmoLoaded();
 	void OnAmmoReleased();
 	void OnLoopingStart(class AActor* Target_0, const struct FGameplayCueParameters& Parameters, const struct FUWEGameplayCueNotify_SpawnResult& SpawnResults);

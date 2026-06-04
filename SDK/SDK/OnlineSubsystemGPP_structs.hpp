@@ -127,20 +127,6 @@ public:
 };
 DUMPER7_ASSERTS_FGPPFont;
 
-// ScriptStruct OnlineSubsystemGPP.GPPKeyGuideInfo
-// 0x0038 (0x0038 - 0x0000)
-struct FGPPKeyGuideInfo final
-{
-public:
-	EGPPWidgetInputExecType                       ExecType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   GuideText;                                         // 0x0008(0x0010)(Edit, NativeAccessSpecifierPublic)
-	bool                                          bUseFixedKey;                                      // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKey                                   FixedKey;                                          // 0x0020(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGPPKeyGuideInfo;
-
 // ScriptStruct OnlineSubsystemGPP.GPPColor
 // 0x0018 (0x0018 - 0x0000)
 struct FGPPColor final
@@ -151,20 +137,6 @@ public:
 	struct FSlateColor                            Color;                                             // 0x0004(0x0014)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGPPColor;
-
-// ScriptStruct OnlineSubsystemGPP.AccelByteQrOptions
-// 0x0018 (0x0018 - 0x0000)
-struct FAccelByteQrOptions final
-{
-public:
-	class UTexture2D*                             Logo;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnlargeLogo;                                       // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LogoRatio;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TextureSize;                                       // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAccelByteQrOptions;
 
 // ScriptStruct OnlineSubsystemGPP.GPPWidgetLayoutStyleBrush
 // 0x00C0 (0x00C0 - 0x0000)
@@ -187,6 +159,34 @@ public:
 	struct FGPPWidgetLayoutStyleBrush             LayoutStyleBrush;                                  // 0x0010(0x00C0)(Edit, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGPPBrush;
+
+// ScriptStruct OnlineSubsystemGPP.AccelByteQrOptions
+// 0x0018 (0x0018 - 0x0000)
+struct FAccelByteQrOptions final
+{
+public:
+	class UTexture2D*                             Logo;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnlargeLogo;                                       // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LogoRatio;                                         // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TextureSize;                                       // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAccelByteQrOptions;
+
+// ScriptStruct OnlineSubsystemGPP.GPPKeyGuideInfo
+// 0x0038 (0x0038 - 0x0000)
+struct FGPPKeyGuideInfo final
+{
+public:
+	EGPPWidgetInputExecType                       ExecType;                                          // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   GuideText;                                         // 0x0008(0x0010)(Edit, NativeAccessSpecifierPublic)
+	bool                                          bUseFixedKey;                                      // 0x0018(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKey                                   FixedKey;                                          // 0x0020(0x0018)(Edit, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGPPKeyGuideInfo;
 
 // ScriptStruct OnlineSubsystemGPP.GPPKeyGuideInputInfo
 // 0x0020 (0x0020 - 0x0000)

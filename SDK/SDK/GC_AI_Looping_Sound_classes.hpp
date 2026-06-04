@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "FMODStudio_structs.hpp"
 #include "Engine_structs.hpp"
+#include "FMODStudio_structs.hpp"
 #include "UWEGameplayCues_classes.hpp"
 
 

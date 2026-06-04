@@ -25,27 +25,6 @@ enum class EUWEChaosPhysicsControllerBuoyancyMode : uint8
 	EUWEChaosPhysicsControllerBuoyancyMode_MAX = 3,
 };
 
-// ScriptStruct UWEPhysics.UWEOverlapDetectorComponentOverlap
-// 0x0018 (0x0018 - 0x0000)
-struct FUWEOverlapDetectorComponentOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsOverlapped;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEOverlapDetectorComponentOverlap;
-
-// ScriptStruct UWEPhysics.UWECollisionImpactObjectData
-// 0x0058 (0x0058 - 0x0000)
-struct alignas(0x08) FUWECollisionImpactObjectData final
-{
-public:
-	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWECollisionImpactObjectData;
-
 // ScriptStruct UWEPhysics.UWEChaosPhysicsControllerEnvironmentSettings
 // 0x0008 (0x0008 - 0x0000)
 struct FUWEChaosPhysicsControllerEnvironmentSettings final
@@ -55,6 +34,15 @@ public:
 	float                                         AngularDamping;                                    // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEChaosPhysicsControllerEnvironmentSettings;
+
+// ScriptStruct UWEPhysics.UWECollisionImpactObjectData
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FUWECollisionImpactObjectData final
+{
+public:
+	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWECollisionImpactObjectData;
 
 // ScriptStruct UWEPhysics.UWECollisionImpactGameplayCue
 // 0x0018 (0x0018 - 0x0000)
@@ -69,6 +57,18 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWECollisionImpactGameplayCue;
+
+// ScriptStruct UWEPhysics.UWEOverlapDetectorComponentOverlap
+// 0x0018 (0x0018 - 0x0000)
+struct FUWEOverlapDetectorComponentOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsOverlapped;                                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEOverlapDetectorComponentOverlap;
 
 // ScriptStruct UWEPhysics.UWEOverlapExpellerAffectedObject
 // 0x0020 (0x0020 - 0x0000)

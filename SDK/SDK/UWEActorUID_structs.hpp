@@ -25,15 +25,6 @@ enum class EUWEActorUIDInstanceState : uint8
 	EUWEActorUIDInstanceState_MAX            = 3,
 };
 
-// ScriptStruct UWEActorUID.UWEActorUID
-// 0x0010 (0x0010 - 0x0000)
-struct FUWEActorUID final
-{
-public:
-	struct FGuid                                  InternalId;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FUWEActorUID;
-
 // ScriptStruct UWEActorUID.UWEActorUIDInstance
 // 0x000C (0x000C - 0x0000)
 struct alignas(0x04) FUWEActorUIDInstance final
@@ -42,6 +33,15 @@ public:
 	uint8                                         Pad_0[0xC];                                        // 0x0000(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWEActorUIDInstance;
+
+// ScriptStruct UWEActorUID.UWEActorUID
+// 0x0010 (0x0010 - 0x0000)
+struct FUWEActorUID final
+{
+public:
+	struct FGuid                                  InternalId;                                        // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FUWEActorUID;
 
 // ScriptStruct UWEActorUID.UWEActorUIDCallbackWrapper
 // 0x0050 (0x0050 - 0x0000)

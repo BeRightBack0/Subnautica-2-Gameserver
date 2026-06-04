@@ -1469,7 +1469,7 @@ DUMPER7_ASSERTS_USN2AdaptationsPlayerStateComponent;
 
 // Class Subnautica2.SN2BuilderGridToggleAbility
 // 0x0000 (0x0538 - 0x0538)
-class USN2BuilderGridToggleAbility : public UUWEGameplayAbility
+class USN2BuilderGridToggleAbility final : public UUWEGameplayAbility
 {
 public:
 	EBuilderSnapping ToggleGridSnapping();
@@ -2565,7 +2565,7 @@ DUMPER7_ASSERTS_USN2BaseCheatManager;
 
 // Class Subnautica2.SN2BaseDeconstructAbility
 // 0x0000 (0x0538 - 0x0538)
-class USN2BaseDeconstructAbility : public UUWEGameplayAbility
+class USN2BaseDeconstructAbility final : public UUWEGameplayAbility
 {
 public:
 	void ApplyEditAction(TScriptInterface<class IUWEBaseEditAction> EditAction);
@@ -2589,7 +2589,7 @@ DUMPER7_ASSERTS_USN2BaseDeconstructAbility;
 
 // Class Subnautica2.SN2BaseEditAbility
 // 0x0010 (0x0550 - 0x0540)
-class USN2BaseEditAbility : public USN2BuilderActionAbility
+class USN2BaseEditAbility final : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x8];                                      // 0x0540(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -3011,7 +3011,7 @@ DUMPER7_ASSERTS_ASN2BioBed;
 
 // Class Subnautica2.SN2Bioreactor
 // 0x00B8 (0x0368 - 0x02B0)
-class ASN2Bioreactor : public AActor
+class ASN2Bioreactor final : public AActor
 {
 public:
 	TMulticastInlineDelegate<void()>              OnItemChanged;                                     // 0x02B0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -3487,7 +3487,7 @@ DUMPER7_ASSERTS_USN2ContinuousAbility;
 
 // Class Subnautica2.SN2BuilderAbility
 // 0x0008 (0x0540 - 0x0538)
-class USN2BuilderAbility : public USN2ContinuousAbility
+class USN2BuilderAbility final : public USN2ContinuousAbility
 {
 public:
 	bool                                          IsDeconstruct;                                     // 0x0538(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3841,7 +3841,7 @@ DUMPER7_ASSERTS_USN2BuilderMenuViewModel;
 
 // Class Subnautica2.SN2BuilderMoveAbility
 // 0x05F0 (0x0B30 - 0x0540)
-class USN2BuilderMoveAbility : public USN2BuilderActionAbility
+class USN2BuilderMoveAbility final : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7649,7 +7649,7 @@ DUMPER7_ASSERTS_USN2SSwimTiltCameraAnimation;
 
 // Class Subnautica2.SN2MoveModeAbility
 // 0x0008 (0x0540 - 0x0538)
-class USN2MoveModeAbility : public UUWEGameplayAbility
+class USN2MoveModeAbility final : public UUWEGameplayAbility
 {
 public:
 	uint8                                         Pad_538[0x8];                                      // 0x0538(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -8496,7 +8496,7 @@ DUMPER7_ASSERTS_USN2PinnedRecipesViewModel;
 
 // Class Subnautica2.SN2PlaceConstructionGhostAbility
 // 0x0028 (0x0568 - 0x0540)
-class USN2PlaceConstructionGhostAbility : public USN2BuilderActionAbility
+class USN2PlaceConstructionGhostAbility final : public USN2BuilderActionAbility
 {
 public:
 	uint8                                         Pad_540[0x10];                                     // 0x0540(0x0010)(Fixing Size After Last Property [ Dumper-7 ])

@@ -122,25 +122,6 @@ void UUWEEventSubsystem::BPRecordEvent(const class FString& EventName, class AAc
 }
 
 
-// Function UWEAnalytics.UWEEventSubsystem.FlushEventsAlternative
-// (Final, Native, Public, BlueprintCallable)
-
-void UUWEEventSubsystem::FlushEventsAlternative()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UWEEventSubsystem", "FlushEventsAlternative");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function UWEAnalytics.UWEEventSubsystem.Init
 // (Final, Native, Public)
 

@@ -33,11 +33,11 @@ public:
 	int32                                         PrecompileThresholdToShow;                         // 0x03A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateCompiling();
-	void PreConstruct(bool IsDesignTime);
-	void ExecuteUbergraph_WBP_CompilingShadersScreen(int32 EntryPoint);
-	void Destruct();
 	void Construct();
+	void Destruct();
+	void ExecuteUbergraph_WBP_CompilingShadersScreen(int32 EntryPoint);
+	void PreConstruct(bool IsDesignTime);
+	void UpdateCompiling();
 
 public:
 	static class UClass* StaticClass()

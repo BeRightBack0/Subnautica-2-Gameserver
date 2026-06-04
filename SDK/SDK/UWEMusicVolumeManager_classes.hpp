@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_classes.hpp"
 #include "UWEMusicVolumeManager_structs.hpp"
 #include "UWEImGui_classes.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "UWEAssetRegistry_classes.hpp"
 
 

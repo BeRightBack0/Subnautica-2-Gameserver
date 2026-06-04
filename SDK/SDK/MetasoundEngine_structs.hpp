@@ -49,12 +49,16 @@ enum class EMetaSoundBuilderResult : uint8
 	EMetaSoundBuilderResult_MAX              = 2,
 };
 
-// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
-// 0x0000 (0x0020 - 0x0020)
-struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
+// ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
+// 0x0030 (0x0030 - 0x0000)
+struct FMetaSoundAsyncAssetDependencies final
 {
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                MetaSound;                                         // 0x0008(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_10[0x20];                                      // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
+DUMPER7_ASSERTS_FMetaSoundAsyncAssetDependencies;
 
 // ScriptStruct MetasoundEngine.MetaSoundOutput
 // 0x0008 (0x0010 - 0x0008)
@@ -105,23 +109,19 @@ public:
 };
 DUMPER7_ASSERTS_FMetaSoundAssetDirectory;
 
-// ScriptStruct MetasoundEngine.MetaSoundAsyncAssetDependencies
-// 0x0030 (0x0030 - 0x0000)
-struct FMetaSoundAsyncAssetDependencies final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                MetaSound;                                         // 0x0008(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_10[0x20];                                      // 0x0010(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMetaSoundAsyncAssetDependencies;
-
 // ScriptStruct MetasoundEngine.MetaSoundBuilderNodeInputHandle
 // 0x0000 (0x0020 - 0x0020)
 struct FMetaSoundBuilderNodeInputHandle final : public FMetasoundFrontendVertexHandle
 {
 };
 DUMPER7_ASSERTS_FMetaSoundBuilderNodeInputHandle;
+
+// ScriptStruct MetasoundEngine.MetaSoundBuilderNodeOutputHandle
+// 0x0000 (0x0020 - 0x0020)
+struct FMetaSoundBuilderNodeOutputHandle final : public FMetasoundFrontendVertexHandle
+{
+};
+DUMPER7_ASSERTS_FMetaSoundBuilderNodeOutputHandle;
 
 // ScriptStruct MetasoundEngine.MetaSoundNodeHandle
 // 0x0010 (0x0010 - 0x0000)

@@ -24,9 +24,9 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_Tadpole.BP_Tadpole_C.GetEnableTadpolePropellers
+// Function BP_Tadpole.BP_Tadpole_C.GetEnableHAULPropellers
 // 0x0018 (0x0018 - 0x0000)
-struct BP_Tadpole_C_GetEnableTadpolePropellers final
+struct BP_Tadpole_C_GetEnableHAULPropellers final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -34,20 +34,8 @@ public:
 	class UUWEVehicleChassisData*                 CallFunc_GetVehicleChassisDataForActor_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_GameplayTag_ReturnValue;       // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Tadpole_C_GetEnableTadpolePropellers;
-
-// Function BP_Tadpole.BP_Tadpole_C.GetPropellerSpeedBottom
-// 0x0018 (0x0018 - 0x0000)
-struct BP_Tadpole_C_GetPropellerSpeedBottom final
-{
-public:
-	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_GetPropellerSpeedBottomNormal_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Tadpole_C_GetPropellerSpeedBottom;
+DUMPER7_ASSERTS_BP_Tadpole_C_GetEnableHAULPropellers;
 
 // Function BP_Tadpole.BP_Tadpole_C.GetPropellerSpeedMain
 // 0x0018 (0x0018 - 0x0000)
@@ -82,6 +70,31 @@ public:
 };
 DUMPER7_ASSERTS_BP_Tadpole_C_GetPropellerSpeedLeft;
 
+// Function BP_Tadpole.BP_Tadpole_C.GetEnableTadpolePropellers
+// 0x0018 (0x0018 - 0x0000)
+struct BP_Tadpole_C_GetEnableTadpolePropellers final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWEVehicleChassisData*                 CallFunc_GetVehicleChassisDataForActor_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_GameplayTag_ReturnValue;       // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Tadpole_C_GetEnableTadpolePropellers;
+
+// Function BP_Tadpole.BP_Tadpole_C.GetPropellerSpeedBottom
+// 0x0018 (0x0018 - 0x0000)
+struct BP_Tadpole_C_GetPropellerSpeedBottom final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_GetPropellerSpeedBottomNormal_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Multiply_DoubleDouble_ReturnValue;        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Tadpole_C_GetPropellerSpeedBottom;
+
 // Function BP_Tadpole.BP_Tadpole_C.GetPropellerRotation
 // 0x0090 (0x0090 - 0x0000)
 struct BP_Tadpole_C_GetPropellerRotation final
@@ -113,19 +126,6 @@ public:
 	struct FVector                                CallFunc_MakeVector_ReturnValue;                   // 0x0038(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Tadpole_C_GetPropellerVelocity;
-
-// Function BP_Tadpole.BP_Tadpole_C.GetEnableHAULPropellers
-// 0x0018 (0x0018 - 0x0000)
-struct BP_Tadpole_C_GetEnableHAULPropellers final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWEVehicleChassisData*                 CallFunc_GetVehicleChassisDataForActor_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_GameplayTag_ReturnValue;       // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Tadpole_C_GetEnableHAULPropellers;
 
 // Function BP_Tadpole.BP_Tadpole_C.BndEvt__BP_Tadpole_AttachmentOwnerComponent_K2Node_ComponentBoundEvent_1_UWENetworkedAttachmentDelegate__DelegateSignature
 // 0x0010 (0x0010 - 0x0000)

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "E_VATAnimationState_structs.hpp"
 #include "Subnautica2_classes.hpp"
+#include "E_VATAnimationState_structs.hpp"
 
 
 SDK_NAMESPACE_START

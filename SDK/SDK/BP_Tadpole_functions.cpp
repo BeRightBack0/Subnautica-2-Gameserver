@@ -16,39 +16,19 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Tadpole.BP_Tadpole_C.GetEnableTadpolePropellers
+// Function BP_Tadpole.BP_Tadpole_C.GetEnableHAULPropellers
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool ABP_Tadpole_C::GetEnableTadpolePropellers()
+bool ABP_Tadpole_C::GetEnableHAULPropellers()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Tadpole_C", "GetEnableTadpolePropellers");
+		Func = Class->GetFunction("BP_Tadpole_C", "GetEnableHAULPropellers");
 
-	Params::BP_Tadpole_C_GetEnableTadpolePropellers Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_Tadpole.BP_Tadpole_C.GetPropellerSpeedBottom
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-double ABP_Tadpole_C::GetPropellerSpeedBottom()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Tadpole_C", "GetPropellerSpeedBottom");
-
-	Params::BP_Tadpole_C_GetPropellerSpeedBottom Parms{};
+	Params::BP_Tadpole_C_GetEnableHAULPropellers Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -116,6 +96,46 @@ double ABP_Tadpole_C::GetPropellerSpeedLeft()
 }
 
 
+// Function BP_Tadpole.BP_Tadpole_C.GetEnableTadpolePropellers
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_Tadpole_C::GetEnableTadpolePropellers()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Tadpole_C", "GetEnableTadpolePropellers");
+
+	Params::BP_Tadpole_C_GetEnableTadpolePropellers Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_Tadpole.BP_Tadpole_C.GetPropellerSpeedBottom
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// double                                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+double ABP_Tadpole_C::GetPropellerSpeedBottom()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Tadpole_C", "GetPropellerSpeedBottom");
+
+	Params::BP_Tadpole_C_GetPropellerSpeedBottom Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BP_Tadpole.BP_Tadpole_C.GetPropellerRotation
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -149,26 +169,6 @@ struct FVector ABP_Tadpole_C::GetPropellerVelocity()
 		Func = Class->GetFunction("BP_Tadpole_C", "GetPropellerVelocity");
 
 	Params::BP_Tadpole_C_GetPropellerVelocity Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_Tadpole.BP_Tadpole_C.GetEnableHAULPropellers
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_Tadpole_C::GetEnableHAULPropellers()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Tadpole_C", "GetEnableHAULPropellers");
-
-	Params::BP_Tadpole_C_GetEnableHAULPropellers Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

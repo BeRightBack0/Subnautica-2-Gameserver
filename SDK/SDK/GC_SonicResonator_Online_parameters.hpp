@@ -104,16 +104,16 @@ public:
 };
 DUMPER7_ASSERTS_GC_SonicResonator_Online_C_GetScannedActorsComponent;
 
-// Function GC_SonicResonator_Online.GC_SonicResonator_Online_C.initHologramLight
+// Function GC_SonicResonator_Online.GC_SonicResonator_Online_C.InitHologramLight
 // 0x0020 (0x0020 - 0x0000)
-struct GC_SonicResonator_Online_C_initHologramLight final
+struct GC_SonicResonator_Online_C_InitHologramLight final
 {
 public:
 	class USceneComponent*                        Tool;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_Conv_ColorToLinearColor_ReturnValue;      // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_GC_SonicResonator_Online_C_initHologramLight;
+DUMPER7_ASSERTS_GC_SonicResonator_Online_C_InitHologramLight;
 
 // Function GC_SonicResonator_Online.GC_SonicResonator_Online_C.OnLoopingStart
 // 0x01D0 (0x01D0 - 0x0000)

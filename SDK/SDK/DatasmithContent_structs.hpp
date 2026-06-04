@@ -145,6 +145,24 @@ public:
 };
 DUMPER7_ASSERTS_FDatasmithImportInfo;
 
+// ScriptStruct DatasmithContent.DatasmithMeshSectionInfoTemplate
+// 0x0004 (0x0004 - 0x0000)
+struct FDatasmithMeshSectionInfoTemplate final
+{
+public:
+	int32                                         MaterialIndex;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDatasmithMeshSectionInfoTemplate;
+
+// ScriptStruct DatasmithContent.DatasmithMeshSectionInfoMapTemplate
+// 0x0050 (0x0050 - 0x0000)
+struct FDatasmithMeshSectionInfoMapTemplate final
+{
+public:
+	TMap<uint32, struct FDatasmithMeshSectionInfoTemplate> Map;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDatasmithMeshSectionInfoMapTemplate;
+
 // ScriptStruct DatasmithContent.DatasmithCameraLookatTrackingSettingsTemplate
 // 0x0030 (0x0030 - 0x0000)
 struct FDatasmithCameraLookatTrackingSettingsTemplate final
@@ -166,6 +184,21 @@ public:
 	float                                         SensorHeight;                                      // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDatasmithCameraFilmbackSettingsTemplate;
+
+// ScriptStruct DatasmithContent.DatasmithTessellationOptions
+// 0x0020 (0x0020 - 0x0000)
+struct FDatasmithTessellationOptions
+{
+public:
+	float                                         ChordTolerance;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxEdgeLength;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NormalTolerance;                                   // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDatasmithCADStitchingTechnique               StitchingTechnique;                                // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        GeometricTolerance;                                // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	double                                        StitchingTolerance;                                // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FDatasmithTessellationOptions;
 
 // ScriptStruct DatasmithContent.DatasmithCameraLensSettingsTemplate
 // 0x0004 (0x0004 - 0x0000)
@@ -222,6 +255,16 @@ public:
 };
 DUMPER7_ASSERTS_FDatasmithAssetImportOptions;
 
+// ScriptStruct DatasmithContent.DatasmithStaticMaterialTemplate
+// 0x0010 (0x0010 - 0x0000)
+struct FDatasmithStaticMaterialTemplate final
+{
+public:
+	class FName                                   MaterialSlotName;                                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     MaterialInterface;                                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FDatasmithStaticMaterialTemplate;
+
 // ScriptStruct DatasmithContent.DatasmithStaticMeshImportOptions
 // 0x0004 (0x0004 - 0x0000)
 struct FDatasmithStaticMeshImportOptions final
@@ -261,21 +304,6 @@ public:
 };
 DUMPER7_ASSERTS_FDatasmithImportBaseOptions;
 
-// ScriptStruct DatasmithContent.DatasmithTessellationOptions
-// 0x0020 (0x0020 - 0x0000)
-struct FDatasmithTessellationOptions
-{
-public:
-	float                                         ChordTolerance;                                    // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxEdgeLength;                                     // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         NormalTolerance;                                   // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EDatasmithCADStitchingTechnique               StitchingTechnique;                                // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        GeometricTolerance;                                // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	double                                        StitchingTolerance;                                // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FDatasmithTessellationOptions;
-
 // ScriptStruct DatasmithContent.DatasmithRetessellationOptions
 // 0x0008 (0x0028 - 0x0020)
 struct FDatasmithRetessellationOptions final : public FDatasmithTessellationOptions
@@ -313,33 +341,5 @@ public:
 	int32                                         DstLightmapIndex;                                  // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDatasmithMeshBuildSettingsTemplate;
-
-// ScriptStruct DatasmithContent.DatasmithStaticMaterialTemplate
-// 0x0010 (0x0010 - 0x0000)
-struct FDatasmithStaticMaterialTemplate final
-{
-public:
-	class FName                                   MaterialSlotName;                                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     MaterialInterface;                                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FDatasmithStaticMaterialTemplate;
-
-// ScriptStruct DatasmithContent.DatasmithMeshSectionInfoTemplate
-// 0x0004 (0x0004 - 0x0000)
-struct FDatasmithMeshSectionInfoTemplate final
-{
-public:
-	int32                                         MaterialIndex;                                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDatasmithMeshSectionInfoTemplate;
-
-// ScriptStruct DatasmithContent.DatasmithMeshSectionInfoMapTemplate
-// 0x0050 (0x0050 - 0x0000)
-struct FDatasmithMeshSectionInfoMapTemplate final
-{
-public:
-	TMap<uint32, struct FDatasmithMeshSectionInfoTemplate> Map;                                      // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FDatasmithMeshSectionInfoMapTemplate;
 
 SDK_NAMESPACE_END

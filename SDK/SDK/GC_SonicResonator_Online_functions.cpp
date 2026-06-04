@@ -85,19 +85,19 @@ void AGC_SonicResonator_Online_C::GetScannedActorsComponent(class UUWEScannedAct
 }
 
 
-// Function GC_SonicResonator_Online.GC_SonicResonator_Online_C.initHologramLight
+// Function GC_SonicResonator_Online.GC_SonicResonator_Online_C.InitHologramLight
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USceneComponent*                  Tool                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void AGC_SonicResonator_Online_C::initHologramLight(class USceneComponent* Tool)
+void AGC_SonicResonator_Online_C::InitHologramLight(class USceneComponent* Tool)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GC_SonicResonator_Online_C", "initHologramLight");
+		Func = Class->GetFunction("GC_SonicResonator_Online_C", "InitHologramLight");
 
-	Params::GC_SonicResonator_Online_C_initHologramLight Parms{};
+	Params::GC_SonicResonator_Online_C_InitHologramLight Parms{};
 
 	Parms.Tool = Tool;
 

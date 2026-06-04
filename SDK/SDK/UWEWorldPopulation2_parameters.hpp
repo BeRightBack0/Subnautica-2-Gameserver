@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "UWEWorldPopulation2_structs.hpp"
 #include "UWEInterfaces_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "UWEWorldPopulation2_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 

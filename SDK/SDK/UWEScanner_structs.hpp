@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "UWEActorUID_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -36,6 +36,16 @@ enum class ESharedScanProgressOverrides : uint8
 	ForceOff                                 = 2,
 	ESharedScanProgressOverrides_MAX         = 3,
 };
+
+// ScriptStruct UWEScanner.UWEScanHologram
+// 0x0040 (0x0040 - 0x0000)
+struct FUWEScanHologram final
+{
+public:
+	TSoftObjectPtr<class UStaticMesh>             HologramMesh;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HologramScale;                                     // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEScanHologram;
 
 // ScriptStruct UWEScanner.UWEScannableActorData
 // 0x0028 (0x0028 - 0x0000)
@@ -84,16 +94,6 @@ public:
 	struct FUWEScanTrait                          Trait;                                             // 0x0020(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEScanStep;
-
-// ScriptStruct UWEScanner.UWEScanHologram
-// 0x0040 (0x0040 - 0x0000)
-struct FUWEScanHologram final
-{
-public:
-	TSoftObjectPtr<class UStaticMesh>             HologramMesh;                                      // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HologramScale;                                     // 0x0028(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEScanHologram;
 
 // ScriptStruct UWEScanner.UWEScanDataExtraUnlock
 // 0x0030 (0x0030 - 0x0000)

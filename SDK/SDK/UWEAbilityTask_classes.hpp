@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_classes.hpp"
 #include "UWEAbilityTask_structs.hpp"
+#include "GameplayAbilities_classes.hpp"
 #include "CoreUObject_structs.hpp"
 
 

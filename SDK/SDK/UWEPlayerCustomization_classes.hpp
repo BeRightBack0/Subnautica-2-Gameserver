@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "UWEPlayerCustomization_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "UWEPlayerCustomization_structs.hpp"
 #include "UWEAssetRegistry_classes.hpp"
 #include "Engine_classes.hpp"
 

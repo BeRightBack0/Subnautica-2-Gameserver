@@ -41,8 +41,8 @@ public:
 	class UImage*                                 Back;                                              // 0x03E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWidgetAnimation*                       Hover_Anim;                                        // 0x03E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void(double Value)>  OnValueChanged;                                    // 0x03F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, BlueprintAssignable, BlueprintCallable)
-	float                                         Step_Size__Rounding_;                              // 0x0400(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          Display_As_Percentage;                             // 0x0404(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	float                                         Step_size__rounding_;                              // 0x0400(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          Display_as_percentage;                             // 0x0404(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	uint8                                         Pad_405[0x3];                                      // 0x0405(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	double                                        VerticalDivisionsHeight;                           // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     SliderMaterial;                                    // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
@@ -62,7 +62,7 @@ public:
 	void SetMaxValue(float Max_Value, bool DisplayValue);
 	void SetMinValue(float Min_Value, bool DisplayValuie);
 	void SetValue(float InValue);
-	void UpdateSliderParameters(bool& Display_As_Percentage_0, float& Step_Size__Rounding__0);
+	void UpdateSliderParameters(bool& Display_as_percentage_0, float& Step_size__rounding__0);
 
 public:
 	static class UClass* StaticClass()

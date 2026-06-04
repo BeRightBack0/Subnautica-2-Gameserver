@@ -3170,7 +3170,7 @@ DUMPER7_ASSERTS_UBTService_BlackboardBase;
 
 // Class AIModule.BTService_BlueprintBase
 // 0x0028 (0x0098 - 0x0070)
-class UBTService_BlueprintBase final : public UBTService
+class UBTService_BlueprintBase : public UBTService
 {
 public:
 	class AAIController*                          AIOwner;                                           // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

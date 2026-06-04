@@ -187,6 +187,17 @@ public:
 };
 DUMPER7_ASSERTS_FUWESlotInfoSimple;
 
+// ScriptStruct UWESaveSystem.UWESaveGameContext
+// 0x0018 (0x0018 - 0x0000)
+struct FUWESaveGameContext final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWESaveGame*                           ActiveSave;                                        // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UUWESaveGameCollection*                 SaveGameCollection;                                // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FUWESaveGameContext;
+
 // ScriptStruct UWESaveSystem.UWESaveGameThumbnail
 // 0x0020 (0x0020 - 0x0000)
 struct FUWESaveGameThumbnail final
@@ -289,26 +300,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWESaveGameCollectionInfo;
 
-// ScriptStruct UWESaveSystem.UWEGenericObjectSaveDataEntry
-// 0x0040 (0x0040 - 0x0000)
-struct FUWEGenericObjectSaveDataEntry final
-{
-public:
-	TSoftClassPtr<class UClass>                   ClassPath;                                         // 0x0000(0x0028)(SaveGame, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FUWESaveBuffer                         SaveBuffer;                                        // 0x0028(0x0018)(SaveGame, Protected, NativeAccessSpecifierProtected)
-};
-DUMPER7_ASSERTS_FUWEGenericObjectSaveDataEntry;
-
-// ScriptStruct UWESaveSystem.UWELoadMetaDataSaveGameWrapper
-// 0x00E0 (0x00E0 - 0x0000)
-struct FUWELoadMetaDataSaveGameWrapper final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FUWESaveSlotMetaData                   MetaData;                                          // 0x0008(0x00D8)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWELoadMetaDataSaveGameWrapper;
-
 // ScriptStruct UWESaveSystem.UWESaveGameDownloadStatus
 // 0x0018 (0x0018 - 0x0000)
 struct FUWESaveGameDownloadStatus final
@@ -319,6 +310,16 @@ public:
 	class FText                                   ErrorMessage;                                      // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWESaveGameDownloadStatus;
+
+// ScriptStruct UWESaveSystem.UWEGenericObjectSaveDataEntry
+// 0x0040 (0x0040 - 0x0000)
+struct FUWEGenericObjectSaveDataEntry final
+{
+public:
+	TSoftClassPtr<class UClass>                   ClassPath;                                         // 0x0000(0x0028)(SaveGame, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FUWESaveBuffer                         SaveBuffer;                                        // 0x0028(0x0018)(SaveGame, Protected, NativeAccessSpecifierProtected)
+};
+DUMPER7_ASSERTS_FUWEGenericObjectSaveDataEntry;
 
 // ScriptStruct UWESaveSystem.UWEGenericObjectSaveDataContainer
 // 0x0010 (0x0010 - 0x0000)
@@ -337,17 +338,6 @@ public:
 	class UUWESaveGame*                           SaveGame;                                          // 0x0000(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 };
 DUMPER7_ASSERTS_FUWESaveDataReadOnlyContext;
-
-// ScriptStruct UWESaveSystem.UWESaveGameContext
-// 0x0018 (0x0018 - 0x0000)
-struct FUWESaveGameContext final
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWESaveGame*                           ActiveSave;                                        // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UUWESaveGameCollection*                 SaveGameCollection;                                // 0x0010(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
-};
-DUMPER7_ASSERTS_FUWESaveGameContext;
 
 // ScriptStruct UWESaveSystem.UWESaveContainerInfoReadContext
 // 0x00B8 (0x00B8 - 0x0000)
@@ -462,6 +452,16 @@ public:
 	struct FUWESaveBuffer                         GameData;                                          // 0x0018(0x0018)(SaveGame, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWESaveBlob;
+
+// ScriptStruct UWESaveSystem.UWELoadMetaDataSaveGameWrapper
+// 0x00E0 (0x00E0 - 0x0000)
+struct FUWELoadMetaDataSaveGameWrapper final
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FUWESaveSlotMetaData                   MetaData;                                          // 0x0008(0x00D8)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWELoadMetaDataSaveGameWrapper;
 
 // ScriptStruct UWESaveSystem.UWESaveHandleDebugInfo
 // 0x0018 (0x0018 - 0x0000)

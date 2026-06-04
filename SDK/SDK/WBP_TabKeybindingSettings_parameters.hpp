@@ -19,26 +19,47 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ApplyAndSaveNewPlayerKeyMapping
-// 0x0078 (0x0078 - 0x0000)
-struct WBP_TabKeybindingSettings_C_ApplyAndSaveNewPlayerKeyMapping final
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.UnregisterLastFocussedInputKeySelector
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_TabKeybindingSettings_C_UnregisterLastFocussedInputKeySelector final
 {
 public:
-	struct FMapPlayerKeyArgs                      NewPlayerKeyMapping_0;                             // 0x0000(0x0050)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  CallFunc_MapPlayerKey_FailureReason;               // 0x0058(0x0020)()
+	class UPanelWidget*                           CallFunc_GetParent_ReturnValue;                    // 0x0000(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_TabControlsSettings_C*             CallFunc_FindParentWidgetOfType_ReturnValue;       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ApplyAndSaveNewPlayerKeyMapping;
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_UnregisterLastFocussedInputKeySelector;
 
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TabKeybindingSettings_C_BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature final
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.RegisterLastFocussedInputKeySelector
+// 0x0058 (0x0058 - 0x0000)
+struct WBP_TabKeybindingSettings_C_RegisterLastFocussedInputKeySelector final
 {
 public:
-	class UCommonButtonBase*                      Button;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	EPlayerMappableKeySlot                        Temp_byte_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUWEInputKeySelector*                   Temp_object_Variable;                              // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_1;                            // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_2;                            // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_3;                            // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_4;                            // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_5;                            // 0x0030(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   Temp_object_Variable_6;                            // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UPanelWidget*                           CallFunc_GetParent_ReturnValue;                    // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUWEInputKeySelector*                   K2Node_Select_Default;                             // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_TabControlsSettings_C*             CallFunc_FindParentWidgetOfType_ReturnValue;       // 0x0050(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature;
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_RegisterLastFocussedInputKeySelector;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowForbiddenKeyWarning
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_TabKeybindingSettings_C_ShowForbiddenKeyWarning final
+{
+public:
+	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowForbiddenKeyWarning;
 
 // Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.CheckForForbiddenKeys
 // 0x0070 (0x0070 - 0x0000)
@@ -63,6 +84,129 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x006B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_CheckForForbiddenKeys;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.GetSortedKeyMappings
+// 0x0140 (0x0140 - 0x0000)
+struct WBP_TabKeybindingSettings_C_GetSortedKeyMappings final
+{
+public:
+	TArray<struct FPlayerKeyMapping>              Result;                                            // 0x0000(0x0010)(Parm, OutParm)
+	TArray<struct FPlayerKeyMapping>              SortedKeyMappings;                                 // 0x0010(0x0010)(Edit, BlueprintVisible)
+	int32                                         NextIndex;                                         // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           SortOrder;                                         // 0x0028(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FPlayerKeyMapping>              UnsortedKeyMappings;                               // 0x0038(0x0010)(Edit, BlueprintVisible)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           K2Node_MakeArray_Array;                            // 0x0058(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x0070(0x00A8)(HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_122[0x2];                                      // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Find_ReturnValue;                   // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FPlayerKeyMapping>              CallFunc_GetKeyMappings_FoundKeyMappings;          // 0x0130(0x0010)(ReferenceParm)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_GetSortedKeyMappings;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowResetAllWidget
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_TabKeybindingSettings_C_ShowResetAllWidget final
+{
+public:
+	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowResetAllWidget;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowConflictWidget
+// 0x00F8 (0x00F8 - 0x0000)
+struct WBP_TabKeybindingSettings_C_ShowConflictWidget final
+{
+public:
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWBP_ConflictingKeybinding_C*           CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x0028(0x00A8)(HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x00E0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowConflictWidget;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.RevertInputMappingChangeAttempt
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_TabKeybindingSettings_C_RevertInputMappingChangeAttempt final
+{
+public:
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_RevertInputMappingChangeAttempt;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ApplyAndSaveNewPlayerKeyMapping
+// 0x0078 (0x0078 - 0x0000)
+struct WBP_TabKeybindingSettings_C_ApplyAndSaveNewPlayerKeyMapping final
+{
+public:
+	struct FMapPlayerKeyArgs                      NewPlayerKeyMapping_0;                             // 0x0000(0x0050)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  CallFunc_MapPlayerKey_FailureReason;               // 0x0058(0x0020)()
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ApplyAndSaveNewPlayerKeyMapping;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.GetKeyMappings
+// 0x0290 (0x0290 - 0x0000)
+struct WBP_TabKeybindingSettings_C_GetKeyMappings final
+{
+public:
+	TArray<struct FPlayerKeyMapping>              FoundKeyMappings;                                  // 0x0000(0x0010)(Parm, OutParm)
+	TArray<struct FPlayerKeyMapping>              MappingArray;                                      // 0x0010(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FKeyMappingRow>                 PlayerMappingRows;                                 // 0x0020(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FPlayerKeyMapping>              KeyMappings;                                       // 0x0030(0x0010)(Edit, BlueprintVisible)
+	struct FPlayerKeyMapping                      KeyMapping;                                        // 0x0040(0x00A8)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKeyMappingRow                         CallFunc_Array_Get_Item;                           // 0x0100(0x0050)()
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FPlayerKeyMapping>              CallFunc_Set_ToArray_Result;                       // 0x0158(0x0010)(ReferenceParm)
+	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item_1;                         // 0x0178(0x00A8)(HasGetValueTypeHash)
+	class UEnhancedPlayerMappableKeyProfile*      CallFunc_GetActiveKeyProfile_ReturnValue;          // 0x0220(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FKeyMappingRow>      CallFunc_GetPlayerMappingRows_ReturnValue;         // 0x0230(0x0050)(ConstParm)
+	TArray<struct FKeyMappingRow>                 CallFunc_Map_Values_Values;                        // 0x0280(0x0010)(ReferenceParm)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_GetKeyMappings;
 
 // Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.CheckIfKeyAlreadyBound
 // 0x01A0 (0x01A0 - 0x0000)
@@ -102,6 +246,35 @@ public:
 	bool                                          CallFunc_BooleanOR_ReturnValue_1;                  // 0x019E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_CheckIfKeyAlreadyBound;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TabKeybindingSettings_C_BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature final
+{
+public:
+	class UCommonButtonBase*                      Button;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_BndEvt__WBP_TabKeybindingSettings_HandleReset_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.OnTryToChangeKeyMapping
+// 0x0058 (0x0058 - 0x0000)
+struct WBP_TabKeybindingSettings_C_OnTryToChangeKeyMapping final
+{
+public:
+	struct FMapPlayerKeyArgs                      NewPlayerKeyMapping_0;                             // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class UWBP_SettingsKeybind_C*                 Widget;                                            // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_OnTryToChangeKeyMapping;
+
+// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.OnClearKeyMapping
+// 0x0058 (0x0058 - 0x0000)
+struct WBP_TabKeybindingSettings_C_OnClearKeyMapping final
+{
+public:
+	struct FMapPlayerKeyArgs                      KeyMappingArgs;                                    // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+	class UWBP_SettingsKeybind_C*                 Widget;                                            // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_OnClearKeyMapping;
 
 // Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ExecuteUbergraph_WBP_TabKeybindingSettings
 // 0x0288 (0x0288 - 0x0000)
@@ -161,179 +334,6 @@ public:
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0282(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ExecuteUbergraph_WBP_TabKeybindingSettings;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.GetKeyMappings
-// 0x0290 (0x0290 - 0x0000)
-struct WBP_TabKeybindingSettings_C_GetKeyMappings final
-{
-public:
-	TArray<struct FPlayerKeyMapping>              FoundKeyMappings;                                  // 0x0000(0x0010)(Parm, OutParm)
-	TArray<struct FPlayerKeyMapping>              MappingArray;                                      // 0x0010(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FKeyMappingRow>                 PlayerMappingRows;                                 // 0x0020(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FPlayerKeyMapping>              KeyMappings;                                       // 0x0030(0x0010)(Edit, BlueprintVisible)
-	struct FPlayerKeyMapping                      KeyMapping;                                        // 0x0040(0x00A8)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable_1;                  // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_FD[0x3];                                       // 0x00FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKeyMappingRow                         CallFunc_Array_Get_Item;                           // 0x0100(0x0050)()
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_154[0x4];                                      // 0x0154(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPlayerKeyMapping>              CallFunc_Set_ToArray_Result;                       // 0x0158(0x0010)(ReferenceParm)
-	bool                                          CallFunc_Less_IntInt_ReturnValue_1;                // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_169[0x3];                                      // 0x0169(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x016C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Array_Index_Variable_1;                   // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_174[0x4];                                      // 0x0174(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item_1;                         // 0x0178(0x00A8)(HasGetValueTypeHash)
-	class UEnhancedPlayerMappableKeyProfile*      CallFunc_GetActiveKeyProfile_ReturnValue;          // 0x0220(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0228(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FKeyMappingRow>      CallFunc_GetPlayerMappingRows_ReturnValue;         // 0x0230(0x0050)(ConstParm)
-	TArray<struct FKeyMappingRow>                 CallFunc_Map_Values_Values;                        // 0x0280(0x0010)(ReferenceParm)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_GetKeyMappings;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.GetSortedKeyMappings
-// 0x0140 (0x0140 - 0x0000)
-struct WBP_TabKeybindingSettings_C_GetSortedKeyMappings final
-{
-public:
-	TArray<struct FPlayerKeyMapping>              Result;                                            // 0x0000(0x0010)(Parm, OutParm)
-	TArray<struct FPlayerKeyMapping>              SortedKeyMappings;                                 // 0x0010(0x0010)(Edit, BlueprintVisible)
-	int32                                         NextIndex;                                         // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           SortOrder;                                         // 0x0028(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FPlayerKeyMapping>              UnsortedKeyMappings;                               // 0x0038(0x0010)(Edit, BlueprintVisible)
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           K2Node_MakeArray_Array;                            // 0x0058(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue_1;                 // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x0070(0x00A8)(HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_2;               // 0x011C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_122[0x2];                                      // 0x0122(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Find_ReturnValue;                   // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_IntInt_ReturnValue;              // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FPlayerKeyMapping>              CallFunc_GetKeyMappings_FoundKeyMappings;          // 0x0130(0x0010)(ReferenceParm)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_GetSortedKeyMappings;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.OnClearKeyMapping
-// 0x0058 (0x0058 - 0x0000)
-struct WBP_TabKeybindingSettings_C_OnClearKeyMapping final
-{
-public:
-	struct FMapPlayerKeyArgs                      KeyMappingArgs;                                    // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UWBP_SettingsKeybind_C*                 Widget;                                            // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_OnClearKeyMapping;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.OnTryToChangeKeyMapping
-// 0x0058 (0x0058 - 0x0000)
-struct WBP_TabKeybindingSettings_C_OnTryToChangeKeyMapping final
-{
-public:
-	struct FMapPlayerKeyArgs                      NewPlayerKeyMapping_0;                             // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-	class UWBP_SettingsKeybind_C*                 Widget;                                            // 0x0050(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_OnTryToChangeKeyMapping;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.RegisterLastFocussedInputKeySelector
-// 0x0058 (0x0058 - 0x0000)
-struct WBP_TabKeybindingSettings_C_RegisterLastFocussedInputKeySelector final
-{
-public:
-	EPlayerMappableKeySlot                        Temp_byte_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUWEInputKeySelector*                   Temp_object_Variable;                              // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_1;                            // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_2;                            // 0x0018(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_3;                            // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_4;                            // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_5;                            // 0x0030(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   Temp_object_Variable_6;                            // 0x0038(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UPanelWidget*                           CallFunc_GetParent_ReturnValue;                    // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUWEInputKeySelector*                   K2Node_Select_Default;                             // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_TabControlsSettings_C*             CallFunc_FindParentWidgetOfType_ReturnValue;       // 0x0050(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_RegisterLastFocussedInputKeySelector;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.RevertInputMappingChangeAttempt
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_TabKeybindingSettings_C_RevertInputMappingChangeAttempt final
-{
-public:
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_RevertInputMappingChangeAttempt;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowConflictWidget
-// 0x00F8 (0x00F8 - 0x0000)
-struct WBP_TabKeybindingSettings_C_ShowConflictWidget final
-{
-public:
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWBP_ConflictingKeybinding_C*           CallFunc_Create_ReturnValue;                       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0020(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FPlayerKeyMapping                      CallFunc_Array_Get_Item;                           // 0x0028(0x00A8)(HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00D4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D5[0x3];                                       // 0x00D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x00E0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowConflictWidget;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowForbiddenKeyWarning
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_TabKeybindingSettings_C_ShowForbiddenKeyWarning final
-{
-public:
-	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowForbiddenKeyWarning;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.ShowResetAllWidget
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_TabKeybindingSettings_C_ShowResetAllWidget final
-{
-public:
-	class UWindowManager*                         CallFunc_GetWindowManager_ReturnValue;             // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCommonActivatableWidget*               CallFunc_PushToLayer_ReturnValue;                  // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_DirtySettingsDialog_C*             K2Node_DynamicCast_AsWBP_Dirty_Settings_Dialog;    // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_ShowResetAllWidget;
-
-// Function WBP_TabKeybindingSettings.WBP_TabKeybindingSettings_C.UnregisterLastFocussedInputKeySelector
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_TabKeybindingSettings_C_UnregisterLastFocussedInputKeySelector final
-{
-public:
-	class UPanelWidget*                           CallFunc_GetParent_ReturnValue;                    // 0x0000(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UWBP_TabControlsSettings_C*             CallFunc_FindParentWidgetOfType_ReturnValue;       // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabKeybindingSettings_C_UnregisterLastFocussedInputKeySelector;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -453,16 +453,6 @@ enum class EFTagChange : uint8
 	FTagChange_MAX                           = 2,
 };
 
-// ScriptStruct Subnautica2.SN2SubmixEffectChainMap
-// 0x0038 (0x0038 - 0x0000)
-struct FSN2SubmixEffectChainMap final
-{
-public:
-	TSoftObjectPtr<class USoundSubmix>            Submix;                                            // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<TSoftObjectPtr<class USoundEffectSubmixPreset>> SubmixEffectChain;                        // 0x0028(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2SubmixEffectChainMap;
-
 // ScriptStruct Subnautica2.SN2BaseCharacterSaveData
 // 0x0080 (0x0080 - 0x0000)
 struct FSN2BaseCharacterSaveData final
@@ -473,15 +463,6 @@ public:
 	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSN2BaseCharacterSaveData;
-
-// ScriptStruct Subnautica2.SN2BlockingOverlap
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FSN2BlockingOverlap final
-{
-public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSN2BlockingOverlap;
 
 // ScriptStruct Subnautica2.SN2BaseCellInfo
 // 0x0028 (0x0028 - 0x0000)
@@ -494,6 +475,18 @@ public:
 	struct FVector                                Normal;                                            // 0x0010(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSN2BaseCellInfo;
+
+// ScriptStruct Subnautica2.ScannerPointData
+// 0x0080 (0x0080 - 0x0000)
+struct FScannerPointData final
+{
+public:
+	struct FTransform                             LocalTransform;                                    // 0x0000(0x0060)(BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x0060(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Lifetime;                                          // 0x0070(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FScannerPointData;
 
 // ScriptStruct Subnautica2.SN2CharacterPart
 // 0x0038 (0x0038 - 0x0000)
@@ -524,6 +517,17 @@ public:
 };
 DUMPER7_ASSERTS_FUWEPlayerAdaptation;
 
+// ScriptStruct Subnautica2.UWEMapPoint
+// 0x0040 (0x0040 - 0x0000)
+struct FUWEMapPoint final
+{
+public:
+	class FString                                 Title;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEMapPoint;
+
 // ScriptStruct Subnautica2.SN2ActiveScannerPoint
 // 0x0020 (0x0020 - 0x0000)
 struct FSN2ActiveScannerPoint final
@@ -535,15 +539,15 @@ public:
 };
 DUMPER7_ASSERTS_FSN2ActiveScannerPoint;
 
-// ScriptStruct Subnautica2.InteractHighlightComponentLink
-// 0x0038 (0x0038 - 0x0000)
-struct FInteractHighlightComponentLink final
+// ScriptStruct Subnautica2.SN2ResonatingCueHandle
+// 0x0010 (0x0010 - 0x0000)
+struct FSN2ResonatingCueHandle final
 {
 public:
-	struct FComponentReference                    HoveredComponent;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FComponentReference>            HighlightedComponents;                             // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           CueTag;                                            // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FInteractHighlightComponentLink;
+DUMPER7_ASSERTS_FSN2ResonatingCueHandle;
 
 // ScriptStruct Subnautica2.SN2BioreactorPowerConsumptionConfig
 // 0x0008 (0x0008 - 0x0000)
@@ -554,18 +558,6 @@ public:
 	float                                         ConsumptionTimeScalar;                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSN2BioreactorPowerConsumptionConfig;
-
-// ScriptStruct Subnautica2.UWEAdaptationStateInfo
-// 0x00A0 (0x00A0 - 0x0000)
-struct FUWEAdaptationStateInfo final
-{
-public:
-	struct FUWEPlayerAdaptation                   Adaptation;                                        // 0x0000(0x0098)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	bool                                          bIsDescriptionVisible;                             // 0x0098(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayerHasAdaptation;                              // 0x0099(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEAdaptationStateInfo;
 
 // ScriptStruct Subnautica2.UWEPlacementVolumeData
 // 0x0070 (0x0070 - 0x0000)
@@ -757,6 +749,15 @@ public:
 };
 DUMPER7_ASSERTS_FBuildingRequirementDisplay;
 
+// ScriptStruct Subnautica2.CellChangeISMInstances
+// 0x0010 (0x0010 - 0x0000)
+struct FCellChangeISMInstances final
+{
+public:
+	TArray<struct FTransform>                     Instances;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCellChangeISMInstances;
+
 // ScriptStruct Subnautica2.SN2BlightNodeCreatureSpawnPoint
 // 0x0060 (0x0060 - 0x0000)
 struct FSN2BlightNodeCreatureSpawnPoint final
@@ -765,6 +766,17 @@ public:
 	struct FTransform                             LocalTransform;                                    // 0x0000(0x0060)(Edit, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSN2BlightNodeCreatureSpawnPoint;
+
+// ScriptStruct Subnautica2.SN2MetalSeedData
+// 0x0018 (0x0018 - 0x0000)
+struct FSN2MetalSeedData final
+{
+public:
+	class UUWEResonatableData*                    ResonatableData;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UMaterialInterface*                     SeedMaterial;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FGameplayTag                           MetalTier;                                         // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSN2MetalSeedData;
 
 // ScriptStruct Subnautica2.SN2PartialResource
 // 0x0030 (0x0030 - 0x0000)
@@ -776,6 +788,16 @@ public:
 	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSN2PartialResource;
+
+// ScriptStruct Subnautica2.InteractHighlightComponentLink
+// 0x0038 (0x0038 - 0x0000)
+struct FInteractHighlightComponentLink final
+{
+public:
+	struct FComponentReference                    HoveredComponent;                                  // 0x0000(0x0028)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FComponentReference>            HighlightedComponents;                             // 0x0028(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInteractHighlightComponentLink;
 
 // ScriptStruct Subnautica2.SculptedBaseEditSettings
 // 0x0004 (0x0004 - 0x0000)
@@ -797,19 +819,6 @@ public:
 };
 DUMPER7_ASSERTS_FSN2PiecePlacementParams;
 
-// ScriptStruct Subnautica2.SN2PlayerRecord
-// 0x0020 (0x0020 - 0x0000)
-struct FSN2PlayerRecord final
-{
-public:
-	bool                                          bIsHost;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PlayerId;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              LastPlayed;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2PlayerRecord;
-
 // ScriptStruct Subnautica2.SN2CharacterPartEntry
 // 0x0040 (0x0040 - 0x0000)
 struct alignas(0x08) FSN2CharacterPartEntry final
@@ -818,15 +827,6 @@ public:
 	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSN2CharacterPartEntry;
-
-// ScriptStruct Subnautica2.SN2PiecePlacementData
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x04) FSN2PiecePlacementData final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSN2PiecePlacementData;
 
 // ScriptStruct Subnautica2.SN2EmbeddedActorParams
 // 0x0100 (0x0100 - 0x0000)
@@ -866,6 +866,16 @@ public:
 };
 DUMPER7_ASSERTS_FUWEClientSessionInfo;
 
+// ScriptStruct Subnautica2.SN2SubmixEffectChainMap
+// 0x0038 (0x0038 - 0x0000)
+struct FSN2SubmixEffectChainMap final
+{
+public:
+	TSoftObjectPtr<class USoundSubmix>            Submix;                                            // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<TSoftObjectPtr<class USoundEffectSubmixPreset>> SubmixEffectChain;                        // 0x0028(0x0010)(Edit, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSN2SubmixEffectChainMap;
+
 // ScriptStruct Subnautica2.SN2CustomizationItemViewModelArray
 // 0x0010 (0x0010 - 0x0000)
 struct FSN2CustomizationItemViewModelArray final
@@ -885,17 +895,14 @@ public:
 };
 DUMPER7_ASSERTS_FAlertInstHandle;
 
-// ScriptStruct Subnautica2.ComputerCoreGoalUnlock
-// 0x0048 (0x0048 - 0x0000)
-struct FComputerCoreGoalUnlock final
+// ScriptStruct Subnautica2.IntVectorSetKey
+// 0x0050 (0x0050 - 0x0000)
+struct alignas(0x08) FIntVectorSetKey final
 {
 public:
-	struct FGameplayTagContainer                  RequiredGoalPool;                                  // 0x0000(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	int32                                         NumRequiredFromPool;                               // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  StoryGoalsToUnlock;                                // 0x0028(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FComputerCoreGoalUnlock;
+DUMPER7_ASSERTS_FIntVectorSetKey;
 
 // ScriptStruct Subnautica2.EngineMode
 // 0x0040 (0x0040 - 0x0000)
@@ -911,6 +918,17 @@ public:
 };
 DUMPER7_ASSERTS_FEngineMode;
 
+// ScriptStruct Subnautica2.SN2DynamicMaterialInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FSN2DynamicMaterialInfo final
+{
+public:
+	int32                                         ProgressBlendLayer;                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FSN2DynamicMaterialInfo;
+
 // ScriptStruct Subnautica2.SN2AngularMotion
 // 0x0050 (0x0050 - 0x0000)
 struct FSN2AngularMotion final
@@ -924,16 +942,6 @@ public:
 	float                                         Mass;                                              // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSN2AngularMotion;
-
-// ScriptStruct Subnautica2.CellChangeISMParams
-// 0x0010 (0x0010 - 0x0000)
-struct FCellChangeISMParams final
-{
-public:
-	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCellChangeISMParams;
 
 // ScriptStruct Subnautica2.SN2CollisionTestParams
 // 0x0040 (0x0040 - 0x0000)
@@ -1012,6 +1020,15 @@ public:
 };
 DUMPER7_ASSERTS_FSN2EditBrush;
 
+// ScriptStruct Subnautica2.SN2BlockingOverlap
+// 0x0028 (0x0028 - 0x0000)
+struct alignas(0x08) FSN2BlockingOverlap final
+{
+public:
+	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSN2BlockingOverlap;
+
 // ScriptStruct Subnautica2.SN2ActorOverrideModuleCoords
 // 0x0070 (0x0070 - 0x0000)
 struct FSN2ActorOverrideModuleCoords final
@@ -1033,29 +1050,50 @@ public:
 };
 DUMPER7_ASSERTS_FSN2ActorOverrideModule;
 
-// ScriptStruct Subnautica2.CheatListItem
-// 0x0030 (0x0030 - 0x0000)
-struct FCheatListItem final
+// ScriptStruct Subnautica2.SN2ConstructActorOverrideKey
+// 0x0088 (0x0088 - 0x0000)
+struct FSN2ConstructActorOverrideKey final
 {
 public:
-	class FString                                 Title;                                             // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Context;                                           // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ToolTip;                                           // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  BrushTypes;                                        // 0x0000(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         AllowedSurfaces;                                   // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<struct FUWEBaseModulePieceID>            AllowedModulePieces;                               // 0x0028(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<struct FSN2ActorOverrideModule>        AllowedModules;                                    // 0x0078(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCheatListItem;
+DUMPER7_ASSERTS_FSN2ConstructActorOverrideKey;
 
-// ScriptStruct Subnautica2.SN2ConstructActorOverride
-// 0x00E0 (0x00E0 - 0x0000)
-struct FSN2ConstructActorOverride final
+// ScriptStruct Subnautica2.UWEGhostLocation
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FUWEGhostLocation final
 {
 public:
-	TSoftClassPtr<class UClass>                   ActorClass;                                        // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             PlacementOffset;                                   // 0x0030(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UStaticMesh>             GhostMeshOverride;                                 // 0x0090(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftClassPtr<class UClass>                   CustomGhost;                                       // 0x00B8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FSN2ConstructActorOverride;
+DUMPER7_ASSERTS_FUWEGhostLocation;
+
+// ScriptStruct Subnautica2.SN2PlayerStartTriggerHandling
+// 0x0030 (0x0030 - 0x0000)
+struct FSN2PlayerStartTriggerHandling final
+{
+public:
+	TSoftObjectPtr<class AUWEPlayerTrigger>       Trigger;                                           // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExecute;                                          // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisable;                                          // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSN2PlayerStartTriggerHandling;
+
+// ScriptStruct Subnautica2.LockerStartupItem
+// 0x0010 (0x0010 - 0x0000)
+struct FLockerStartupItem final
+{
+public:
+	class UUWEItemType*                           Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	int32                                         Count;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FLockerStartupItem;
 
 // ScriptStruct Subnautica2.SN2BuilderSnapping
 // 0x0008 (0x0008 - 0x0000)
@@ -1067,24 +1105,6 @@ public:
 	float                                         Scale;                                             // 0x0004(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSN2BuilderSnapping;
-
-// ScriptStruct Subnautica2.IntVectorSetKey
-// 0x0050 (0x0050 - 0x0000)
-struct alignas(0x08) FIntVectorSetKey final
-{
-public:
-	uint8                                         Pad_0[0x50];                                       // 0x0000(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIntVectorSetKey;
-
-// ScriptStruct Subnautica2.SN2EditLegalitySnapData
-// 0x0050 (0x0050 - 0x0000)
-struct FSN2EditLegalitySnapData final
-{
-public:
-	TMap<struct FIntVectorSetKey, class UObject*> CachedEditActions;                                 // 0x0000(0x0050)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2EditLegalitySnapData;
 
 // ScriptStruct Subnautica2.SN2TabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
@@ -1117,6 +1137,19 @@ public:
 };
 DUMPER7_ASSERTS_FSN2BuilderConstructionInfo;
 
+// ScriptStruct Subnautica2.SN2ConstructActorOverride
+// 0x00E0 (0x00E0 - 0x0000)
+struct FSN2ConstructActorOverride final
+{
+public:
+	TSoftClassPtr<class UClass>                   ActorClass;                                        // 0x0000(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             PlacementOffset;                                   // 0x0030(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UStaticMesh>             GhostMeshOverride;                                 // 0x0090(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   CustomGhost;                                       // 0x00B8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSN2ConstructActorOverride;
+
 // ScriptStruct Subnautica2.EMTTorsionComponentExtraInfo
 // 0x0028 (0x0028 - 0x0000)
 struct FEMTTorsionComponentExtraInfo final
@@ -1130,6 +1163,16 @@ public:
 };
 DUMPER7_ASSERTS_FEMTTorsionComponentExtraInfo;
 
+// ScriptStruct Subnautica2.CellChangeISMParams
+// 0x0010 (0x0010 - 0x0000)
+struct FCellChangeISMParams final
+{
+public:
+	class UStaticMesh*                            Mesh;                                              // 0x0000(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCellChangeISMParams;
+
 // ScriptStruct Subnautica2.ConsumableInfo
 // 0x000C (0x000C - 0x0000)
 struct FConsumableInfo final
@@ -1139,16 +1182,6 @@ public:
 	float                                         Value;                                             // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FConsumableInfo;
-
-// ScriptStruct Subnautica2.SN2ResonatingCueHandle
-// 0x0010 (0x0010 - 0x0000)
-struct FSN2ResonatingCueHandle final
-{
-public:
-	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           CueTag;                                            // 0x0008(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2ResonatingCueHandle;
 
 // ScriptStruct Subnautica2.SubsystemDamage
 // 0x000C (0x000C - 0x0000)
@@ -1182,6 +1215,36 @@ public:
 };
 DUMPER7_ASSERTS_FSN2EditSelectionData;
 
+// ScriptStruct Subnautica2.SN2PiecePlacementData
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x04) FSN2PiecePlacementData final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSN2PiecePlacementData;
+
+// ScriptStruct Subnautica2.SN2EditLegalitySnapData
+// 0x0050 (0x0050 - 0x0000)
+struct FSN2EditLegalitySnapData final
+{
+public:
+	TMap<struct FIntVectorSetKey, class UObject*> CachedEditActions;                                 // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSN2EditLegalitySnapData;
+
+// ScriptStruct Subnautica2.UWEAdaptationStateInfo
+// 0x00A0 (0x00A0 - 0x0000)
+struct FUWEAdaptationStateInfo final
+{
+public:
+	struct FUWEPlayerAdaptation                   Adaptation;                                        // 0x0000(0x0098)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bIsDescriptionVisible;                             // 0x0098(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayerHasAdaptation;                              // 0x0099(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9A[0x6];                                       // 0x009A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEAdaptationStateInfo;
+
 // ScriptStruct Subnautica2.UWEAnimatingActorInfo
 // 0x0018 (0x0018 - 0x0000)
 struct alignas(0x08) FUWEAnimatingActorInfo final
@@ -1209,19 +1272,6 @@ public:
 };
 DUMPER7_ASSERTS_FSN2BaseScannerStationSignalsForTag;
 
-// ScriptStruct Subnautica2.SN2ConstructActorOverrideKey
-// 0x0088 (0x0088 - 0x0000)
-struct FSN2ConstructActorOverrideKey final
-{
-public:
-	struct FGameplayTagContainer                  BrushTypes;                                        // 0x0000(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         AllowedSurfaces;                                   // 0x0020(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<struct FUWEBaseModulePieceID>            AllowedModulePieces;                               // 0x0028(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TArray<struct FSN2ActorOverrideModule>        AllowedModules;                                    // 0x0078(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2ConstructActorOverrideKey;
-
 // ScriptStruct Subnautica2.SN2GhostMaterialKey
 // 0x0010 (0x0010 - 0x0000)
 struct FSN2GhostMaterialKey final
@@ -1232,26 +1282,6 @@ public:
 	class UMaterialInterface*                     Material;                                          // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FSN2GhostMaterialKey;
-
-// ScriptStruct Subnautica2.SN2DynamicMaterialInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FSN2DynamicMaterialInfo final
-{
-public:
-	int32                                         ProgressBlendLayer;                                // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x0008(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FSN2DynamicMaterialInfo;
-
-// ScriptStruct Subnautica2.CellChangeISMInstances
-// 0x0010 (0x0010 - 0x0000)
-struct FCellChangeISMInstances final
-{
-public:
-	TArray<struct FTransform>                     Instances;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCellChangeISMInstances;
 
 // ScriptStruct Subnautica2.SN2CannotBuildReason
 // 0x0018 (0x0018 - 0x0000)
@@ -1288,14 +1318,28 @@ public:
 };
 DUMPER7_ASSERTS_FDefaultParam;
 
-// ScriptStruct Subnautica2.UWEGhostLocation
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FUWEGhostLocation final
+// ScriptStruct Subnautica2.CheatListItem
+// 0x0030 (0x0030 - 0x0000)
+struct FCheatListItem final
 {
 public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 Title;                                             // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Context;                                           // 0x0010(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ToolTip;                                           // 0x0020(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FUWEGhostLocation;
+DUMPER7_ASSERTS_FCheatListItem;
+
+// ScriptStruct Subnautica2.ComputerCoreGoalUnlock
+// 0x0048 (0x0048 - 0x0000)
+struct FComputerCoreGoalUnlock final
+{
+public:
+	struct FGameplayTagContainer                  RequiredGoalPool;                                  // 0x0000(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         NumRequiredFromPool;                               // 0x0020(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  StoryGoalsToUnlock;                                // 0x0028(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FComputerCoreGoalUnlock;
 
 // ScriptStruct Subnautica2.KeyBindTextElement
 // 0x0018 (0x0018 - 0x0000)
@@ -1305,17 +1349,6 @@ public:
 	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FKeyBindTextElement;
-
-// ScriptStruct Subnautica2.LockerStartupItem
-// 0x0010 (0x0010 - 0x0000)
-struct FLockerStartupItem final
-{
-public:
-	class UUWEItemType*                           Item;                                              // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	int32                                         Count;                                             // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FLockerStartupItem;
 
 // ScriptStruct Subnautica2.SN2EditBrushKey
 // 0x0070 (0x0070 - 0x0000)
@@ -1369,17 +1402,6 @@ public:
 };
 DUMPER7_ASSERTS_FSN2EditMode;
 
-// ScriptStruct Subnautica2.UWEMapPoint
-// 0x0040 (0x0040 - 0x0000)
-struct FUWEMapPoint final
-{
-public:
-	class FString                                 Title;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0010(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0028(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEMapPoint;
-
 // ScriptStruct Subnautica2.MapData
 // 0x0038 (0x0038 - 0x0000)
 struct FMapData final
@@ -1394,17 +1416,6 @@ public:
 	class UTexture2D*                             Texture;                                           // 0x0030(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FMapData;
-
-// ScriptStruct Subnautica2.SN2MetalSeedData
-// 0x0018 (0x0018 - 0x0000)
-struct FSN2MetalSeedData final
-{
-public:
-	class UUWEResonatableData*                    ResonatableData;                                   // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UMaterialInterface*                     SeedMaterial;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FGameplayTag                           MetalTier;                                         // 0x0010(0x0008)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSN2MetalSeedData;
 
 // ScriptStruct Subnautica2.UWENearbyActor
 // 0x0040 (0x0040 - 0x0000)
@@ -1508,18 +1519,6 @@ public:
 };
 DUMPER7_ASSERTS_FSN2CharacterSkinTone;
 
-// ScriptStruct Subnautica2.SN2PlayerStartTriggerHandling
-// 0x0030 (0x0030 - 0x0000)
-struct FSN2PlayerStartTriggerHandling final
-{
-public:
-	TSoftObjectPtr<class AUWEPlayerTrigger>       Trigger;                                           // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bExecute;                                          // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDisable;                                          // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSN2PlayerStartTriggerHandling;
-
 // ScriptStruct Subnautica2.RefineryClientServerMessage
 // 0x0008 (0x0008 - 0x0000)
 struct FRefineryClientServerMessage final
@@ -1553,18 +1552,6 @@ public:
 	class ASN2WorldGameMode*                      GameMode;                                          // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEConversionInfo;
-
-// ScriptStruct Subnautica2.ScannerPointData
-// 0x0080 (0x0080 - 0x0000)
-struct FScannerPointData final
-{
-public:
-	struct FTransform                             LocalTransform;                                    // 0x0000(0x0060)(BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0060(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Lifetime;                                          // 0x0070(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FScannerPointData;
 
 // ScriptStruct Subnautica2.SpinningScannerPointData
 // 0x0040 (0x0040 - 0x0000)
@@ -1707,6 +1694,19 @@ public:
 	TArray<TScriptInterface<class IUWEUnlockableAsset>> Unlockables;                                 // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEUnlockablesList;
+
+// ScriptStruct Subnautica2.SN2PlayerRecord
+// 0x0020 (0x0020 - 0x0000)
+struct FSN2PlayerRecord final
+{
+public:
+	bool                                          bIsHost;                                           // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PlayerId;                                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              LastPlayed;                                        // 0x0018(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, SaveGame, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSN2PlayerRecord;
 
 // ScriptStruct Subnautica2.CompassStripTextMarker
 // 0x0020 (0x0020 - 0x0000)

@@ -14,10 +14,10 @@
 #include "FieldNotification_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UWEPlayerCustomization_structs.hpp"
-#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 #include "FMODStudio_structs.hpp"
 #include "Subnautica2_structs.hpp"
-#include "UMG_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START

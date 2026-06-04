@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "UWEGameConfiguration_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
 

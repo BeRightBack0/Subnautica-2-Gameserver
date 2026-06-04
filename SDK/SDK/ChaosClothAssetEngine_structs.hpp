@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "ClothingSystemRuntimeCommon_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
 
 

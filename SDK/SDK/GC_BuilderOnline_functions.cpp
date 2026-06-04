@@ -84,19 +84,19 @@ struct FLinearColor AGC_BuilderOnline_C::GetStateColor()
 }
 
 
-// Function GC_BuilderOnline.GC_BuilderOnline_C.initHologramLight
+// Function GC_BuilderOnline.GC_BuilderOnline_C.InitHologramLight
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USceneComponent*                  AttachTarget                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void AGC_BuilderOnline_C::initHologramLight(class USceneComponent* AttachTarget)
+void AGC_BuilderOnline_C::InitHologramLight(class USceneComponent* AttachTarget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GC_BuilderOnline_C", "initHologramLight");
+		Func = Class->GetFunction("GC_BuilderOnline_C", "InitHologramLight");
 
-	Params::GC_BuilderOnline_C_initHologramLight Parms{};
+	Params::GC_BuilderOnline_C_InitHologramLight Parms{};
 
 	Parms.AttachTarget = AttachTarget;
 

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "F_ISMCData_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
 

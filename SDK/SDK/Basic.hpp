@@ -56,11 +56,12 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0CD16500;
-	constexpr int32 AppendString      = 0x0147B0D0; // 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 80 3D ? ? ? ? ? 48 8B F2 8B 19
-	constexpr int32 GNames            = 0x0CC32300; // we dont use it chat
-	constexpr int32 GWorld            = 0x0C9DAA20; // same chat
-	constexpr int32 ProcessEvent      = 0x016BAC90; // 40 55 56 57 41 54 41 55 41 56 41 57 48 81 EC ? ? ? ? 48 8D 6C 24 ? 48 89 9D ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C5 48 89 85 ? ? ? ? 8B 41
+	constexpr int32 GObjects          = 0x0CD23980;
+	constexpr int32 AppendString      = 0x0147A530;
+	constexpr int32 GNames            = 0x0CC3F780;
+	constexpr int32 GWorld            = 0x0C9E7A20;
+	constexpr int32 ProcessEvent      = 0x016BB8C0;
+	constexpr int32 ProcessEventIdx   = 0x0000004C;
 }
 
 namespace InSDKUtils

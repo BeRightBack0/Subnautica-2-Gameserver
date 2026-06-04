@@ -32,18 +32,18 @@ public:
 	bool                                          DisableSFX;                                        // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_Blackbox_Clickable_01a(int32 EntryPoint);
-	struct FInteractionInfo GetInteractionInfo(class AActor* HoverActor, class AActor* ForActor, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
-	void Interact(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	void InteractClient(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	void InteractEnd(class AController* Controller, class APawn* Pawn);
-	void InteractEndClient(class AController* Controller, class APawn* Pawn);
-	void InteractEndServer(class AController* Controller, class APawn* Pawn);
-	float InteractionDistance();
-	void InteractServer(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	bool IsInteractDisabled(class AActor* HoverActor, class AActor* ForActor, float Distance, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
-	void OnUnlocked_07BDEFDA4F7F51B7910FA1BD9757E4B0();
 	void ReceiveBeginPlay();
+	void OnUnlocked_07BDEFDA4F7F51B7910FA1BD9757E4B0();
+	bool IsInteractDisabled(class AActor* HoverActor, class AActor* ForActor, float Distance, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
+	void InteractServer(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	float InteractionDistance();
+	void InteractEndServer(class AController* Controller, class APawn* Pawn);
+	void InteractEndClient(class AController* Controller, class APawn* Pawn);
+	void InteractEnd(class AController* Controller, class APawn* Pawn);
+	void InteractClient(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	void Interact(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	struct FInteractionInfo GetInteractionInfo(class AActor* HoverActor, class AActor* ForActor, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
+	void ExecuteUbergraph_BP_Blackbox_Clickable_01a(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

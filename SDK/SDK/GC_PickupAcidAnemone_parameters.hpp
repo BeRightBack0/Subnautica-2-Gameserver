@@ -13,8 +13,8 @@
 #include "GameplayAbilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UWEGameplayCues_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "FMODStudio_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 SDK_NAMESPACE_START

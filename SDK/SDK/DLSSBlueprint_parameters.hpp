@@ -111,15 +111,6 @@ public:
 };
 DUMPER7_ASSERTS_DLSSLibrary_GetDLSSScreenPercentageRange;
 
-// Function DLSSBlueprint.DLSSLibrary.GetDLSSSharpness
-// 0x0004 (0x0004 - 0x0000)
-struct DLSSLibrary_GetDLSSSharpness final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DLSSLibrary_GetDLSSSharpness;
-
 // Function DLSSBlueprint.DLSSLibrary.GetSupportedDLSSModes
 // 0x0010 (0x0010 - 0x0000)
 struct DLSSLibrary_GetSupportedDLSSModes final
@@ -221,15 +212,6 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_DLSSLibrary_SetDLSSMode;
-
-// Function DLSSBlueprint.DLSSLibrary.SetDLSSSharpness
-// 0x0004 (0x0004 - 0x0000)
-struct DLSSLibrary_SetDLSSSharpness final
-{
-public:
-	float                                         Sharpness;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_DLSSLibrary_SetDLSSSharpness;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

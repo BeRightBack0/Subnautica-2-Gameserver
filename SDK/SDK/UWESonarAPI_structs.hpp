@@ -53,14 +53,16 @@ enum class ESonarEntitlementSource : uint8
 	ESonarEntitlementSource_MAX              = 2,
 };
 
-// ScriptStruct UWESonarAPI.SonarPlayerFriendRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FSonarPlayerFriendRequest final
+// ScriptStruct UWESonarAPI.SonarSurveyQuestion
+// 0x0018 (0x0018 - 0x0000)
+struct FSonarSurveyQuestion final
 {
 public:
-	class FString                                 Status;                                            // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESonarSurveyOptionType                        OptionType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Question;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FSonarPlayerFriendRequest;
+DUMPER7_ASSERTS_FSonarSurveyQuestion;
 
 // ScriptStruct UWESonarAPI.SonarSaveUploadCustomInfo
 // 0x0020 (0x0020 - 0x0000)
@@ -97,154 +99,6 @@ public:
 };
 DUMPER7_ASSERTS_FSonarSaveUploadMetadata;
 
-// ScriptStruct UWESonarAPI.SonarSaveGameResponse
-// 0x00F8 (0x00F8 - 0x0000)
-struct FSonarSaveGameResponse final
-{
-public:
-	struct FSonarSaveUploadMetadata               SaveMetaData;                                      // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FString                                 SaveId;                                            // 0x0088(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 S3Filename;                                        // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SaveOwnerSonarPlayerId;                            // 0x00A8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ShareCode;                                         // 0x00B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 S3Url;                                             // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UrlType;                                           // 0x00D0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              LastUpdateTime;                                    // 0x00E0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              ExpirationTime;                                    // 0x00E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              CreationTime;                                      // 0x00F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarSaveGameResponse;
-
-// ScriptStruct UWESonarAPI.SonarTwitchLinkResponse
-// 0x0020 (0x0020 - 0x0000)
-struct FSonarTwitchLinkResponse final
-{
-public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<uint8>                                 QRCodeData;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarTwitchLinkResponse;
-
-// ScriptStruct UWESonarAPI.SonarEntitlementClaimedResponse
-// 0x0030 (0x0030 - 0x0000)
-struct FSonarEntitlementClaimedResponse final
-{
-public:
-	class FString                                 BenefitId;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EntitlementStatus;                                 // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 EntitlementSource;                                 // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarEntitlementClaimedResponse;
-
-// ScriptStruct UWESonarAPI.SonarSurveyQuestion
-// 0x0018 (0x0018 - 0x0000)
-struct FSonarSurveyQuestion final
-{
-public:
-	ESonarSurveyOptionType                        OptionType;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Question;                                          // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarSurveyQuestion;
-
-// ScriptStruct UWESonarAPI.SonarSurveyAnswer
-// 0x0028 (0x0028 - 0x0000)
-struct FSonarSurveyAnswer final
-{
-public:
-	uint8                                         Index;                                             // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Selected;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Question;                                          // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarSurveyAnswer;
-
-// ScriptStruct UWESonarAPI.SonarTwitchEntitlementResponse
-// 0x0018 (0x0018 - 0x0000)
-struct FSonarTwitchEntitlementResponse final
-{
-public:
-	int32                                         Count;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FString>                         EntitlementIds;                                    // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarTwitchEntitlementResponse;
-
-// ScriptStruct UWESonarAPI.SonarSurveyResponse
-// 0x0038 (0x0038 - 0x0000)
-struct FSonarSurveyResponse final
-{
-public:
-	class FString                                 DocumentId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              EndDate;                                           // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FSonarSurveyQuestion>           Questions;                                         // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarSurveyResponse;
-
-// ScriptStruct UWESonarAPI.SonarNewsfeedContent
-// 0x0018 (0x0018 - 0x0000)
-struct FSonarNewsfeedContent final
-{
-public:
-	ESonarNewsfeedContentType                     ContentType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Content;                                           // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarNewsfeedContent;
-
-// ScriptStruct UWESonarAPI.SonarNewsfeedEntryResponse
-// 0x0058 (0x0058 - 0x0000)
-struct FSonarNewsfeedEntryResponse final
-{
-public:
-	class FString                                 DocumentId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              Date;                                              // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ImageUrl;                                          // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<uint8>                                 ImageThumbnailData;                                // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FSonarNewsfeedContent>          Content;                                           // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarNewsfeedEntryResponse;
-
-// ScriptStruct UWESonarAPI.SonarPlayerDeleteFriendCodeRequest
-// 0x0001 (0x0001 - 0x0000)
-struct FSonarPlayerDeleteFriendCodeRequest final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSonarPlayerDeleteFriendCodeRequest;
-
-// ScriptStruct UWESonarAPI.SonarRuntimeInfo
-// 0x0048 (0x0048 - 0x0000)
-struct FSonarRuntimeInfo final
-{
-public:
-	int32                                         seconds_since_start;                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         seconds_since_game_start;                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 map_name;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 game_type;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 net_mode;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 lobby_id;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarRuntimeInfo;
-
-// ScriptStruct UWESonarAPI.SonarPlayerStatusRequest
-// 0x0080 (0x0080 - 0x0000)
-struct FSonarPlayerStatusRequest final
-{
-public:
-	class FString                                 alias;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Mode;                                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 connected_to_address;                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         connected_to_port;                                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         connected_to_gameserver_id;                        // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSonarRuntimeInfo                      runtime_info;                                      // 0x0038(0x0048)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarPlayerStatusRequest;
-
 // ScriptStruct UWESonarAPI.SonarSystemInfo
 // 0x0070 (0x0070 - 0x0000)
 struct FSonarSystemInfo final
@@ -280,6 +134,131 @@ public:
 };
 DUMPER7_ASSERTS_FSonarAuthRequest;
 
+// ScriptStruct UWESonarAPI.SonarTwitchEntitlementResponse
+// 0x0018 (0x0018 - 0x0000)
+struct FSonarTwitchEntitlementResponse final
+{
+public:
+	int32                                         Count;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         EntitlementIds;                                    // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarTwitchEntitlementResponse;
+
+// ScriptStruct UWESonarAPI.SonarPlayerFriendUpdateRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FSonarPlayerFriendUpdateRequest final
+{
+public:
+	class FString                                 Status;                                            // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarPlayerFriendUpdateRequest;
+
+// ScriptStruct UWESonarAPI.SonarSaveGameResponse
+// 0x00F8 (0x00F8 - 0x0000)
+struct FSonarSaveGameResponse final
+{
+public:
+	struct FSonarSaveUploadMetadata               SaveMetaData;                                      // 0x0000(0x0088)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FString                                 SaveId;                                            // 0x0088(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 S3Filename;                                        // 0x0098(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SaveOwnerSonarPlayerId;                            // 0x00A8(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ShareCode;                                         // 0x00B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 S3Url;                                             // 0x00C0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UrlType;                                           // 0x00D0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              LastUpdateTime;                                    // 0x00E0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              ExpirationTime;                                    // 0x00E8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              CreationTime;                                      // 0x00F0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarSaveGameResponse;
+
+// ScriptStruct UWESonarAPI.SonarEntitlementClaimedResponse
+// 0x0030 (0x0030 - 0x0000)
+struct FSonarEntitlementClaimedResponse final
+{
+public:
+	class FString                                 BenefitId;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntitlementStatus;                                 // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 EntitlementSource;                                 // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarEntitlementClaimedResponse;
+
+// ScriptStruct UWESonarAPI.SonarSurveyResponse
+// 0x0038 (0x0038 - 0x0000)
+struct FSonarSurveyResponse final
+{
+public:
+	class FString                                 DocumentId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              EndDate;                                           // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSonarSurveyQuestion>           Questions;                                         // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarSurveyResponse;
+
+// ScriptStruct UWESonarAPI.SonarTwitchLinkResponse
+// 0x0020 (0x0020 - 0x0000)
+struct FSonarTwitchLinkResponse final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 QRCodeData;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarTwitchLinkResponse;
+
+// ScriptStruct UWESonarAPI.SonarNewsfeedContent
+// 0x0018 (0x0018 - 0x0000)
+struct FSonarNewsfeedContent final
+{
+public:
+	ESonarNewsfeedContentType                     ContentType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Content;                                           // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarNewsfeedContent;
+
+// ScriptStruct UWESonarAPI.SonarNewsfeedEntryResponse
+// 0x0058 (0x0058 - 0x0000)
+struct FSonarNewsfeedEntryResponse final
+{
+public:
+	class FString                                 DocumentId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              Date;                                              // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Title;                                             // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ImageUrl;                                          // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 ImageThumbnailData;                                // 0x0038(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSonarNewsfeedContent>          Content;                                           // 0x0048(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarNewsfeedEntryResponse;
+
+// ScriptStruct UWESonarAPI.SonarRuntimeInfo
+// 0x0048 (0x0048 - 0x0000)
+struct FSonarRuntimeInfo final
+{
+public:
+	int32                                         seconds_since_start;                               // 0x0000(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         seconds_since_game_start;                          // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 map_name;                                          // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 game_type;                                         // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 net_mode;                                          // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 lobby_id;                                          // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarRuntimeInfo;
+
+// ScriptStruct UWESonarAPI.SonarPlayerStatusRequest
+// 0x0080 (0x0080 - 0x0000)
+struct FSonarPlayerStatusRequest final
+{
+public:
+	class FString                                 alias;                                             // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Mode;                                              // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 connected_to_address;                              // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         connected_to_port;                                 // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         connected_to_gameserver_id;                        // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSonarRuntimeInfo                      runtime_info;                                      // 0x0038(0x0048)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarPlayerStatusRequest;
+
 // ScriptStruct UWESonarAPI.SonarEmptyRequest
 // 0x0001 (0x0001 - 0x0000)
 struct FSonarEmptyRequest final
@@ -299,6 +278,15 @@ public:
 };
 DUMPER7_ASSERTS_FSonarUploadSaveRequest;
 
+// ScriptStruct UWESonarAPI.SonarPlayerFriendRequest
+// 0x0010 (0x0010 - 0x0000)
+struct FSonarPlayerFriendRequest final
+{
+public:
+	class FString                                 Status;                                            // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarPlayerFriendRequest;
+
 // ScriptStruct UWESonarAPI.SonarPlayerFriendCodeRequest
 // 0x0001 (0x0001 - 0x0000)
 struct FSonarPlayerFriendCodeRequest final
@@ -317,6 +305,15 @@ public:
 };
 DUMPER7_ASSERTS_FSonarPlayerRemoveFriendRequest;
 
+// ScriptStruct UWESonarAPI.SonarPlayerDeleteFriendCodeRequest
+// 0x0001 (0x0001 - 0x0000)
+struct FSonarPlayerDeleteFriendCodeRequest final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSonarPlayerDeleteFriendCodeRequest;
+
 // ScriptStruct UWESonarAPI.SonarPlayerAddFriendByCodeRequest
 // 0x0001 (0x0001 - 0x0000)
 struct FSonarPlayerAddFriendByCodeRequest final
@@ -325,15 +322,6 @@ public:
 	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FSonarPlayerAddFriendByCodeRequest;
-
-// ScriptStruct UWESonarAPI.SonarPlayerFriendUpdateRequest
-// 0x0010 (0x0010 - 0x0000)
-struct FSonarPlayerFriendUpdateRequest final
-{
-public:
-	class FString                                 Status;                                            // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSonarPlayerFriendUpdateRequest;
 
 // ScriptStruct UWESonarAPI.SonarSurveyRequest
 // 0x0020 (0x0020 - 0x0000)
@@ -344,6 +332,18 @@ public:
 	class FString                                 PlatformName;                                      // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSonarSurveyRequest;
+
+// ScriptStruct UWESonarAPI.SonarSurveyAnswer
+// 0x0028 (0x0028 - 0x0000)
+struct FSonarSurveyAnswer final
+{
+public:
+	uint8                                         Index;                                             // 0x0000(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Selected;                                          // 0x0008(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Question;                                          // 0x0018(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSonarSurveyAnswer;
 
 // ScriptStruct UWESonarAPI.SonarNewsfeedListRequest
 // 0x0020 (0x0020 - 0x0000)

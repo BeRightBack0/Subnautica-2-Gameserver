@@ -16,6 +16,15 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct UWEGameplay.UWEPlayerSaveDataStub
+// 0x0060 (0x0060 - 0x0000)
+struct FUWEPlayerSaveDataStub final
+{
+public:
+	struct FTransform                             Transform;                                         // 0x0000(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEPlayerSaveDataStub;
+
 // ScriptStruct UWEGameplay.ActiveDynamicForceFeedback
 // 0x0010 (0x0010 - 0x0000)
 struct FActiveDynamicForceFeedback final
@@ -35,14 +44,5 @@ public:
 	struct FGameplayTag                           DamageType;                                        // 0x0010(0x0008)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDamageSource;
-
-// ScriptStruct UWEGameplay.UWEPlayerSaveDataStub
-// 0x0060 (0x0060 - 0x0000)
-struct FUWEPlayerSaveDataStub final
-{
-public:
-	struct FTransform                             Transform;                                         // 0x0000(0x0060)(SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEPlayerSaveDataStub;
 
 SDK_NAMESPACE_END

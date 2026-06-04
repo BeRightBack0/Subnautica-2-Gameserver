@@ -325,6 +325,18 @@ public:
 };
 DUMPER7_ASSERTS_FFocalLengthFocusCurve;
 
+// ScriptStruct CameraCalibrationCore.NodalOffsetFocusPoint
+// 0x0308 (0x0310 - 0x0008)
+struct FNodalOffsetFocusPoint final : public FBaseFocusPoint
+{
+public:
+	float                                         Focus;                                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRichCurve                             LocationOffset[0x3];                               // 0x0010(0x0080)(NativeAccessSpecifierPublic)
+	struct FRichCurve                             RotationOffset[0x3];                               // 0x0190(0x0080)(NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNodalOffsetFocusPoint;
+
 // ScriptStruct CameraCalibrationCore.FocalLengthTable
 // 0x0020 (0x0030 - 0x0010)
 struct FFocalLengthTable final : public FBaseLensTable
@@ -369,6 +381,29 @@ public:
 };
 DUMPER7_ASSERTS_FImageCenterTable;
 
+// ScriptStruct CameraCalibrationCore.DistortionData
+// 0x0018 (0x0018 - 0x0000)
+struct FDistortionData final
+{
+public:
+	TArray<struct FVector2D>                      DistortedUVs;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	float                                         OverscanFactor;                                    // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDistortionData;
+
+// ScriptStruct CameraCalibrationCore.DerivedDistortionData
+// 0x0030 (0x0030 - 0x0000)
+struct FDerivedDistortionData final
+{
+public:
+	struct FDistortionData                        DistortionData;                                    // 0x0000(0x0018)(Edit, EditConst, NativeAccessSpecifierPublic)
+	class UTextureRenderTarget2D*                 UndistortionDisplacementMap;                       // 0x0018(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	class UTextureRenderTarget2D*                 DistortionDisplacementMap;                         // 0x0020(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FDerivedDistortionData;
+
 // ScriptStruct CameraCalibrationCore.LensInfo
 // 0x0048 (0x0048 - 0x0000)
 struct FLensInfo final
@@ -406,16 +441,52 @@ public:
 };
 DUMPER7_ASSERTS_FSimulcamInfo;
 
-// ScriptStruct CameraCalibrationCore.DistortionData
-// 0x0018 (0x0018 - 0x0000)
-struct FDistortionData final
+// ScriptStruct CameraCalibrationCore.STMapZoomPoint
+// 0x0050 (0x0050 - 0x0000)
+struct FSTMapZoomPoint final
 {
 public:
-	TArray<struct FVector2D>                      DistortedUVs;                                      // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	float                                         OverscanFactor;                                    // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         Zoom;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSTMapInfo                             STMapInfo;                                         // 0x0008(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FDerivedDistortionData                 DerivedDistortionData;                             // 0x0018(0x0030)(Transient, NativeAccessSpecifierPublic)
+	bool                                          bIsCalibrationPoint;                               // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FDistortionData;
+DUMPER7_ASSERTS_FSTMapZoomPoint;
+
+// ScriptStruct CameraCalibrationCore.STMapFocusPoint
+// 0x0098 (0x00A0 - 0x0008)
+struct FSTMapFocusPoint final : public FBaseFocusPoint
+{
+public:
+	float                                         Focus;                                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRichCurve                             MapBlendingCurve;                                  // 0x0010(0x0080)(NativeAccessSpecifierPublic)
+	TArray<struct FSTMapZoomPoint>                ZoomPoints;                                        // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSTMapFocusPoint;
+
+// ScriptStruct CameraCalibrationCore.STMapFocusCurve
+// 0x0088 (0x0088 - 0x0000)
+struct FSTMapFocusCurve final : public FBaseFocusCurve
+{
+public:
+	struct FRichCurve                             MapBlendingCurve;                                  // 0x0000(0x0080)(NativeAccessSpecifierPublic)
+	float                                         Zoom;                                              // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSTMapFocusCurve;
+
+// ScriptStruct CameraCalibrationCore.STMapTable
+// 0x0020 (0x0030 - 0x0010)
+struct FSTMapTable final : public FBaseLensTable
+{
+public:
+	TArray<struct FSTMapFocusPoint>               FocusPoints;                                       // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSTMapFocusCurve>               FocusCurves;                                       // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSTMapTable;
 
 // ScriptStruct CameraCalibrationCore.DataTablePointInfoBase
 // 0x0008 (0x0008 - 0x0000)
@@ -509,18 +580,6 @@ public:
 };
 DUMPER7_ASSERTS_FLensFileEvaluationInputs;
 
-// ScriptStruct CameraCalibrationCore.NodalOffsetFocusPoint
-// 0x0308 (0x0310 - 0x0008)
-struct FNodalOffsetFocusPoint final : public FBaseFocusPoint
-{
-public:
-	float                                         Focus;                                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRichCurve                             LocationOffset[0x3];                               // 0x0010(0x0080)(NativeAccessSpecifierPublic)
-	struct FRichCurve                             RotationOffset[0x3];                               // 0x0190(0x0080)(NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FNodalOffsetFocusPoint;
-
 // ScriptStruct CameraCalibrationCore.NodalOffsetFocusCurve
 // 0x0308 (0x0308 - 0x0000)
 struct FNodalOffsetFocusCurve final : public FBaseFocusCurve
@@ -555,64 +614,5 @@ public:
 	float                                         P2;                                                // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSphericalDistortionParameters;
-
-// ScriptStruct CameraCalibrationCore.DerivedDistortionData
-// 0x0030 (0x0030 - 0x0000)
-struct FDerivedDistortionData final
-{
-public:
-	struct FDistortionData                        DistortionData;                                    // 0x0000(0x0018)(Edit, EditConst, NativeAccessSpecifierPublic)
-	class UTextureRenderTarget2D*                 UndistortionDisplacementMap;                       // 0x0018(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	class UTextureRenderTarget2D*                 DistortionDisplacementMap;                         // 0x0020(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDerivedDistortionData;
-
-// ScriptStruct CameraCalibrationCore.STMapZoomPoint
-// 0x0050 (0x0050 - 0x0000)
-struct FSTMapZoomPoint final
-{
-public:
-	float                                         Zoom;                                              // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSTMapInfo                             STMapInfo;                                         // 0x0008(0x0010)(NoDestructor, NativeAccessSpecifierPublic)
-	struct FDerivedDistortionData                 DerivedDistortionData;                             // 0x0018(0x0030)(Transient, NativeAccessSpecifierPublic)
-	bool                                          bIsCalibrationPoint;                               // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSTMapZoomPoint;
-
-// ScriptStruct CameraCalibrationCore.STMapFocusPoint
-// 0x0098 (0x00A0 - 0x0008)
-struct FSTMapFocusPoint final : public FBaseFocusPoint
-{
-public:
-	float                                         Focus;                                             // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRichCurve                             MapBlendingCurve;                                  // 0x0010(0x0080)(NativeAccessSpecifierPublic)
-	TArray<struct FSTMapZoomPoint>                ZoomPoints;                                        // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSTMapFocusPoint;
-
-// ScriptStruct CameraCalibrationCore.STMapFocusCurve
-// 0x0088 (0x0088 - 0x0000)
-struct FSTMapFocusCurve final : public FBaseFocusCurve
-{
-public:
-	struct FRichCurve                             MapBlendingCurve;                                  // 0x0000(0x0080)(NativeAccessSpecifierPublic)
-	float                                         Zoom;                                              // 0x0080(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSTMapFocusCurve;
-
-// ScriptStruct CameraCalibrationCore.STMapTable
-// 0x0020 (0x0030 - 0x0010)
-struct FSTMapTable final : public FBaseLensTable
-{
-public:
-	TArray<struct FSTMapFocusPoint>               FocusPoints;                                       // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FSTMapFocusCurve>               FocusCurves;                                       // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSTMapTable;
 
 SDK_NAMESPACE_END

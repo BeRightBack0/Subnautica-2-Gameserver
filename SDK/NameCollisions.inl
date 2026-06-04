@@ -9,50 +9,54 @@
 // FORWARD DECLARATIONS
 
 
-namespace ABP_PCCarry_Locker { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_PCLayer_Vehicle_DiveElevator { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_PCTools_Scanner { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_PCTools_Builder { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace ABP_Fabricator { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace ABP_PCLayer_Vehicle_None { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace ABP_Tadpole_HAUL { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace ABP_PCTools_None { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace ABP_DeepwingBrooder_01 { struct FAnimBlueprintGeneratedConstantData; }
+
+namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
 
 namespace ABP_Fins { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_FloatingLocker_01 { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_SN2Player_CameraCorrection { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_PCTools_SonicResonator { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
+namespace ABP_Tadpole_Scout_Ray { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_PCTools_Flashlight { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_PCBase_Swim { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_PCTools_GenericItem { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_PCTools_SonicResonator { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_DeepwingBrooder_01 { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_PCTools_Builder { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_Hammerhead_01 { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_PCTools_Scanner { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_PCTools_Flare { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_Tadpole_Scout_Ray { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_Fabricator { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_PCTools_None { struct FAnimBlueprintGeneratedConstantData; }
-
-namespace ABP_PCLayer_Vehicle_None { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_FloatingLocker_01 { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_PCore_PostProcess { struct FAnimBlueprintGeneratedConstantData; }
 
 namespace ABP_PCBase_Land { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_PCLayer_Vehicle_DiveElevator { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_PCTools_GenericItem { struct FAnimBlueprintGeneratedConstantData; }
 
-namespace ABP_Tadpole_HAUL { struct FAnimBlueprintGeneratedConstantData; }
+namespace ABP_SN2Player_CameraCorrection { struct FAnimBlueprintGeneratedConstantData; }
 
+namespace ABP_PCCarry_Locker { struct FAnimBlueprintGeneratedConstantData; }
+
+
+namespace ABP_Foureye_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
 
 namespace ABP_Tools_Builder
 {
@@ -60,25 +64,13 @@ namespace ABP_Tools_Builder
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_BlightParasite
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_SonicResonator
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_SN2Player_WaterMotion_Linked
+namespace ABP_Biobed
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_ElectricGeordie_01
+namespace ABP_PCTools_SharedStates
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
@@ -90,181 +82,13 @@ namespace ABP_SN2PlayerCharacter_Main
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ABP_Flare
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Foureye_01
+namespace ABP_BlightParasite
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Waterslug_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Halfmoon_01
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Biobed
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Clamthulu_Nerve_01
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Wakemaker
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_PCTools_SharedStates
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Player_Character
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_AngelComb_Adult_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_PCCarry_SharedStates
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_AngelComb_Juvenile_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Jellyfisher_01
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_TwinEels_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ABP_PlantOxygen_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Flashlight
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Waxmoon
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Processor
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_PCLayer_Vehicle_HAUL
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_ModificationStation
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Coralcrab_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Tadpole
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Needlershark_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_MarrowBreach_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_Geordie_01
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_RepairTool
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ABP_BlightDamagePoint_01
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_PCLayer_Vehicle_Tadpole
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace oldABP_TwinEels_001
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_Houndgar_01
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -276,7 +100,187 @@ namespace ABP_PCTools_Wakemaker
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
+namespace ABP_PCCarry_SharedStates
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_AngelComb_Adult_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_RepairTool
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_BlightDamagePoint_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Waterslug_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Wakemaker
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_TwinEels_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Houndgar_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Flare
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_PCLayer_Vehicle_HAUL
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Coralcrab_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_ElectricGeordie_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Player_Character
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_AnemoneCrab
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Geordie_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_ModificationStation
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Clamthulu_Nerve_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Processor
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_SandSpear_juvenile_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_AngelComb_Juvenile_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_Halfmoon_01
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace oldABP_TwinEels_001
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Flashlight
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Waxmoon
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_MarrowBreach_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
 namespace ABP_Scanner
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_SonicResonator
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Needlershark_01
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_SN2Player_WaterMotion_Linked
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_PCLayer_Vehicle_Tadpole
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_Tadpole
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;

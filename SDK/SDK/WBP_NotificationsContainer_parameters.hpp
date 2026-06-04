@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "UMG_structs.hpp"
-#include "UWENotifications_structs.hpp"
 #include "Engine_structs.hpp"
+#include "UWENotifications_structs.hpp"
 #include "FMODStudio_structs.hpp"
 
 

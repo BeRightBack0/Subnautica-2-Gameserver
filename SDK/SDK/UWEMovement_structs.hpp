@@ -47,6 +47,17 @@ enum class EUWECharacterMovementComponentBasePhysicsInteractionMethod : uint8
 	EUWECharacterMovementComponentBasePhysicsInteractionMethod_MAX = 2,
 };
 
+// ScriptStruct UWEMovement.UWELerpMovementPoint
+// 0x0040 (0x0040 - 0x0000)
+struct FUWELerpMovementPoint final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWELerpMovementPoint;
+
 // ScriptStruct UWEMovement.UWELerpMovementExecutionSettings
 // 0x000C (0x000C - 0x0000)
 struct FUWELerpMovementExecutionSettings final
@@ -71,17 +82,6 @@ public:
 	double                                        ApplicationTime;                                   // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSubmarineInput;
-
-// ScriptStruct UWEMovement.UWELerpMovementPoint
-// 0x0040 (0x0040 - 0x0000)
-struct FUWELerpMovementPoint final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  Rotation;                                          // 0x0020(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWELerpMovementPoint;
 
 // ScriptStruct UWEMovement.UWECharacterMovementComponentBasePhysicsInteractionSettings
 // 0x0014 (0x0014 - 0x0000)

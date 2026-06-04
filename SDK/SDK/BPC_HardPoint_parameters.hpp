@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "UWEInterfaces_structs.hpp"
 #include "Engine_structs.hpp"
+#include "UWEInterfaces_structs.hpp"
 
 
 SDK_NAMESPACE_START

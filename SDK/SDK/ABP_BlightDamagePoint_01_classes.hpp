@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ABP_BlightDamagePoint_01_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
-#include "ABP_BlightDamagePoint_01_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
 

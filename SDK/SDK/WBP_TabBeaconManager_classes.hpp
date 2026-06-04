@@ -38,11 +38,11 @@ public:
 
 public:
 	void BP_OnActivated();
-	void BP_OnDeactivated();
-	void ExecuteUbergraph_WBP_TabBeaconManager(int32 EntryPoint);
-	void OnLabelChangeConfirmed(const class FString& Label);
-	void OnPingEntryIsActiveChanged(int32 PingEntryIndex, bool IsActive);
 	void RefreshMap(const TMap<struct FGuid, class USN2PingViewModel*>& PingsMap);
+	void OnPingEntryIsActiveChanged(int32 PingEntryIndex, bool IsActive);
+	void BP_OnDeactivated();
+	void OnLabelChangeConfirmed(const class FString& Label);
+	void ExecuteUbergraph_WBP_TabBeaconManager(int32 EntryPoint);
 
 	class UWidget* BP_GetDesiredFocusTarget() const;
 

@@ -25,17 +25,6 @@ enum class ECurrencyTransactionType : uint8
 	ECurrencyTransactionType_MAX             = 3,
 };
 
-// ScriptStruct UWEInGameCurrency.CurrencyData
-// 0x0010 (0x0010 - 0x0000)
-struct FCurrencyData final
-{
-public:
-	struct FGameplayTag                           CurrencyTag;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CurrentAmount;                                     // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TotalAmount;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCurrencyData;
-
 // ScriptStruct UWEInGameCurrency.CurrencyTransaction
 // 0x0038 (0x0038 - 0x0000)
 struct FCurrencyTransaction final
@@ -48,6 +37,17 @@ public:
 	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCurrencyTransaction;
+
+// ScriptStruct UWEInGameCurrency.CurrencyData
+// 0x0010 (0x0010 - 0x0000)
+struct FCurrencyData final
+{
+public:
+	struct FGameplayTag                           CurrencyTag;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentAmount;                                     // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TotalAmount;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCurrencyData;
 
 // ScriptStruct UWEInGameCurrency.CurrencyLedger
 // 0x0030 (0x0030 - 0x0000)

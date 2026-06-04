@@ -61,6 +61,21 @@ public:
 };
 DUMPER7_ASSERTS_FAbilityInfoData;
 
+// ScriptStruct UWEInterfaces.UWEWorldPopCreatureData
+// 0x0028 (0x0028 - 0x0000)
+struct FUWEWorldPopCreatureData final
+{
+public:
+	int32                                         ScaleDeviationPercent;                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinGroupSize;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxGroupSize;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftClassPtr<class UClass>>           GroupTypes;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          IgnoreCollisionBetweenMembers;                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FUWEWorldPopCreatureData;
+
 // ScriptStruct UWEInterfaces.UWEWorldPopResourceInterfaceSpawnSettings
 // 0x0002 (0x0002 - 0x0000)
 struct FUWEWorldPopResourceInterfaceSpawnSettings final
@@ -85,20 +100,5 @@ public:
 	class FText                                   TextInputOverride;                                 // 0x0028(0x0010)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FInteractionInfo;
-
-// ScriptStruct UWEInterfaces.UWEWorldPopCreatureData
-// 0x0028 (0x0028 - 0x0000)
-struct FUWEWorldPopCreatureData final
-{
-public:
-	int32                                         ScaleDeviationPercent;                             // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinGroupSize;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxGroupSize;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftClassPtr<class UClass>>           GroupTypes;                                        // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          IgnoreCollisionBetweenMembers;                     // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FUWEWorldPopCreatureData;
 
 SDK_NAMESPACE_END

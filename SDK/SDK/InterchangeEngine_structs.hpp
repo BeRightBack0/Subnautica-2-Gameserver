@@ -27,30 +27,6 @@ enum class EInterchangePipelineConfigurationDialogResult : uint8
 	EInterchangePipelineConfigurationDialogResult_MAX = 4,
 };
 
-// ScriptStruct InterchangeEngine.InterchangePerTranslatorDialogOverride
-// 0x0030 (0x0030 - 0x0000)
-struct FInterchangePerTranslatorDialogOverride final
-{
-public:
-	TSoftClassPtr<class UClass>                   Translator;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowImportDialog;                                 // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowReimportDialog;                               // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FInterchangePerTranslatorDialogOverride;
-
-// ScriptStruct InterchangeEngine.InterchangeDialogOverride
-// 0x0018 (0x0018 - 0x0000)
-struct FInterchangeDialogOverride final
-{
-public:
-	bool                                          bShowImportDialog;                                 // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowReimportDialog;                               // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FInterchangePerTranslatorDialogOverride> PerTranslatorImportDialogOverride;        // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FInterchangeDialogOverride;
-
 // ScriptStruct InterchangeEngine.InterchangeFilePickerParameters
 // 0x0040 (0x0040 - 0x0000)
 struct FInterchangeFilePickerParameters final
@@ -95,6 +71,30 @@ public:
 	TArray<struct FInterchangeTranslatorPipelines> PerTranslatorPipelines;                           // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FInterchangePipelineStack;
+
+// ScriptStruct InterchangeEngine.InterchangePerTranslatorDialogOverride
+// 0x0030 (0x0030 - 0x0000)
+struct FInterchangePerTranslatorDialogOverride final
+{
+public:
+	TSoftClassPtr<class UClass>                   Translator;                                        // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowImportDialog;                                 // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowReimportDialog;                               // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A[0x6];                                       // 0x002A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FInterchangePerTranslatorDialogOverride;
+
+// ScriptStruct InterchangeEngine.InterchangeDialogOverride
+// 0x0018 (0x0018 - 0x0000)
+struct FInterchangeDialogOverride final
+{
+public:
+	bool                                          bShowImportDialog;                                 // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowReimportDialog;                               // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FInterchangePerTranslatorDialogOverride> PerTranslatorImportDialogOverride;        // 0x0008(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FInterchangeDialogOverride;
 
 // ScriptStruct InterchangeEngine.InterchangeImportSettings
 // 0x0088 (0x0088 - 0x0000)

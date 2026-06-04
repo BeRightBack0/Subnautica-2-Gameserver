@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayAbilities_classes.hpp"
 #include "UWEDynamicResources_structs.hpp"
+#include "GameplayAbilities_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "UWEAssetRegistry_classes.hpp"

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "FMODStudio_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UWECommonUI_classes.hpp"
 #include "UMG_structs.hpp"
 

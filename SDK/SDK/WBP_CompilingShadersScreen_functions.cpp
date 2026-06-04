@@ -16,37 +16,31 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.UpdateCompiling
-// (BlueprintCallable, BlueprintEvent)
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
-void UWBP_CompilingShadersScreen_C::UpdateCompiling()
+void UWBP_CompilingShadersScreen_C::Construct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "UpdateCompiling");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.PreConstruct
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Destruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CompilingShadersScreen_C::PreConstruct(bool IsDesignTime)
+void UWBP_CompilingShadersScreen_C::Destruct()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "PreConstruct");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Destruct");
 
-	Params::WBP_CompilingShadersScreen_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -70,29 +64,35 @@ void UWBP_CompilingShadersScreen_C::ExecuteUbergraph_WBP_CompilingShadersScreen(
 }
 
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Destruct
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CompilingShadersScreen_C::Destruct()
+void UWBP_CompilingShadersScreen_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Destruct");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "PreConstruct");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_CompilingShadersScreen_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function WBP_CompilingShadersScreen.WBP_CompilingShadersScreen_C.UpdateCompiling
+// (BlueprintCallable, BlueprintEvent)
 
-void UWBP_CompilingShadersScreen_C::Construct()
+void UWBP_CompilingShadersScreen_C::UpdateCompiling()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "Construct");
+		Func = Class->GetFunction("WBP_CompilingShadersScreen_C", "UpdateCompiling");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

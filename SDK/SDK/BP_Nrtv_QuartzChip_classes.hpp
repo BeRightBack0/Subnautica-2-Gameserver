@@ -53,21 +53,21 @@ public:
 	bool                                          CanInteract;                                       // 0x0380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Animate();
-	void ExecuteUbergraph_BP_Nrtv_QuartzChip(int32 EntryPoint);
-	struct FInteractionInfo GetInteractionInfo(class AActor* HoverActor, class AActor* ForActor, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
-	void Interact(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	void InteractClient(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	void InteractEnd(class AController* Controller, class APawn* Pawn);
-	void InteractEndClient(class AController* Controller, class APawn* Pawn);
-	void InteractEndServer(class AController* Controller, class APawn* Pawn);
-	float InteractionDistance();
-	void InteractServer(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
-	bool IsInteractDisabled(class AActor* HoverActor, class AActor* ForActor, float Distance, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
-	void ReceiveBeginPlay();
-	void Timeline__FinishedFunc();
-	void Timeline__UpdateFunc();
 	void Turn_Off_Glow(class UUWEStoryGoal* UnlockedStoryGoal, class AActor* ReceivingActor);
+	void Timeline__UpdateFunc();
+	void Timeline__FinishedFunc();
+	void ReceiveBeginPlay();
+	bool IsInteractDisabled(class AActor* HoverActor, class AActor* ForActor, float Distance, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
+	void InteractServer(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	float InteractionDistance();
+	void InteractEndServer(class AController* Controller, class APawn* Pawn);
+	void InteractEndClient(class AController* Controller, class APawn* Pawn);
+	void InteractEnd(class AController* Controller, class APawn* Pawn);
+	void InteractClient(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	void Interact(class AController* Controller, class APawn* Pawn, const struct FHitResult& HitResult);
+	struct FInteractionInfo GetInteractionInfo(class AActor* HoverActor, class AActor* ForActor, class UPrimitiveComponent* HoverComponent, const struct FHitResult& HitResult);
+	void ExecuteUbergraph_BP_Nrtv_QuartzChip(int32 EntryPoint);
+	void Animate();
 
 public:
 	static class UClass* StaticClass()

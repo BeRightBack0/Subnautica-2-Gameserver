@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "UWEUtilities_structs.hpp"
 #include "UWEInterfaces_structs.hpp"
-#include "Engine_structs.hpp"
 #include "UWECrafting_structs.hpp"
 #include "FMODStudio_structs.hpp"
 

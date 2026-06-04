@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_PartList.WBP_PartList_C.ExecuteUbergraph_WBP_PartList
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_PartList_C::ExecuteUbergraph_WBP_PartList(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PartList_C", "ExecuteUbergraph_WBP_PartList");
-
-	Params::WBP_PartList_C_ExecuteUbergraph_WBP_PartList Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_PartList.WBP_PartList_C.FocusFirstElement
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_PartList_C::FocusFirstElement()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PartList_C", "FocusFirstElement");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_PartList.WBP_PartList_C.ResetState
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -59,20 +25,6 @@ void UWBP_PartList_C::ResetState()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WBP_PartList_C", "ResetState");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_PartList.WBP_PartList_C.SelectFirstElement
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_PartList_C::SelectFirstElement()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PartList_C", "SelectFirstElement");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -118,6 +70,34 @@ void UWBP_PartList_C::SelectItem(class UUWEPlayerCustomizationItemDA* Item)
 }
 
 
+// Function WBP_PartList.WBP_PartList_C.FocusFirstElement
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_PartList_C::FocusFirstElement()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PartList_C", "FocusFirstElement");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_PartList.WBP_PartList_C.SelectFirstElement
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_PartList_C::SelectFirstElement()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PartList_C", "SelectFirstElement");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_PartList.WBP_PartList_C.SetObjects
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -157,6 +137,26 @@ void UWBP_PartList_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime
 
 	Parms.MyGeometry = std::move(MyGeometry);
 	Parms.InDeltaTime = InDeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_PartList.WBP_PartList_C.ExecuteUbergraph_WBP_PartList
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_PartList_C::ExecuteUbergraph_WBP_PartList(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PartList_C", "ExecuteUbergraph_WBP_PartList");
+
+	Params::WBP_PartList_C_ExecuteUbergraph_WBP_PartList Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

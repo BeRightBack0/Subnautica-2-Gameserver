@@ -12,8 +12,8 @@
 
 #include "SlateCore_structs.hpp"
 #include "FMODStudio_structs.hpp"
-#include "Engine_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START

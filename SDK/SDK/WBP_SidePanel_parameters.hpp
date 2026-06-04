@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "UMG_structs.hpp"
-#include "Engine_structs.hpp"
 #include "Subnautica2_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START

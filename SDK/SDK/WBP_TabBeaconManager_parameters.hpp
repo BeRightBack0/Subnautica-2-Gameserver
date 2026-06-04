@@ -16,6 +16,34 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.RefreshMap
+// 0x0050 (0x0050 - 0x0000)
+struct WBP_TabBeaconManager_C_RefreshMap final
+{
+public:
+	TMap<struct FGuid, class USN2PingViewModel*>  PingsMap;                                          // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
+};
+DUMPER7_ASSERTS_WBP_TabBeaconManager_C_RefreshMap;
+
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnPingEntryIsActiveChanged
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TabBeaconManager_C_OnPingEntryIsActiveChanged final
+{
+public:
+	int32                                         PingEntryIndex;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsActive;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabBeaconManager_C_OnPingEntryIsActiveChanged;
+
+// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnLabelChangeConfirmed
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_TabBeaconManager_C_OnLabelChangeConfirmed final
+{
+public:
+	class FString                                 Label;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_TabBeaconManager_C_OnLabelChangeConfirmed;
+
 // Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.ExecuteUbergraph_WBP_TabBeaconManager
 // 0x0110 (0x0110 - 0x0000)
 struct WBP_TabBeaconManager_C_ExecuteUbergraph_WBP_TabBeaconManager final
@@ -54,34 +82,6 @@ public:
 	class UWBP_PDAScreen_C*                       CallFunc_FindParentWidgetOfType_ReturnValue;       // 0x0108(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_TabBeaconManager_C_ExecuteUbergraph_WBP_TabBeaconManager;
-
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnLabelChangeConfirmed
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_TabBeaconManager_C_OnLabelChangeConfirmed final
-{
-public:
-	class FString                                 Label;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabBeaconManager_C_OnLabelChangeConfirmed;
-
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.OnPingEntryIsActiveChanged
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TabBeaconManager_C_OnPingEntryIsActiveChanged final
-{
-public:
-	int32                                         PingEntryIndex;                                    // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsActive;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_TabBeaconManager_C_OnPingEntryIsActiveChanged;
-
-// Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.RefreshMap
-// 0x0050 (0x0050 - 0x0000)
-struct WBP_TabBeaconManager_C_RefreshMap final
-{
-public:
-	TMap<struct FGuid, class USN2PingViewModel*>  PingsMap;                                          // 0x0000(0x0050)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_TabBeaconManager_C_RefreshMap;
 
 // Function WBP_TabBeaconManager.WBP_TabBeaconManager_C.BP_GetDesiredFocusTarget
 // 0x0018 (0x0018 - 0x0000)

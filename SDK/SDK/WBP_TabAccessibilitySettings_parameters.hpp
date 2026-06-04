@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EnhancedInput_structs.hpp"
 #include "UWECommonUI_structs.hpp"
+#include "EnhancedInput_structs.hpp"
 
 
 SDK_NAMESPACE_START

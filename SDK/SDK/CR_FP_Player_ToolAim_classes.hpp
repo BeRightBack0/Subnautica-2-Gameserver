@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "UWEInventory_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "UWEInventory_structs.hpp"
 #include "ControlRig_classes.hpp"
 
 

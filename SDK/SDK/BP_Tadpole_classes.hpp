@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "UWEUtilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "UWESculpturalBase_structs.hpp"
+#include "Engine_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "UWESculpturalBase_structs.hpp"
 #include "Subnautica2_structs.hpp"
 #include "Subnautica2_classes.hpp"
 
@@ -108,14 +108,14 @@ public:
 	TArray<struct FUWESculpturalBaseCellCost>     RefundCost;                                        // 0x0E88(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	bool GetEnableTadpolePropellers();
-	double GetPropellerSpeedBottom();
+	bool GetEnableHAULPropellers();
 	double GetPropellerSpeedMain();
 	double GetPropellerSpeedRight();
 	double GetPropellerSpeedLeft();
+	bool GetEnableTadpolePropellers();
+	double GetPropellerSpeedBottom();
 	struct FRotator GetPropellerRotation();
 	struct FVector GetPropellerVelocity();
-	bool GetEnableHAULPropellers();
 	void Added_16220A694B268221A018DF93DFDAB1F9();
 	void Added_16C4A2EE4D3755D7D292A0949544B829();
 	void Added_37216B1E4C4FECAA47D6F6ACD0313CC1();

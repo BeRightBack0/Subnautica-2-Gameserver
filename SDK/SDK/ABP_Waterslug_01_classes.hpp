@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ABP_Waterslug_01_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Subnautica2_classes.hpp"
+#include "ABP_Waterslug_01_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -32,7 +32,7 @@ public:
 	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0440(0x0050)()
 	struct FAnimNode_RandomPlayer                 AnimGraphNode_RandomPlayer;                        // 0x0490(0x0078)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0508(0x0048)()
-	bool                                          IsPlayerClose;                                     // 0x0550(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isPlayerClose;                                     // 0x0550(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void PlayersInRangeChanged(int32 PlayersInRange);

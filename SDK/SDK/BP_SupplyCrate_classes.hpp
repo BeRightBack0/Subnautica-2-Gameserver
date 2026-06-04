@@ -20,8 +20,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SupplyCrate.BP_SupplyCrate_C
 // 0x0110 (0x03C0 - 0x02B0)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) ABP_SupplyCrate_C : public AActor
+class ABP_SupplyCrate_C final : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -78,7 +77,6 @@ public:
 		return GetDefaultObjImpl<ABP_SupplyCrate_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABP_SupplyCrate_C;
 
 SDK_NAMESPACE_END

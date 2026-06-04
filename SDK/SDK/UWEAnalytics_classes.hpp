@@ -101,20 +101,18 @@ public:
 DUMPER7_ASSERTS_UUWEEventRecorderDiagnostic;
 
 // Class UWEAnalytics.UWEEventSubsystem
-// 0x0050 (0x0080 - 0x0030)
+// 0x0030 (0x0060 - 0x0030)
 class UUWEEventSubsystem final : public UGameInstanceSubsystem
 {
 public:
 	int32                                         EventHistoryLen;                                   // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnabled;                                          // 0x0034(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_35[0x33];                                      // 0x0035(0x0033)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaxAlternativeEvents;                              // 0x0068(0x0004)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bGPPDisabled;                                      // 0x006C(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6D[0x13];                                      // 0x006D(0x0013)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_35[0x23];                                      // 0x0035(0x0023)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bGPPDisabled;                                      // 0x0058(0x0001)(ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void BPRecordEvent(const class FString& EventName, class AActor* Player, const bool bVerbose, const TArray<struct FAnalyticsEventAttr>& Attributes);
-	void FlushEventsAlternative();
 	void Init();
 	bool IsEnabled();
 	void SetEnabled(bool InbEnabled);

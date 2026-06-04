@@ -30,7 +30,6 @@ public:
 	static void GetDLSSModeInformation(EUDLSSMode DLSSMode, const struct FVector2D& ScreenResolution, bool* bIsSupported, float* OptimalScreenPercentage, bool* bIsFixedScreenPercentage, float* MinScreenPercentage, float* MaxScreenPercentage, float* OptimalSharpness);
 	static void GetDLSSRRMinimumDriverVersion(int32* MinDriverVersionMajor, int32* MinDriverVersionMinor);
 	static void GetDLSSScreenPercentageRange(float* MinScreenPercentage, float* MaxScreenPercentage);
-	static float GetDLSSSharpness();
 	static TArray<EUDLSSMode> GetSupportedDLSSModes();
 	static bool IsDLAAEnabled();
 	static bool IsDLSSEnabled();
@@ -42,7 +41,6 @@ public:
 	static EUDLSSSupport QueryDLSSRRSupport();
 	static EUDLSSSupport QueryDLSSSupport();
 	static void SetDLSSMode(class UObject* WorldContextObject, EUDLSSMode DLSSMode);
-	static void SetDLSSSharpness(float Sharpness);
 
 public:
 	static class UClass* StaticClass()

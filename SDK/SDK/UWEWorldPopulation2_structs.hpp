@@ -47,32 +47,16 @@ enum class EUWEWorldPopDirection : uint8
 	EUWEWorldPopDirection_MAX                = 3,
 };
 
-// ScriptStruct UWEWorldPopulation2.UWEWorldPop2Query
-// 0x0038 (0x0038 - 0x0000)
-struct FUWEWorldPop2Query final
+// ScriptStruct UWEWorldPopulation2.UWESpatialOctreeCell
+// 0x0058 (0x0058 - 0x0000)
+struct FUWESpatialOctreeCell final
 {
 public:
-	TArray<TSoftClassPtr<class UClass>>           IncludedClasses;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSoftClassPtr<class UClass>>           ExcludedClasses;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          OnlySpawned;                                       // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OnlyActive;                                        // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OnlyRespawnable;                                   // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MinimumDepth;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	double                                        MaximumDepth;                                      // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBox                                   Bounds;                                            // 0x0000(0x0038)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Children;                                          // 0x0038(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Data;                                              // 0x0048(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FUWEWorldPop2Query;
-
-// ScriptStruct UWEWorldPopulation2.UWEWorldPopSpatialCell
-// 0x0003 (0x0003 - 0x0000)
-struct FUWEWorldPopSpatialCell final
-{
-public:
-	bool                                          IsEmpty;                                           // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPlayableSpace;                                   // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsLandscapeCell;                                   // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWEWorldPopSpatialCell;
+DUMPER7_ASSERTS_FUWESpatialOctreeCell;
 
 // ScriptStruct UWEWorldPopulation2.UWESeededResourceInfo
 // 0x00D0 (0x00D0 - 0x0000)
@@ -93,6 +77,22 @@ public:
 	uint8                                         Pad_C7[0x9];                                       // 0x00C7(0x0009)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FUWESeededResourceInfo;
+
+// ScriptStruct UWEWorldPopulation2.UWEWorldPop2Query
+// 0x0038 (0x0038 - 0x0000)
+struct FUWEWorldPop2Query final
+{
+public:
+	TArray<TSoftClassPtr<class UClass>>           IncludedClasses;                                   // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSoftClassPtr<class UClass>>           ExcludedClasses;                                   // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          OnlySpawned;                                       // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OnlyActive;                                        // 0x0021(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OnlyRespawnable;                                   // 0x0022(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MinimumDepth;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        MaximumDepth;                                      // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEWorldPop2Query;
 
 // ScriptStruct UWEWorldPopulation2.UWECreatureSpawnReplacement
 // 0x0014 (0x0014 - 0x0000)
@@ -146,17 +146,6 @@ public:
 };
 DUMPER7_ASSERTS_FUWESeededCreatureInfo;
 
-// ScriptStruct UWEWorldPopulation2.UWESpatialOctreeCell
-// 0x0058 (0x0058 - 0x0000)
-struct FUWESpatialOctreeCell final
-{
-public:
-	struct FBox                                   Bounds;                                            // 0x0000(0x0038)(ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Children;                                          // 0x0038(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-	TArray<int32>                                 Data;                                              // 0x0048(0x0010)(ZeroConstructor, SaveGame, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FUWESpatialOctreeCell;
-
 // ScriptStruct UWEWorldPopulation2.UWESeededActorInstance
 // 0x0068 (0x0068 - 0x0000)
 struct FUWESeededActorInstance final
@@ -184,6 +173,17 @@ public:
 	struct FGameplayTagContainer                  CellTags;                                          // 0x0030(0x0020)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FUWEWorldPopLocationDebugInfo;
+
+// ScriptStruct UWEWorldPopulation2.UWEWorldPopSpatialCell
+// 0x0003 (0x0003 - 0x0000)
+struct FUWEWorldPopSpatialCell final
+{
+public:
+	bool                                          IsEmpty;                                           // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPlayableSpace;                                   // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsLandscapeCell;                                   // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FUWEWorldPopSpatialCell;
 
 // ScriptStruct UWEWorldPopulation2.UWEWorldPopSpatialLayer
 // 0x0050 (0x0050 - 0x0000)

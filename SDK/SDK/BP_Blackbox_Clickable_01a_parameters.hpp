@@ -10,12 +10,117 @@
 
 #include "Basic.hpp"
 
-#include "UWEInterfaces_structs.hpp"
 #include "Engine_structs.hpp"
+#include "UWEInterfaces_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.IsInteractDisabled
+// 0x0138 (0x0138 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_IsInteractDisabled final
+{
+public:
+	class AActor*                                 HoverActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ForActor;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	float                                         Distance;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPrimitiveComponent*                    HoverComponent;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0020(0x0100)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          ReturnValue;                                       // 0x0120(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  K2Node_DynamicCast_AsPawn;                         // 0x0128(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsStoryGoalUnlocked_ReturnValue;          // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_IsInteractDisabled;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractServer
+// 0x0110 (0x0110 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractServer final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractServer;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractionDistance
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractionDistance final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractionDistance;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEndServer
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractEndServer final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEndServer;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEndClient
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractEndClient final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEndClient;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEnd
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractEnd final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEnd;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractClient
+// 0x0110 (0x0110 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_InteractClient final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractClient;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.Interact
+// 0x0110 (0x0110 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_Interact final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_Interact;
+
+// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.GetInteractionInfo
+// 0x0188 (0x0188 - 0x0000)
+struct BP_Blackbox_Clickable_01a_C_GetInteractionInfo final
+{
+public:
+	class AActor*                                 HoverActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 ForActor;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPrimitiveComponent*                    HoverComponent;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             HitResult;                                         // 0x0018(0x0100)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	struct FInteractionInfo                       ReturnValue;                                       // 0x0118(0x0038)(Parm, OutParm, ReturnParm)
+	struct FInteractionInfo                       K2Node_MakeStruct_InteractionInfo;                 // 0x0150(0x0038)()
+};
+DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_GetInteractionInfo;
 
 // Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.ExecuteUbergraph_BP_Blackbox_Clickable_01a
 // 0x0388 (0x0388 - 0x0000)
@@ -44,111 +149,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0380(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_ExecuteUbergraph_BP_Blackbox_Clickable_01a;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.GetInteractionInfo
-// 0x0188 (0x0188 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_GetInteractionInfo final
-{
-public:
-	class AActor*                                 HoverActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 ForActor;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPrimitiveComponent*                    HoverComponent;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0018(0x0100)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	struct FInteractionInfo                       ReturnValue;                                       // 0x0118(0x0038)(Parm, OutParm, ReturnParm)
-	struct FInteractionInfo                       K2Node_MakeStruct_InteractionInfo;                 // 0x0150(0x0038)()
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_GetInteractionInfo;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.Interact
-// 0x0110 (0x0110 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_Interact final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_Interact;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractClient
-// 0x0110 (0x0110 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractClient final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractClient;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEnd
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractEnd final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEnd;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEndClient
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractEndClient final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEndClient;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractEndServer
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractEndServer final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractEndServer;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractionDistance
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractionDistance final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractionDistance;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.InteractServer
-// 0x0110 (0x0110 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_InteractServer final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0010(0x0100)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_InteractServer;
-
-// Function BP_Blackbox_Clickable_01a.BP_Blackbox_Clickable_01a_C.IsInteractDisabled
-// 0x0138 (0x0138 - 0x0000)
-struct BP_Blackbox_Clickable_01a_C_IsInteractDisabled final
-{
-public:
-	class AActor*                                 HoverActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 ForActor;                                          // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	float                                         Distance;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPrimitiveComponent*                    HoverComponent;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             HitResult;                                         // 0x0020(0x0100)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          ReturnValue;                                       // 0x0120(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  K2Node_DynamicCast_AsPawn;                         // 0x0128(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsStoryGoalUnlocked_ReturnValue;          // 0x0131(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Blackbox_Clickable_01a_C_IsInteractDisabled;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -64,19 +64,19 @@ void AGC_WelderOnline_C::ExecuteUbergraph_GC_WelderOnline(int32 EntryPoint)
 }
 
 
-// Function GC_WelderOnline.GC_WelderOnline_C.initHologramLight
+// Function GC_WelderOnline.GC_WelderOnline_C.InitHologramLight
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USceneComponent*                  Tool                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void AGC_WelderOnline_C::initHologramLight(class USceneComponent* Tool)
+void AGC_WelderOnline_C::InitHologramLight(class USceneComponent* Tool)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GC_WelderOnline_C", "initHologramLight");
+		Func = Class->GetFunction("GC_WelderOnline_C", "InitHologramLight");
 
-	Params::GC_WelderOnline_C_initHologramLight Parms{};
+	Params::GC_WelderOnline_C_InitHologramLight Parms{};
 
 	Parms.Tool = Tool;
 

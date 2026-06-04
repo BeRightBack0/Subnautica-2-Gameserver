@@ -27,6 +27,31 @@ enum class ESCCModification : uint32
 	ESCCModification_MAX                     = 4,
 };
 
+// ScriptStruct TypedElementFramework.EditorDataStorageTag
+// 0x0001 (0x0001 - 0x0000)
+struct FEditorDataStorageTag
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FEditorDataStorageTag;
+
+// ScriptStruct TypedElementFramework.TypedElementClassDefaultObjectTag
+// 0x0000 (0x0001 - 0x0001)
+struct FTypedElementClassDefaultObjectTag final : public FEditorDataStorageTag
+{
+};
+DUMPER7_ASSERTS_FTypedElementClassDefaultObjectTag;
+
+// ScriptStruct TypedElementFramework.SCCUserInfo
+// 0x0010 (0x0010 - 0x0000)
+struct FSCCUserInfo final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSCCUserInfo;
+
 // ScriptStruct TypedElementFramework.ScriptTypedElementHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FScriptTypedElementHandle final
@@ -44,15 +69,6 @@ struct SDK_ALIGN(0x01) FEditorDataStorageColumn
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_FEditorDataStorageColumn;
-
-// ScriptStruct TypedElementFramework.EditorDataStorageTag
-// 0x0001 (0x0001 - 0x0000)
-struct FEditorDataStorageTag
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FEditorDataStorageTag;
 
 // ScriptStruct TypedElementFramework.TypedElementUObjectColumn
 // 0x0008 (0x0008 - 0x0000)
@@ -81,13 +97,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTypedElementExternalObjectColumn;
-
-// ScriptStruct TypedElementFramework.TypedElementClassDefaultObjectTag
-// 0x0000 (0x0001 - 0x0001)
-struct FTypedElementClassDefaultObjectTag final : public FEditorDataStorageTag
-{
-};
-DUMPER7_ASSERTS_FTypedElementClassDefaultObjectTag;
 
 // ScriptStruct TypedElementFramework.TypedElementActorTag
 // 0x0000 (0x0001 - 0x0001)
@@ -411,15 +420,6 @@ public:
 	struct FSCCRevisionId                         RevisionId;                                        // 0x0000(0x0014)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSCCExternalRevisionIdColumn;
-
-// ScriptStruct TypedElementFramework.SCCUserInfo
-// 0x0010 (0x0010 - 0x0000)
-struct FSCCUserInfo final
-{
-public:
-	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FSCCUserInfo;
 
 // ScriptStruct TypedElementFramework.SCCExternallyLockedColumn
 // 0x0010 (0x0010 - 0x0000)
